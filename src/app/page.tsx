@@ -6,7 +6,7 @@ import { Inter } from 'next/font/google'
 import styles from './page.module.scss'
 
 // type imports
-import Nav from '@/app/types/navbar/navbar'
+import Nav from '@/app/models/navbar/navbar'
 
 // component imports
 import Navbar from '@/app/components/navbar/navbar'

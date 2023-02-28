@@ -1,20 +1,19 @@
 // use file to link content to components.
 import NavItem from './navItem';
 
-// used TS "interface" to create object type routes in the navbar.
-export interface INavbar {
+export type NavbarType = {
   navItems?: NavItem[] 
 }
 
 export default class Navbar {
   public navItems!: NavItem[];
 
-  constructor(navbar: INavbar) {
-    if (!navbar) {
-      throw new Error("Cannot construct Navbar from falsey INavbar");
+  constructor(navbarType: NavbarType) {
+    if (!navbarType) {
+      throw new Error("Cannot construct Navbar from falsey NavbarType");
     }
 
-    this.navItems = navbar.navItems || [];
+    this.navItems = navbarType.navItems || [];
   }
 
   public static empty(): Navbar {

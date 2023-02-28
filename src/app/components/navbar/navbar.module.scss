@@ -3,6 +3,7 @@
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1fr;
     border: solid green 2px;
+    width: 100%;
 }
 
 .navTitle {
@@ -18,7 +19,7 @@
 }
 
 .navItem {
-    grid-column: 2 / 4;
+    grid-column: 3 / 4;
     grid-row: 1;
     font-size: 1.5rem;
     font-weight: 700;
