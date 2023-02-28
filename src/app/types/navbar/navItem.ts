@@ -1,11 +1,11 @@
 export interface INavItem {
     url?: string, 
-    name?: string
+    title?: string
 }
 
 export default class NavItem {
     url!: string;
-    name!: string;
+    title!: string;
 
     constructor(navItem: INavItem) {
         if (!navItem) {
@@ -13,7 +13,7 @@ export default class NavItem {
           }      
 
         this.url = navItem.url || "";
-        this.name = navItem.name || "";
+        this.title = navItem.title || "";
     }
 
     public static empty(): NavItem {

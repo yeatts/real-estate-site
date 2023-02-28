@@ -28,31 +28,31 @@ export default class Nav {
       navItems: [
         new NavItem({
           url: '#/',
-          name: 'Home'
+          title: 'Home'
         }),
         new NavItem({
           url: '#/accounting-services', 
-          name: 'Accounting Services'
+          title: 'Accounting Services'
         }),
         new NavItem({
           url: '#/resources', 
-          name: 'Resources'
+          title: 'Resources'
         }),
         new NavItem({
           url: '#/blog', 
-          name: 'Blog'
+          title: 'Blog'
         }),
         new NavItem({
           url: '#/about', 
-          name: 'About'
+          title: 'About'
         }),
         new NavItem({
           url: '#/contact-form', 
-          name: 'Get In Touch'
+          title: 'Get In Touch'
         }),
         new NavItem({
           url: '#/not-found', 
-          name: 'Not Found'
+          title: 'Not Found'
         }),
       ]
     });
