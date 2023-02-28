@@ -1,6 +1,17 @@
+// next imports
 // import Image from 'next/image'
 import { Inter } from 'next/font/google'
+
+// style imports
 import styles from './page.module.scss'
+
+// type imports
+import Nav from '@/app/types/navbar/navbar'
+
+// component imports
+import Navbar from '@/app/components/navbar/navbar'
+
+// other imports
 // import { useEffect, useState } from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -23,7 +34,10 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
-      {/* TODO: start coding here       */}
+      <Navbar 
+        navTitle="Navbar Title"
+        navItems={Nav.withDefaultNavItems().navItems}
+      /> 
     </main>
   )
 }

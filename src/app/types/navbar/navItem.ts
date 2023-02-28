@@ -4,8 +4,8 @@ export interface INavItem {
 }
 
 export default class NavItem {
-    url!: string;
-    title!: string;
+    public url!: string;
+    public title!: string;
 
     constructor(navItem: INavItem) {
         if (!navItem) {

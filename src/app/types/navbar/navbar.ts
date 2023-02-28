@@ -2,56 +2,56 @@
 import NavItem from './navItem';
 
 // used TS "interface" to create object type routes in the navbar.
-export interface INav {
+export interface INavbar {
   navItems?: NavItem[] 
 }
 
-export default class Nav {
-  navItems!: NavItem[];
+export default class Navbar {
+  public navItems!: NavItem[];
 
-  constructor(nav: INav) {
-    if (!nav) {
-      throw new Error("Cannot construct Nav from falsey INav");
+  constructor(navbar: INavbar) {
+    if (!navbar) {
+      throw new Error("Cannot construct Navbar from falsey INavbar");
     }
 
-    this.navItems = nav.navItems || [];
+    this.navItems = navbar.navItems || [];
   }
 
-  public static empty(): Nav {
-    return new Nav({
+  public static empty(): Navbar {
+    return new Navbar({
       navItems: []
     });
   }
 
-  public static withDefaultNavItems(): Nav {
-    return new Nav({
+  public static withDefaultNavItems(): Navbar {
+    return new Navbar({
       navItems: [
         new NavItem({
-          url: '#/',
+          url: '/',
           title: 'Home'
         }),
         new NavItem({
-          url: '#/accounting-services', 
+          url: '/accounting-services', 
           title: 'Accounting Services'
         }),
         new NavItem({
-          url: '#/resources', 
+          url: '/resources', 
           title: 'Resources'
         }),
         new NavItem({
-          url: '#/blog', 
+          url: '/blog', 
           title: 'Blog'
         }),
         new NavItem({
-          url: '#/about', 
+          url: '/about', 
           title: 'About'
         }),
         new NavItem({
-          url: '#/contact-form', 
+          url: '/contact-form', 
           title: 'Get In Touch'
         }),
         new NavItem({
-          url: '#/not-found', 
+          url: '/not-found', 
           title: 'Not Found'
         }),
       ]

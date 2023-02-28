@@ -7,21 +7,20 @@ import NavItem from '@/app/types/navbar/navItem'
 // other imports
 import { ReactFragment } from 'react'
 
-export default function Navbar( navTitle: string = "Navbar Title", navItems: NavItem[] = [NavItem.empty()]) {
+interface NavbarProps {
+  navTitle: string,
+  navItems: NavItem[]
+}
 
-    // const items = navItems.map((item) => {
-    //   <li className={styles.navItem} key={item.title}>
-    //     <a href={item.url}>{item.title}</a>
-    //   </li>
-    // })
+export default function Navbar( NavbarProps: NavbarProps ) {
 
   return (
       <nav className={styles.nav}>
-        <div className={styles.navTitle}>{navTitle}</div>
+        <div className={styles.navTitle}>{NavbarProps.navTitle}</div>
         <ul>
           {
-            navItems.map((item) => {
-              <li className={styles.navItem} key={item.title}>
+            NavbarProps.navItems.map((item) => {
+              <li className={styles.navItem}>
                 <a href={item.url}>{item.title}</a>
               </li>
             }) as ReactFragment
