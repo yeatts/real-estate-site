@@ -31,11 +31,13 @@ import Navbar from '@/app/components/navbar/navbar'
 
 export default function Home() {
 
+  const navItems = Nav.builder().withDefaultNavItems().build().navItems
+
   return (
     <main className={styles.main}>
       <Navbar 
         navDisplayName="Navbar Title"
-        navItems={Nav.builder().withDefaultNavItems().build().navItems}
+        navItems={navItems}
       /> 
     </main>
   )
