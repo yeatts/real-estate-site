@@ -14,7 +14,7 @@ import Navbar from '@/app/components/navbar/navbar'
 // other imports
 // import { useEffect, useState } from 'react'
 
-const inter = Inter({ subsets: ['latin'] })
+// const inter = Inter({ subsets: ['latin'] })
 
 {/* <h2 className={inter.className}>
   Docs <span>-&gt;</span>
@@ -29,14 +29,13 @@ const inter = Inter({ subsets: ['latin'] })
   priority
 /> */}
 
-
 export default function Home() {
 
   return (
     <main className={styles.main}>
       <Navbar 
-        navTitle="Navbar Title"
-        navItems={Nav.withDefaultNavItems().navItems}
+        navDisplayName="Navbar Title"
+        navItems={Nav.builder().withDefaultNavItems().build().navItems}
       /> 
     </main>
   )

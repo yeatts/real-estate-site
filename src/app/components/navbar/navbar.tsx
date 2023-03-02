@@ -2,21 +2,18 @@
 import styles from './navbar.module.scss'
 
 // type imports
-import NavItem from '@/app/models/navbar/navItem'
+import { TNavbar } from '@/app/models/navbar/navbar'
 
 // other imports
 import { ReactFragment } from 'react'
 
-type NavbarPropsType = {
-  navTitle: string,
-  navItems: NavItem[]
-}
+export default function Navbar( navbarProps: TNavbar) {
 
-export default function Navbar( navbarProps: NavbarPropsType ) {
+  console.log(`navbarProps`, navbarProps)
 
   return (
       <nav className={styles.nav}>
-        <div className={styles.navTitle}>{navbarProps.navTitle}</div>
+        <div className={styles.navTitle}>{navbarProps.navDisplayName}</div>
         <ul>
           {
             navbarProps.navItems.map((item) => {
