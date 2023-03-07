@@ -6,7 +6,8 @@ import { Inter } from 'next/font/google'
 import styles from './page.module.scss'
 
 // type imports
-import Nav from '@/app/models/navbar/navbar'
+// TODO: maybe change the model name to NavbarModel? 
+import { default as NavbarModel }from '@/app/models/navbar/navbar'
 
 // component imports
 import Navbar from '@/app/components/navbar/navbar'
@@ -31,7 +32,7 @@ import Navbar from '@/app/components/navbar/navbar'
 
 export default function Home() {
 
-  const navItems = Nav.builder().withDefaultNavItems().build().navItems
+  const navItems = NavbarModel.builder().withDefaultNavItems().build().navItems
 
   return (
     <main className={styles.main}>

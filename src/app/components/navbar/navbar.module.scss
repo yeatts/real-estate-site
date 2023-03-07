@@ -1,14 +1,11 @@
 .nav {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 1fr;
     border: solid green 2px;
     width: 100%;
+    display: flex;
 }
 
 .navTitle {
-    grid-column: 1;
-    grid-row: 1;
+    flex: 6;
     font-size: 1.5rem;
     font-weight: 700;
     color: #000;
@@ -18,9 +15,16 @@
     border: solid blue 2px;
 }
 
-.navItem {
-    grid-column: 3 / 4;
-    grid-row: 1;
+.navUl {
+    flex: 6;
+    display: flex;
+    justify-content: flex-end;
+    border: solid yellow 2px;
+}
+
+.navLi {
+    flex: 1;
+    list-style: none;
     font-size: 1.5rem;
     font-weight: 700;
     color: #000;
