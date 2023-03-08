@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es6",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -11,7 +11,7 @@
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": true,
+    "isolatedModules": true, // When isolatedModules is set to true, the compiler assumes that each file is independent and does not share any state with other files. This means that certain features of TypeScript, such as global variable declarations and module augmentation, are not available.
     "jsx": "preserve",
     "incremental": true,
     "plugins": [

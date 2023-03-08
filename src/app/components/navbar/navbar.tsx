@@ -8,9 +8,6 @@ import styles from './navbar.module.scss'
 // type imports
 import { TNavbar } from '@/app/models/navbar/navbar'
 
-// other imports
-import { ReactFragment } from 'react'
-
 export default function Navbar( navbarProps: TNavbar ) {
 
   useEffect(() => {
