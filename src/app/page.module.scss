@@ -3,6 +3,38 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 6rem;
-  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+}
+
+.section {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+  width: 100%;
+  position: relative;
+
+  .hero {
+    object-fit: cover;
+    filter: brightness(40%);
+    z-index: 0;
+  }
+
+  section {
+    z-index: 1;
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    text-align: center;
+    color: white;
+  }
 }
