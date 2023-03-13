@@ -20,4 +20,19 @@ a {
   width: 100vw;
   height: 100vh;
   display: flex;
+
+  // global vars here
+  --primary: #bbd5d8;
+  --secondary: #ebf2f2;
+  --tertiary: #cfdada;
+  --quaternary: #9cadb3;
+
+  --text-color-light: #ebf2f2;
+  --text-color-dark: rgba(0,0,0,1);
+
+  --background-color-light: #ebf2f2;
+  --background-color-dark: #cfdada;
+
+  --border-light: #bbd5d8;
+  --border-dark: #9cadb3;
 }

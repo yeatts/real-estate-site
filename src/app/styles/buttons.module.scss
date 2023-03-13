@@ -1,0 +1,29 @@
+.buttonPrimary,
+.buttonSecondary {
+  height: 100%;
+  font-size: 1.5rem;  
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 3%;
+}
+
+.buttonPrimary {
+    background-color: var(--primary);
+    color: var(--text-color-dark);
+
+    &:hover {
+      background-color: var(--secondary);
+    }
+  } 
+
+.buttonSecondary {
+    color: var(--secondary);
+    border: var(--secondary) solid 2px;
+
+    &:hover {
+      color: var(--primary);
+      border: var(--primary) solid 2px;
+    }
+  }

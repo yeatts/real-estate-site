@@ -4,6 +4,7 @@ import Image from 'next/image'
 
 // style imports
 import styles from './page.module.scss'
+import buttonStyles from '@/app/styles/buttons.module.scss'
 
 // type imports
 // TODO: maybe change the model name to NavbarModel? 
@@ -26,13 +27,25 @@ export default function Home() {
           navItems={navItems}
         /> 
       </header>
-      <section className={styles.section}>
-        <Image className={styles.hero} src="/landing-houses.jpg" alt="Hauses" fill priority/>
-        <section>
+      <section className={styles.hero}>
+        <Image className={styles.heroImage} src="/landing-houses.jpg" alt="Hauses" fill priority/>
+        <section className={styles.heroBody}>
           <h1>
-            {"I sell hauses. Let's make a deal."}
+            {"I sell hauses."}
           </h1>
-          
+          <p>
+            {"Let me help you experience the luxury of owning your dream home. "} 
+            <br/>
+            {"With my expert real estate services, I'll guide you every step of the way to finding the perfect property."}
+          </p>
+          <div className={styles.heroButtonGroup}>
+            <button className={buttonStyles.buttonPrimary}>
+              {"Let's do it!"}
+            </button>
+            <button className={buttonStyles.buttonSecondary}>
+              {"Learn More."}
+            </button>
+          </div>
 
         </section>
       </section>
