@@ -4,16 +4,12 @@ export type TNavItem = {
 }
 
 export default class NavItem {
-    private navItem: TNavItem;
+    public navItem: TNavItem;
 
     constructor(navItem: TNavItem) {
         this.navItem = navItem;
     }
-
-    public static builder(): NavItemBuilder {
-        return new NavItemBuilder();
-    }
-
+    
     public get url(): string {
         return this.navItem.url;
     }
@@ -29,10 +25,14 @@ export default class NavItem {
     public set title(title: string) {
         this.navItem.title = title;
     }
+
+    public static builder(): NavItemBuilder {
+        return new NavItemBuilder();
+    }
 }
 
 export class NavItemBuilder {
-    private navItem: TNavItem;
+    public navItem: TNavItem;
 
     constructor() {
         this.navItem = {

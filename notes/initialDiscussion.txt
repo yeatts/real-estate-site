@@ -20,3 +20,4 @@ misc
 - figure out CMS for Quise to use
 
 
+Integrate Hotjar to get site analytics on user activity on the site

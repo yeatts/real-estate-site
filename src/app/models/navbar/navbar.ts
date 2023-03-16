@@ -1,5 +1,5 @@
 // use file to link content to components.
-import NavItem from './navItem';
+import NavItem from './nav-item';
 
 export type TNavbar = {
   navDisplayName: string,
@@ -7,35 +7,27 @@ export type TNavbar = {
 }
 
 export default class Navbar {
-  private navbar: TNavbar;
+  public navbar: TNavbar;
 
   constructor(navbar: TNavbar) {
-    this.navbar = navbar;
+    this.navbar = navbar; 
   }
-
-  public static builder(): NavbarBuilder {
-    return new NavbarBuilder();
-  }
-
-  public get navDisplayName(): string {
-    return this.navbar.navDisplayName;
-  }
-
-  public set navDisplayName(navDisplayName: string) {
-    this.navbar.navDisplayName = navDisplayName;
-  }
-
-  public get navItems(): NavItem[] {
+  
+  public get navbarItems(): NavItem[] {
     return this.navbar.navItems;
   }
 
-  public set navItems(navItems: NavItem[]) {
+  public set navbarItems(navItems: NavItem[]) {
     this.navbar.navItems = navItems;
+  }
+ 
+  public static builder(): NavbarBuilder {
+    return new NavbarBuilder();
   }
 }
 
 export class NavbarBuilder {
-  private navbar: TNavbar;
+  public navbar: TNavbar;
 
   constructor() {
     this.navbar = {

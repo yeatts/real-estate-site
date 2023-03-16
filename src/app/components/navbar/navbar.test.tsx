@@ -1,9 +1,9 @@
 import { render } from '@testing-library/react'
 import '@testing-library/jest-dom'
 
-import Navbar from '@/app/components/navbar/navbar';
+import Navbar from '@/app/components/navbar/Navbar';
 import { TNavbar } from '@/app/models/navbar/navbar';
-import NavItem from '@/app/models/navbar/navItem';
+import NavItem from '@/app/models/navbar/nav-item';
 
 describe('Navbar', () => {
   const mockNavbarProps: TNavbar = {
