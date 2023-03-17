@@ -72,6 +72,10 @@
   background-color: var(--background-color-light);
   padding: 5% 0;
 
+  .servicesHeader {
+    border: solid 1px red;
+  }
+
   .serviceCardGroup {
     width: 100%;
     display: flex;
@@ -79,5 +83,6 @@
     align-items: center;
     flex-flow: row wrap;
     padding: 5% 0;
+    margin-bottom: -5%; // offset the margin-bottom on the service cards
   }
 }

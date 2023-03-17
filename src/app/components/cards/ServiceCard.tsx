@@ -9,10 +9,10 @@ import { TServiceCard } from '@/app/models/cards/service-card'
 
 export default function ServicesCard( props: TServiceCard ) {
   return (
-    <section className={styles.serviceCard}>
+    <div className={styles.serviceCard}>
       <DynamicIcon iconName={props.icon} size={25} color={"black"}/>
       <h2 className={styles.title}>{props.header}</h2>
       <p className={styles.description}>{props.description}</p>
-    </section>
+    </div>
   )
 }

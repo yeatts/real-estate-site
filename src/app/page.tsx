@@ -34,7 +34,7 @@ export default function Home() {
       {/* hero section */}
       <section className={styles.hero}>
         <Image className={styles.heroImage} src="/landing-houses.jpg" alt="Hauses" fill priority/>
-        <section className={styles.heroBody}>
+        <div className={styles.heroBody}>
           <h1>
             {"I sell hauses."}
           </h1>
@@ -51,7 +51,7 @@ export default function Home() {
               {"Learn More."}
             </button>
           </div>
-        </section>
+        </div>
       </section>
       {/* services section */}
       <section className={styles.services}>
@@ -59,14 +59,14 @@ export default function Home() {
           {"Services"}
         </h1>
         {/* service cards */}
-        <section className={styles.serviceCardGroup}>
+        <div className={styles.serviceCardGroup}>
           <ServiceCard icon={serviceCard.icon} header={serviceCard.header} description={serviceCard.description}/>
           <ServiceCard icon={serviceCard.icon} header={serviceCard.header} description={serviceCard.description}/>
           <ServiceCard icon={serviceCard.icon} header={serviceCard.header} description={serviceCard.description}/>
           <ServiceCard icon={serviceCard.icon} header={serviceCard.header} description={serviceCard.description}/>
           <ServiceCard icon={serviceCard.icon} header={serviceCard.header} description={serviceCard.description}/>
           <ServiceCard icon={serviceCard.icon} header={serviceCard.header} description={serviceCard.description}/>
-        </section>
+        </div>
       </section>
     </main>
   )
