@@ -66,7 +66,6 @@ export default function Home() {
           <ServiceCard icon={serviceCard.icon} header={serviceCard.header} description={serviceCard.description}/>
           <ServiceCard icon={serviceCard.icon} header={serviceCard.header} description={serviceCard.description}/>
           <ServiceCard icon={serviceCard.icon} header={serviceCard.header} description={serviceCard.description}/>
-
         </section>
       </section>
     </main>
