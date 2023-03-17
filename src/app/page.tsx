@@ -55,12 +55,18 @@ export default function Home() {
       </section>
       {/* services section */}
       <section className={styles.services}>
-        <h1>
+        <h1 className={styles.servicesHeader}>
           {"Services"}
         </h1>
         {/* service cards */}
         <section className={styles.serviceCardGroup}>
           <ServiceCard icon={serviceCard.icon} header={serviceCard.header} description={serviceCard.description}/>
+          <ServiceCard icon={serviceCard.icon} header={serviceCard.header} description={serviceCard.description}/>
+          <ServiceCard icon={serviceCard.icon} header={serviceCard.header} description={serviceCard.description}/>
+          <ServiceCard icon={serviceCard.icon} header={serviceCard.header} description={serviceCard.description}/>
+          <ServiceCard icon={serviceCard.icon} header={serviceCard.header} description={serviceCard.description}/>
+          <ServiceCard icon={serviceCard.icon} header={serviceCard.header} description={serviceCard.description}/>
+
         </section>
       </section>
     </main>
