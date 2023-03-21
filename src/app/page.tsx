@@ -13,7 +13,8 @@ import { default as ServiceCardModel } from '@/app/models/cards/service-card'
 
 // component imports
 import Navbar from '@/app/components/navbar/Navbar'
-import ServiceCard from '@/app/components/cards/ServiceCard'
+// import ServiceCard from '@/app/components/cards/ServiceCard'
+import DynamicIcon from '@/app/components/utils/DynamicIcon'
 
 // const inter = Inter({ subsets: ['latin'] })
 
@@ -27,7 +28,7 @@ export default function Home() {
       {/* header and nav */}
       <header className={styles.header}>
         <Navbar 
-          navDisplayName="Navbar Title"
+          navDisplayName="Marquise Lovelace"
           navItems={navItems}
         /> 
       </header>
@@ -38,36 +39,30 @@ export default function Home() {
           <h1>
             {"I sell hauses."}
           </h1>
-          <p>
-            {"Let me help you experience the luxury of owning your dream home. "} 
-            <br/>
-            {"With my expert real estate services, I'll guide you every step of the way to finding the perfect property."}
-          </p>
           <div className={styles.heroButtonGroup}>
-            <button className={buttonStyles.buttonPrimary}>
-              {"Let's do it!"}
-            </button>
-            <button className={buttonStyles.buttonSecondary}>
-              {"Learn More."}
+            <button className={buttonStyles.buttonPrimaryDark}>
+              <span> {"Search All Homes"} </span> <DynamicIcon iconName="bs-arrow-right"/>
             </button>
           </div>
-        </div>
-      </section>
-      {/* services section */}
-      <section className={styles.services}>
-        <h1 className={styles.servicesHeader}>
-          {"Services"}
-        </h1>
-        {/* service cards */}
-        <div className={styles.serviceCardGroup}>
-          <ServiceCard icon={serviceCard.icon} header={serviceCard.header} description={serviceCard.description}/>
-          <ServiceCard icon={serviceCard.icon} header={serviceCard.header} description={serviceCard.description}/>
-          <ServiceCard icon={serviceCard.icon} header={serviceCard.header} description={serviceCard.description}/>
-          <ServiceCard icon={serviceCard.icon} header={serviceCard.header} description={serviceCard.description}/>
-          <ServiceCard icon={serviceCard.icon} header={serviceCard.header} description={serviceCard.description}/>
-          <ServiceCard icon={serviceCard.icon} header={serviceCard.header} description={serviceCard.description}/>
         </div>
       </section>
     </main>
   )
 }
+
+
+// {/* services section */}
+// <section className={styles.services}>
+//   <h1 className={styles.servicesHeader}>
+//     {"Services"}
+//   </h1>
+//   {/* service cards */}
+//   <div className={styles.serviceCardGroup}>
+//     <ServiceCard icon={serviceCard.icon} header={serviceCard.header} description={serviceCard.description}/>
+//     <ServiceCard icon={serviceCard.icon} header={serviceCard.header} description={serviceCard.description}/>
+//     <ServiceCard icon={serviceCard.icon} header={serviceCard.header} description={serviceCard.description}/>
+//     <ServiceCard icon={serviceCard.icon} header={serviceCard.header} description={serviceCard.description}/>
+//     <ServiceCard icon={serviceCard.icon} header={serviceCard.header} description={serviceCard.description}/>
+//     <ServiceCard icon={serviceCard.icon} header={serviceCard.header} description={serviceCard.description}/>
+//   </div>
+// </section>

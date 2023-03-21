@@ -1,29 +1,41 @@
 .buttonPrimary,
-.buttonSecondary {
+.buttonSecondary,
+.buttonPrimaryDark {
   height: 100%;
-  font-size: 1.25rem;  
+  font-size: 1rem;  
   background: none;
   border: none;
   outline: none;
   cursor: pointer;
-  padding: 2% 5%;
+  padding: 3% 5%;
+  display: flex;
+  align-items: center;
 }
 
 .buttonPrimary {
-    background-color: var(--primary);
-    color: var(--text-color-dark);
+  background-color: var(--primary);
+  color: var(--text-color-dark);
 
-    &:hover {
-      background-color: var(--secondary);
-    }
-  } 
+  &:hover {
+    background-color: var(--secondary);
+  }
+} 
 
 .buttonSecondary {
-    color: var(--secondary);
-    border: var(--secondary) solid 2px;
+  color: var(--secondary);
+  border: var(--secondary) solid 2px;
 
-    &:hover {
-      color: var(--primary);
-      border: var(--primary) solid 2px;
-    }
+  &:hover {
+    color: var(--primary);
+    border: var(--primary) solid 2px;
   }
+}
+
+.buttonPrimaryDark {
+  background-color: var(--background-color-dark);
+  color: var(--text-color-light);
+
+  &:hover {
+    background-color: var(--background-color-darker);
+  }
+}

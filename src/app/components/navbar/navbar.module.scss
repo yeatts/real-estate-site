@@ -4,32 +4,34 @@
     background-color: var(--background-color-light);
 }
 
+.navTitle,
+.navItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-color-light);
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+}
+
 .navTitle {
     flex: 6;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--text-color-dark);
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 0.1rem;
     border: solid blue 2px;
 }
 
 .navItems {
-    flex: 6;
+    flex: 3;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
+    align-items: center;
     border: solid yellow 2px;
 }
 
 .navItem {
     flex: 1;
     list-style: none;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--text-color-dark);
     text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 0.1rem;
     border: solid red 2px;
 }

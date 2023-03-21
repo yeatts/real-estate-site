@@ -6,6 +6,7 @@ import { FaRocket } from 'react-icons/fa';
 import { GiSandsOfTime } from 'react-icons/gi';
 import { MdLocalShipping } from 'react-icons/md';
 import { RiMoneyDollarCircleLine } from 'react-icons/ri';
+import { BsArrowRight } from 'react-icons/bs';
 
 type IDynamicIcon = {
   iconName: TIcon,
@@ -16,19 +17,21 @@ type IDynamicIcon = {
 export const DynamicIcon = (props: IDynamicIcon): JSX.Element  => {
   const IconComponent = getIcon(props.iconName);
 
-  return <IconComponent size={props.size} color={props.color} /> 
+  return <IconComponent size={props.size} color={props.color}/> 
 }
 
 export const getIcon = (iconName: TIcon): TIconType => {
   switch (iconName) {
-    case 'fa-rocket':
+    case 'fa-rocket' || 'FaRocket':
       return FaRocket;
-    case 'gi-sands-of-time':
+    case 'gi-sands-of-time' || 'GiSandsOfTime':
       return GiSandsOfTime;
-    case 'md-local-shipping':
+    case 'md-local-shipping' || 'MdLocalShipping':
       return MdLocalShipping;
-    case 'ri-money-dollar-circle-line':
+    case 'ri-money-dollar-circle-line' || 'RiMoneyDollarCircleLine':
       return RiMoneyDollarCircleLine;
+    case 'bs-arrow-right' || 'BsArrowRight':
+      return BsArrowRight;
     default:
       return FaRocket;
   }

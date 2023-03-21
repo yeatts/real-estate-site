@@ -49,40 +49,40 @@
 
     h1 {
       font-size: 5rem;
-    }
-
-    p {
-      font-size: 1.5rem;
-      padding: 5% 10% 5% 10%;
+      margin-bottom: 5%;
     }
 
     .heroButtonGroup {
       width: 50%;
       justify-content: space-around;
+
+      * svg {
+        margin-left: 1rem;
+      }
     }
   }
 }
 
-.services {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--background-color-light);
-  padding: 5% 0;
+// .services {
+//   display: flex;
+//   width: 100%;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   background-color: var(--background-color-light);
+//   padding: 5% 0;
 
-  .servicesHeader {
-    border: solid 1px red;
-  }
+//   .servicesHeader {
+//     border: solid 1px red;
+//   }
 
-  .serviceCardGroup {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-flow: row wrap;
-    padding: 5% 0;
-    margin-bottom: -5%; // offset the margin-bottom on the service cards
-  }
-}
+//   .serviceCardGroup {
+//     width: 100%;
+//     display: flex;
+//     justify-content: space-around;
+//     align-items: center;
+//     flex-flow: row wrap;
+//     padding: 5% 0;
+//     margin-bottom: -5%; // offset the margin-bottom on the service cards
+//   }
+// }
