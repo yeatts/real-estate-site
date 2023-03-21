@@ -10,6 +10,7 @@ import buttonStyles from '@/app/styles/buttons.module.scss'
 // TODO: maybe change the model name to NavbarModel? 
 import { default as NavbarModel }from '@/app/models/navbar/navbar'
 import { default as ServiceCardModel } from '@/app/models/cards/service-card'
+import { default as NavItemModel } from '@/app/models/navbar/nav-item'
 
 // component imports
 import Navbar from '@/app/components/navbar/Navbar'
@@ -20,7 +21,12 @@ import DynamicIcon from '@/app/components/utils/DynamicIcon'
 
 export default function Home() {
 
-  const navItems = NavbarModel.builder().withDefaultNavItems().build().navbarItems
+  const navItems = [
+    NavItemModel.builder().withTitle("Properties").build(),
+    NavItemModel.builder().withTitle("About").build(),
+    NavItemModel.builder().withTitle("Contact").build(),
+  ]
+  const navbarProps = NavbarModel.builder().withNavDisplayName("Marquise lovelace").withNavItems(navItems).build()
   const serviceCard = ServiceCardModel.builder().withDefaultServiceCard().build()
 
   return (
@@ -28,8 +34,8 @@ export default function Home() {
       {/* header and nav */}
       <header className={styles.header}>
         <Navbar 
-          navDisplayName="Marquise Lovelace"
-          navItems={navItems}
+          navDisplayName={navbarProps.navbar.navDisplayName} 
+          navItems={navbarProps.navbar.navItems}
         /> 
       </header>
       {/* hero section */}
