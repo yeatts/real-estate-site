@@ -9,6 +9,7 @@ body {
   width: 100%;
   overflow-x: hidden;
   display: flex;
+  font-family: var(--global-secondary-font-family)
 }
 
 a {
@@ -22,20 +23,25 @@ a {
   display: flex;
 
   // global vars here
-  --primary: #bbd5d8;
-  --secondary: #ebf2f2;
-  --tertiary: #cfdada;
-  --quaternary: #9cadb3;
+  --global-primary-color: #bbd5d8;
+  --global-secondary-color: #ebf2f2;
+  --global-tertiary-color: #cfdada;
+  --global-quaternary-color: #9cadb3;
 
-  --text-color-light: #ebf2f2;
-  --text-color-dark: rgba(0,0,0,1);
+  --global-primary-font-family: Italiana,serif;
+  --global-primary-font-family-short: Italiana;
+  --global-secondary-font-family: Roboto,sans-serif;
+  --global-secondary-font-family-short: Roboto;
 
-  --background-color-secondary: #ebf2f2;
-  --background-color-secondary-whiter: #f9fafb;
-  --background-color-tertiary: #cfdada;
-  --background-color-dark: #1f1e1e;
-  --background-color-darker: #121010;
+  --global-text-color-light: #ebf2f2;
+  --global-text-color-dark: rgba(0,0,0,1);
 
-  --border-light: #bbd5d8;
-  --border-dark: #9cadb3;
+  --global-background-color-secondary: #ebf2f2;
+  --global-background-color-secondary-whiter: #f9fafb;
+  --global-background-color-tertiary: #cfdada;
+  --global-background-color-dark: #1f1e1e;
+  --global-background-color-darker: #121010;
+
+  --global-border-light: #bbd5d8;
+  --global-border-dark: #9cadb3;
 }

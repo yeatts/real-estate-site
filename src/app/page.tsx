@@ -52,6 +52,17 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* bio section */}
+      <section className={styles.bio}>
+        <div className={styles.bioImgContainer}>
+          <Image className={styles.bioImage} src="/cat_portrait_lol.jpg" alt="bio-pic" fill priority/>
+        </div>
+        <aside className={styles.bioText}>
+          <h2>Quise Gives You The Keys 🔑</h2>
+          <br/>
+          <p> As a Marine Corps veteran, Mar[quise] is a real estate agent who understands the value of hard work and dedication. He is passionate about helping his clients find the perfect home and making the buying or selling process as smooth as possible. With his sharp negotiating skills and knowledge of the local market, Quise is a valuable asset to anyone looking to buy or sell real estate. He is committed to providing exceptional service and building lasting relationships with his clients. Let Quise help you achieve your real estate goals with his expertise and professionalism. </p>
+        </aside>
+      </section>
     </main>
   )
 }

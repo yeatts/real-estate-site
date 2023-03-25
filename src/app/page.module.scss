@@ -39,7 +39,7 @@
     align-items: center;
     font-size: 3rem;
     text-align: center;
-    color: var(--text-color-light);
+    color: var(--global-text-color-light);
 
     > * {
       justify-content: center;
@@ -61,6 +61,61 @@
       }
     }
   }
+}
+
+.bio {
+  display: flex;
+  width: 100%;
+  min-height: 100%;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--global-secondary-color);
+
+  .bioImgContainer {
+    position: relative;
+    width: 50%;
+    height: 100%;
+
+    .bioImage {
+      object-fit: cover;
+      width: 50%;
+    }
+  }
+
+  .bioText {
+    width: 50%;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10% 5%;
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 5%;
+    }
+
+    p {
+      font-size: 1.5rem;
+      text-align: center;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      line-height: 1.5;
+    }
+
+    // &:before {
+    //   content: "";
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   width: 3%;
+    //   height: 100%;
+    //   background-color: purple;
+    // }
+  }
+
 }
 
 // .services {

@@ -13,21 +13,21 @@
 }
 
 .buttonPrimary {
-  background-color: var(--primary);
-  color: var(--text-color-dark);
+  background-color: var(--global-primary-color);
+  color: var(--global-text-color-dark);
 
   &:hover {
-    background-color: var(--secondary);
+    background-color: var(--global-secondary-color);
   }
 } 
 
 .buttonSecondary {
-  color: var(--secondary);
-  border: var(--secondary) solid 2px;
+  color: var(--global-secondary-color);
+  border: var(--global-secondary-color) solid 2px;
 
   &:hover {
-    color: var(--primary);
-    border: var(--primary) solid 2px;
+    color: var(--global-primary-color);
+    border: var(--global-primary-color) solid 2px;
   }
 }
 
