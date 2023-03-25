@@ -8,13 +8,13 @@ import { MdLocalShipping } from 'react-icons/md';
 import { RiMoneyDollarCircleLine } from 'react-icons/ri';
 import { BsArrowRight } from 'react-icons/bs';
 
-type IDynamicIcon = {
+type TDynamicIcon = {
   iconName: TIcon,
   size?: string | number;
   color?: string;
 }
 
-export const DynamicIcon = (props: IDynamicIcon): JSX.Element  => {
+export const DynamicIcon = (props: TDynamicIcon): JSX.Element  => {
   const IconComponent = getIcon(props.iconName);
 
   return <IconComponent size={props.size} color={props.color}/> 

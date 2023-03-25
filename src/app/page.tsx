@@ -1,10 +1,9 @@
-// next imports
+// nextjs imports
 import Image from 'next/image'
 // import { Inter } from 'next/font/google'
 
 // style imports
 import styles from './page.module.scss'
-import buttonStyles from '@/app/styles/buttons.module.scss'
 
 // type imports
 // TODO: maybe change the model name to NavbarModel? 
@@ -15,7 +14,7 @@ import { default as NavItemModel } from '@/app/models/navbar/nav-item'
 // component imports
 import Navbar from '@/app/components/navbar/Navbar'
 // import ServiceCard from '@/app/components/cards/ServiceCard'
-import DynamicIcon from '@/app/components/utils/DynamicIcon'
+import ButtonPrimary from '@/app/components/buttons/ButtonPrimary'
 
 // const inter = Inter({ subsets: ['latin'] })
 
@@ -46,9 +45,7 @@ export default function Home() {
             {"I sell hauses."}
           </h1>
           <div className={styles.heroButtonGroup}>
-            <button className={buttonStyles.buttonPrimaryDark}>
-              <span> {"Search All Homes"} </span> <DynamicIcon iconName="bs-arrow-right"/>
-            </button>
+            <ButtonPrimary buttonText="Search All Homes"/>
           </div>
         </div>
       </section>
@@ -61,8 +58,10 @@ export default function Home() {
           <h2>Quise Gives You The Keys 🔑</h2>
           <br/>
           <p> As a Marine Corps veteran, Mar[quise] is a real estate agent who understands the value of hard work and dedication. He is passionate about helping his clients find the perfect home and making the buying or selling process as smooth as possible. With his sharp negotiating skills and knowledge of the local market, Quise is a valuable asset to anyone looking to buy or sell real estate. He is committed to providing exceptional service and building lasting relationships with his clients. Let Quise help you achieve your real estate goals with his expertise and professionalism. </p>
+          <br/>
+          <ButtonPrimary buttonText="Get To Know Quise"/>
         </aside>
-      </section>
+      </section> 
     </main>
   )
 }

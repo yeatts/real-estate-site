@@ -32,10 +32,10 @@
 }
 
 .buttonPrimaryDark {
-  background-color: var(--background-color-dark);
-  color: var(--text-color-light);
+  background-color: var(--global-background-color-dark);
+  color: var(--global-text-color-light);
 
   &:hover {
-    background-color: var(--background-color-darker);
+    background-color: var(--global-background-color-darker);
   }
 }
