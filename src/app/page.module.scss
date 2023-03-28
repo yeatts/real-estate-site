@@ -55,10 +55,6 @@
     .heroButtonGroup {
       width: 50%;
       justify-content: space-around;
-
-      * svg {
-        margin-left: 1rem;
-      }
     }
   }
 }
@@ -95,6 +91,8 @@
     h1 {
       font-size: 3rem;
       margin-bottom: 5%;
+      font-weight: 300;
+      text-align: center;
     }
 
     p {
@@ -103,8 +101,10 @@
       font-size: 1rem;
       letter-spacing: 1px;
       line-height: 1.5;
+      margin-bottom: 5%;
     }
 
+    // this was inteded to make the image or text section look like a book page 🤷🏼‍♂️
     // &:before {
     //   content: "";
     //   position: absolute;
@@ -115,29 +115,4 @@
     //   background-color: purple;
     // }
   }
-
 }
-
-// .services {
-//   display: flex;
-//   width: 100%;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-//   background-color: var(--background-color-light);
-//   padding: 5% 0;
-
-//   .servicesHeader {
-//     border: solid 1px red;
-//   }
-
-//   .serviceCardGroup {
-//     width: 100%;
-//     display: flex;
-//     justify-content: space-around;
-//     align-items: center;
-//     flex-flow: row wrap;
-//     padding: 5% 0;
-//     margin-bottom: -5%; // offset the margin-bottom on the service cards
-//   }
-// }
