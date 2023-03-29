@@ -4,6 +4,10 @@
     background-color: var(--global-background-color-light);
 }
 
+.nav__hide {
+    display:none;
+}
+
 .navTitle,
 .navItem {
     display: flex;
