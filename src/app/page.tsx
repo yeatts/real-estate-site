@@ -1,3 +1,8 @@
+'use client'
+
+// react imports
+import { useEffect } from 'react'
+
 // nextjs imports
 import Image from 'next/image'
 // import { Inter } from 'next/font/google'
@@ -16,7 +21,26 @@ import ButtonPrimary from '@/app/components/buttons/ButtonPrimary'
 
 // const inter = Inter({ subsets: ['latin'] })
 
+// dynamodb imports
+import {
+  DynamoDBClient,
+  ScanCommand,
+} from '@aws-sdk/client-dynamodb';
+
 export default function Home() {
+  useEffect(() => {
+    const client = new DynamoDBClient({ region: "us-east-2" });
+    const input = { TableName: process.env.TABLE_NAME }
+    const command = new ScanCommand(input);
+  
+    const testing = async () => {
+      const resp = await client.send(command)
+      console.log(`testing: `, resp)
+      console.log(`am i doing anything`,)
+    }
+
+    testing()
+  })
 
   const navItems = [
     NavItemModel.builder().withTitle("Properties").build(),
