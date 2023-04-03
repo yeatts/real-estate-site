@@ -1,7 +1,7 @@
-"use client";
+// "use client";
 
 // React imports
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 
 // style imports
 import styles from "./navbar.module.scss";
@@ -23,29 +23,21 @@ export default function Navbar(props: TNavbar) {
   );
 
   // state
-  const [isScrollingUp, setIsScrollingUp] = useState(true);
-  const preScrollPosition = useRef(window.scrollY);
+  const [isScrollingUp, setIsScrollingUp] = useState<boolean>(true);
+  // const [preScrollPosition, setPreScrollPosition] = useState<number>(0);
+  // const [postScrollPosition, setPostScrollPosition] = useState<number>();
 
+  // scroll handler
+  function scrollHandler(event: any) {
+    console.log("scrollHandler called");
+   
+  }
   useEffect(() => {
-    // scroll handler
-    function scrollHandler() {
-      console.log("scrollHandler called");
-
-      const postScrollPosition = window.scrollY;
-      const isScrollingUp = postScrollPosition < preScrollPosition.current;
-      setIsScrollingUp(isScrollingUp);
-      preScrollPosition.current = postScrollPosition;
-
-      if (window.scrollY === 0) {
-        setIsScrollingUp(true);
-        return;
-      }
-    }
-
     window.addEventListener("scroll", scrollHandler);
-
+    // cleanup function to remove event listener on unmount
     return () => {
       window.removeEventListener("scroll", scrollHandler);
+
     };
   }, []);
 
