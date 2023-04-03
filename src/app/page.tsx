@@ -1,5 +1,3 @@
-'use client'
-
 // react imports
 import { useEffect } from 'react'
 
@@ -11,7 +9,6 @@ import Image from 'next/image'
 import styles from './page.module.scss'
 
 // type imports
-// TODO: maybe change the model name to NavbarModel? 
 import { default as NavbarModel }from '@/app/models/navbar/navbar'
 import { default as NavItemModel } from '@/app/models/navbar/nav-item'
 
@@ -19,28 +16,25 @@ import { default as NavItemModel } from '@/app/models/navbar/nav-item'
 import Navbar from '@/app/components/navbar/Navbar'
 import ButtonPrimary from '@/app/components/buttons/ButtonPrimary'
 
-// const inter = Inter({ subsets: ['latin'] })
-
 // dynamodb imports
-import {
-  DynamoDBClient,
-  ScanCommand,
-} from '@aws-sdk/client-dynamodb';
+import dynamoDocClient from '@/app/utils/dynamo-doc-client'
+import { ScanCommand } from "@aws-sdk/lib-dynamodb";
 
-export default function Home() {
-  useEffect(() => {
-    const client = new DynamoDBClient({ region: "us-east-2" });
-    const input = { TableName: process.env.TABLE_NAME }
-    const command = new ScanCommand(input);
-  
-    const testing = async () => {
-      const resp = await client.send(command)
-      console.log(`testing: `, resp)
-      console.log(`am i doing anything`,)
-    }
 
-    testing()
-  })
+const scanTable =  async () => {
+  const params = { TableName: process.env.TABLE_NAME }
+
+  try {
+    const data = await dynamoDocClient.send(new ScanCommand(params));
+    console.log("success", data.Items);
+  } catch (err) {
+    console.log("Error", err);
+  }
+}
+
+export default async function Home() {
+  const getTableItems = await scanTable()
+  console.log("getting tables:", getTableItems)
 
   const navItems = [
     NavItemModel.builder().withTitle("Properties").build(),
