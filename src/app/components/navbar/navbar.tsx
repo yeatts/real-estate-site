@@ -1,5 +1,3 @@
-// "use client";
-
 // React imports
 import React, { useState, useEffect } from "react";
 
@@ -27,17 +25,17 @@ export default function Navbar(props: TNavbar) {
   // const [preScrollPosition, setPreScrollPosition] = useState<number>(0);
   // const [postScrollPosition, setPostScrollPosition] = useState<number>();
 
-  // scroll handler
-  function scrollHandler(event: any) {
-    console.log("scrollHandler called");
-   
-  }
   useEffect(() => {
-    window.addEventListener("scroll", scrollHandler);
-    // cleanup function to remove event listener on unmount
-    return () => {
-      window.removeEventListener("scroll", scrollHandler);
+    // scroll handler
+    function scrollHandler(event: any) {
+      console.log("scrollHandler called");
+    }
 
+    document.getElementsByTagName("body")[0].addEventListener("scroll", (e) => { scrollHandler(e) })
+
+    // cleanup function to remove event listener on unmounts
+    return () => {
+      document.getElementsByTagName("body")[0].removeEventListener("scroll", (e) => { scrollHandler(e) })
     };
   }, []);
 
