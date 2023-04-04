@@ -34,9 +34,7 @@ export default function Navbar(props: TNavbar) {
         return;
       }
       setPostScrollPosition(document.body.scrollTop);
-      console.log("Post" + postScrollPosition);
       setIsScrollingUp(postScrollPosition < preScrollPosition);
-      console.log("Pre " + preScrollPosition);
       setPreScrollPosition(postScrollPosition);
     }
 
