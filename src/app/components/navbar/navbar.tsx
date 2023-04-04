@@ -7,6 +7,7 @@ import styles from "./navbar.module.scss";
 // type imports
 import { TNavbar } from "@/app/models/navbar/navbar";
 import NavItem from "@/app/models/navbar/nav-item";
+import { BsPrescription } from "react-icons/bs";
 
 export default function Navbar(props: TNavbar) {
   // props
@@ -22,13 +23,21 @@ export default function Navbar(props: TNavbar) {
 
   // state
   const [isScrollingUp, setIsScrollingUp] = useState<boolean>(true);
-  // const [preScrollPosition, setPreScrollPosition] = useState<number>(0);
-  // const [postScrollPosition, setPostScrollPosition] = useState<number>();
+  const [preScrollPosition, setPreScrollPosition] = useState<number>(0);
+  const [postScrollPosition, setPostScrollPosition] = useState<number>(69);
 
   useEffect(() => {
     // scroll handler
     function scrollHandler(event: any) {
-      console.log("scrollHandler called");
+      if (postScrollPosition === 0) {
+        setIsScrollingUp(true);
+        return;
+      }
+      setPostScrollPosition(document.body.scrollTop);
+      console.log("Post" + postScrollPosition);
+      setIsScrollingUp(postScrollPosition < preScrollPosition);
+      console.log("Pre " + preScrollPosition);
+      setPreScrollPosition(postScrollPosition);
     }
 
     document.getElementsByTagName("body")[0].addEventListener("scroll", (e) => { scrollHandler(e) })
@@ -37,7 +46,7 @@ export default function Navbar(props: TNavbar) {
     return () => {
       document.getElementsByTagName("body")[0].removeEventListener("scroll", (e) => { scrollHandler(e) })
     };
-  }, []);
+  }, [preScrollPosition, postScrollPosition]);
 
   return (
     <nav className={`${isScrollingUp ? styles.nav : styles.nav__hide}`}>
