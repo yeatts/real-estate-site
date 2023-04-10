@@ -1,27 +1,21 @@
 // Create a service client module using ES6 syntax.
 import { DynamoDBDocumentClient } from "@aws-sdk/lib-dynamodb";
-import { default as DynamoDBClient } from "./dynamo-client";
+import { default as ddbClient, marshallOptions, unmarshallOptions } from "./dynamo-client";
 
-const marshallOptions = {
-  // Whether to automatically convert empty strings, blobs, and sets to `null`.
-  convertEmptyValues: false, // false, by default.
-  // Whether to remove undefined values while marshalling.
-  removeUndefinedValues: true, // false, by default.
-  // Whether to convert typeof object to map attribute.
-  convertClassInstanceToMap: false, // false, by default.
-};
-
-const unmarshallOptions = {
-  // Whether to return numbers as a string instead of converting them to native JavaScript numbers.
-  wrapNumbers: false, // false, by default.
-};
+export type TddbDocParams = {
+  TableName: string, // "Table name"
+  ProjectionExpression?: string, // "#r, #y, title"
+  ExpressionAttributeNames?:  object, // { "#r": "rank", "#y": "year" }
+  FilterExpression?: string, // "title = :t and #y = :y and info.#r = :r"
+  ExpressionAttributeValues?: object, // { ":r": "MOVIE_RANK", ":y": "MOVIE_YEAR", ":t": "MOVIE_NAME", },
+}
 
 // Create the DynamoDB document client.
-export const dynamoDocClient =
-  DynamoDBDocumentClient.from(DynamoDBClient, {
+export const ddbDocClient =
+  DynamoDBDocumentClient.from(ddbClient, {
     marshallOptions,
     unmarshallOptions,
   });
 
-export default dynamoDocClient;
+export default ddbDocClient;
 

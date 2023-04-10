@@ -1,6 +1,3 @@
-// react imports
-import { useEffect } from 'react'
-
 // nextjs imports
 import Image from 'next/image'
 // import { Inter } from 'next/font/google'
@@ -17,24 +14,23 @@ import Navbar from '@/app/components/navbar/Navbar'
 import ButtonPrimary from '@/app/components/buttons/ButtonPrimary'
 
 // dynamodb imports
-import dynamoDocClient from '@/app/utils/dynamo-doc-client'
+import { default as ddbDocClient, TddbDocParams } from '@/app/utils/dynamo-doc-client'
 import { ScanCommand } from "@aws-sdk/lib-dynamodb";
 
-
-const scanTable =  async () => {
-  const params = { TableName: process.env.TABLE_NAME }
-
+const scanTable = async (params: any) => {
   try {
-    const data = await dynamoDocClient.send(new ScanCommand(params));
+    const data = await ddbDocClient.send(new ScanCommand(params));
     console.log("success", data.Items);
   } catch (err) {
     console.log("Error", err);
   }
-}
+};
 
 export default async function Home() {
-  const getTableItems = await scanTable()
-  console.log("getting tables:", getTableItems)
+  const scanParams: TddbDocParams = {
+    TableName: process.env.TABLE_NAME as string
+  }
+  scanTable(scanParams)
 
   const navItems = [
     NavItemModel.builder().withTitle("Properties").build(),
