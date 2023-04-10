@@ -32,7 +32,7 @@ export default async function Home() {
       </header>
       {/* hero section */}
       <section className={styles.hero}>
-        <Image className={styles.heroImage} src="/landing-houses.jpg" alt="Hauses" fill priority/>
+        <Image className={styles.heroImage} src="/landing-houses.jpg" alt="Hauses" fill priority sizes='100%'/>
         <div className={styles.heroBody}>
           <h1>
             {"I sell hauses."}
@@ -45,7 +45,7 @@ export default async function Home() {
       {/* bio section */}
       <section className={styles.bio}>
         <div className={styles.bioImgContainer}>
-          <Image className={styles.bioImage} src="/cat_portrait_lol.jpg" alt="bio-pic" fill priority/>
+          <Image className={styles.bioImage} src="/cat-portrait-lol.jpg" alt="bio-pic" fill priority sizes='100%'/>
         </div>
         <aside className={styles.bioText}>
           <h1>Quise Gives You The Keys 🔑</h1>
@@ -55,15 +55,21 @@ export default async function Home() {
           <ButtonPrimary buttonText="Get To Know Quise"/>
         </aside>
       </section> 
+      {/* contact section */}
+      <section className={styles.contact}>
+        <Image className={styles.contactBgImg} src="/contact-bg-img.jpg" alt="kewl haus" fill priority sizes="100%"/>
+        <div className={styles.contactBody}>
+          <h1>Connect With Quise</h1>  
+          <div className={styles.contactButtonGroup}>
+            <ButtonPrimary buttonText="Contact Quise"/>
+          </div>
+        </div>
+      </section>
       {/* testimonials section */}
       <section>
         
       </section>
       {/* listings section */}
-      <section>
-
-      </section>
-      {/* contact section */}
       <section>
 
       </section>
