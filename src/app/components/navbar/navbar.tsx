@@ -22,19 +22,22 @@ export default function Navbar(props: TNavbar) {
   );
 
   // state
-  const [isScrollingUp, setIsScrollingUp] = useState<boolean>(true);
+  const [navbarStyle, setNavbarStyle] = useState("nav__transparent");
   const [preScrollPosition, setPreScrollPosition] = useState<number>(0);
-  const [postScrollPosition, setPostScrollPosition] = useState<number>(69);
+  const [postScrollPosition, setPostScrollPosition] = useState<number>(0);
 
   useEffect(() => {
-    // scroll handler
+    console.log("useEffect ran!");
     function scrollHandler(event: any) {
-      if (postScrollPosition === 0) {
-        setIsScrollingUp(true);
-        return;
-      }
+
       setPostScrollPosition(document.body.scrollTop);
-      setIsScrollingUp(postScrollPosition < preScrollPosition);
+      
+      setNavbarStyle(postScrollPosition === 0 
+        ? "nav_transparent" 
+        : postScrollPosition < preScrollPosition
+        ? "nav__opaque"
+      : "nav__hide")
+      console.log(postScrollPosition);
       setPreScrollPosition(postScrollPosition);
     }
 
@@ -47,7 +50,7 @@ export default function Navbar(props: TNavbar) {
   }, [preScrollPosition, postScrollPosition]);
 
   return (
-    <nav className={`${isScrollingUp ? styles.nav : styles.nav__hide}`}>
+    <nav className={`main ${navbarStyle}`}>
       <ul className={styles.navItems}>
         {leftSideItems.map((item) => {
           return (
