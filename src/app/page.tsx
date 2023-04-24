@@ -1,5 +1,5 @@
 'use client'
-
+import React, { useState, useEffect } from "react";
 // nextjs imports
 import Image from 'next/image'
 // import { Inter } from 'next/font/google'
@@ -27,11 +27,48 @@ export default function Home() {
   ]
   const navbarProps = NavbarModel.builder().withNavDisplayName("Marquise lovelace").withNavItems(navItems).build()
 
+
+
+
+
+
+  // state
+  const [navbarStyle, setNavbarStyle] = useState("transparent");
+  const [preScrollPosition, setPreScrollPosition] = useState(0);
+  const [postScrollPosition, setPostScrollPosition] = useState(0);
+
+  useEffect(() => {
+    console.log("useEffect ran!");
+    function scrollHandler(event: any) {
+
+      setNavbarStyle(postScrollPosition === 0 
+        ? "transparent" 
+        : postScrollPosition < preScrollPosition
+        ? "opaque"
+      : "hide")
+      console.log(postScrollPosition);
+      setPreScrollPosition(postScrollPosition);
+    }
+
+    document.getElementsByTagName("main")[0].addEventListener("scroll", (e) => { scrollHandler(e) })
+
+    // cleanup function to remove event listener on unmounts
+    return () => {
+      document.getElementsByTagName("main")[0].removeEventListener("scroll", (e) => { scrollHandler(e) })
+    };
+  }, [postScrollPosition]);
+
+
+
+
+
+
   return (
-    <main className={styles.main}>
+    <main className={styles.main} onScroll={scrollHandler}>
       {/* header and nav */}
       <header className={styles.header}>
-        <Navbar 
+        <Navbar
+          className={navbarStyle} 
           navDisplayName={navbarProps.navbar.navDisplayName} 
           navItems={navbarProps.navbar.navItems}
         /> 

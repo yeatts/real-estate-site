@@ -21,36 +21,8 @@ export default function Navbar(props: TNavbar) {
     itemCount
   );
 
-  // state
-  const [navbarStyle, setNavbarStyle] = useState("nav__transparent");
-  const [preScrollPosition, setPreScrollPosition] = useState<number>(0);
-  const [postScrollPosition, setPostScrollPosition] = useState<number>(0);
-
-  useEffect(() => {
-    console.log("useEffect ran!");
-    function scrollHandler(event: any) {
-
-      setPostScrollPosition(document.body.scrollTop);
-      
-      setNavbarStyle(postScrollPosition === 0 
-        ? "nav_transparent" 
-        : postScrollPosition < preScrollPosition
-        ? "nav__opaque"
-      : "nav__hide")
-      console.log(postScrollPosition);
-      setPreScrollPosition(postScrollPosition);
-    }
-
-    document.getElementsByTagName("body")[0].addEventListener("scroll", (e) => { scrollHandler(e) })
-
-    // cleanup function to remove event listener on unmounts
-    return () => {
-      document.getElementsByTagName("body")[0].removeEventListener("scroll", (e) => { scrollHandler(e) })
-    };
-  }, [preScrollPosition, postScrollPosition]);
-
   return (
-    <nav className={`main ${navbarStyle}`}>
+    <nav>
       <ul className={styles.navItems}>
         {leftSideItems.map((item) => {
           return (
