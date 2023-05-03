@@ -7,7 +7,7 @@ import styles from './page.module.scss'
 
 // type imports
 import { default as NavbarModel }from '@/app/models/navbar/navbar'
-import { default as NavItemModel } from '@/app/models/navbar/nav-item'
+import { default as NavItemModel } from '@/app/models/navbar/navitem'
 
 // component imports
 import Navbar from '@/app/components/navbar/Navbar'

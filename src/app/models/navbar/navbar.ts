@@ -1,5 +1,5 @@
 // use file to link content to components.
-import NavItem from './nav-item';
+import NavItem from './navitem';
 
 export type TNavbar = {
   navDisplayName: string,
