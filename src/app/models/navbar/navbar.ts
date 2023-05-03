@@ -1,9 +1,11 @@
 // use file to link content to components.
-import NavItem from './navitem';
+import NavItem, { TNavItem } from './navitem';
 
 export type TNavbar = {
   navDisplayName: string,
-  navItems: NavItem[] 
+  navItems: NavItem[], 
+  leftNavItems: TNavItem[],
+  rightNavItems: TNavItem[]
 }
 
 export default class Navbar {
@@ -13,14 +15,36 @@ export default class Navbar {
     this.navbar = navbar; 
   }
   
+  public get navDisplayName(): string {
+    return this.navbar.navDisplayName
+  }
+  
   public get navbarItems(): NavItem[] {
     return this.navbar.navItems;
   }
 
-  public set navbarItems(navItems: NavItem[]) {
-    this.navbar.navItems = navItems;
+  public get leftNavItems(): TNavItem[] {
+    const itemCount = this.navbar.navItems.length
+    this.navbar.leftNavItems = this.navbar.navItems.slice(0, Math.floor(itemCount / 2)).map((item): TNavItem => {
+      return {
+        url: item.url,
+        title: item.title
+      }
+    })
+    return this.navbar.leftNavItems
   }
- 
+
+  public get rightNavItems(): TNavItem[] {
+    const itemCount = this.navbar.navItems.length
+    this.navbar.rightNavItems = this.navbar.navItems.slice(Math.floor(itemCount / 2), itemCount).map((item): TNavItem => {
+      return {
+        url: item.url,
+        title: item.title
+      }
+    })
+    return this.navbar.rightNavItems
+  }
+  
   public static builder(): NavbarBuilder {
     return new NavbarBuilder();
   }
@@ -32,7 +56,9 @@ export class NavbarBuilder {
   constructor() {
     this.navbar = {
       navDisplayName: '',
-      navItems: []
+      navItems: [],
+      leftNavItems: [],
+      rightNavItems: []
     }
   }
 

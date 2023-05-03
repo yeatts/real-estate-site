@@ -8,13 +8,9 @@ import styles from './navbar.module.scss'
 
 // type imports
 import { TNavbar } from '@/app/models/navbar/navbar'
-import NavItem from '@/app/models/navbar/navitem'
+import { TNavItem } from '@/app/models/navbar/navitem'
 
 export default function Navbar( props: TNavbar ) {
-  const itemCount: number = props.navItems.length
-  const leftSideItems: NavItem[] = props.navItems.slice(0, Math.floor(itemCount / 2))
-  const rightSideItems: NavItem[] = props.navItems.slice(Math.floor(itemCount / 2), itemCount)
-
   // useEffect that sets event listener on nav element
   useEffect(() => {
     const navElement = document.getElementsByTagName("nav")[0]
@@ -37,7 +33,7 @@ export default function Navbar( props: TNavbar ) {
     <nav className={styles.nav}>
       <ul className={styles.navItems}>
         {
-          leftSideItems.map((item) => {
+          props.leftNavItems.map((item: TNavItem) => {
             return (
               <ol className={styles.navItem} key={item.title}>
                 <a href={item.url}>{item.title}</a>
@@ -51,7 +47,7 @@ export default function Navbar( props: TNavbar ) {
       </header>
       <ul className={styles.navItems}>
         {
-          rightSideItems.map((item) => {
+          props.rightNavItems.map((item: TNavItem) => {
             return (
               <ol className={styles.navItem} key={item.title}>
                 <a href={item.url}>{item.title}</a>

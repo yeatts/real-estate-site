@@ -7,7 +7,7 @@ import styles from './page.module.scss'
 
 // type imports
 import { default as NavbarModel }from '@/app/models/navbar/navbar'
-import { default as NavItemModel } from '@/app/models/navbar/navitem'
+import { default as NavItemModel, TNavItem } from '@/app/models/navbar/navitem'
 
 // component imports
 import Navbar from '@/app/components/navbar/Navbar'
@@ -26,8 +26,10 @@ export default async function Home() {
       {/* header and nav */}
       <header className={styles.header}>
         <Navbar 
-          navDisplayName={navbarProps.navbar.navDisplayName} 
-          navItems={navbarProps.navbar.navItems}
+          navDisplayName={navbarProps.navDisplayName} 
+          navItems = {navbarProps.navbarItems}
+          leftNavItems={navbarProps.leftNavItems}
+          rightNavItems={navbarProps.rightNavItems}
         /> 
       </header>
       {/* hero section */}
