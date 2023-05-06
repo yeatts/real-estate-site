@@ -22,32 +22,47 @@ export default function Navbar(props: TNavbar) {
   );
 
   // state
-  const [isScrollingUp, setIsScrollingUp] = useState<boolean>(true);
-  const [preScrollPosition, setPreScrollPosition] = useState<number>(0);
-  const [postScrollPosition, setPostScrollPosition] = useState<number>(69);
+  const [navbarStatus, setNavbarStatus] = useState({
+    style: "nav",
+    preScrollPosition: 0,
+    postScrollPosition: 0,
+  });
 
   useEffect(() => {
     // scroll handler
     function scrollHandler(event: any) {
-      if (postScrollPosition === 0) {
-        setIsScrollingUp(true);
-        return;
-      }
-      setPostScrollPosition(document.body.scrollTop);
-      setIsScrollingUp(postScrollPosition < preScrollPosition);
-      setPreScrollPosition(postScrollPosition);
+      // TODO properly type instead of "explicit any" quick fix
+      console.log("before state change: " + navbarStatus.style);
+
+      setNavbarStatus({
+        style:
+          navbarStatus.postScrollPosition === 0
+            ? "nav transparent"
+            : navbarStatus.postScrollPosition < navbarStatus.preScrollPosition
+            ? "nav opaque"
+            : "nav hide",
+        preScrollPosition: navbarStatus.postScrollPosition,
+        postScrollPosition: document.body.scrollTop,
+      });
+      console.log("after state change: " + navbarStatus.style);
     }
 
-    document.getElementsByTagName("body")[0].addEventListener("scroll", (e) => { scrollHandler(e) })
+    document.getElementsByTagName("body")[0].addEventListener("scroll", (e) => {
+      scrollHandler(e);
+    });
 
     // cleanup function to remove event listener on unmounts
     return () => {
-      document.getElementsByTagName("body")[0].removeEventListener("scroll", (e) => { scrollHandler(e) })
+      document
+        .getElementsByTagName("body")[0]
+        .removeEventListener("scroll", (e) => {
+          scrollHandler(e);
+        });
     };
-  }, [preScrollPosition, postScrollPosition]);
+  }, [navbarStatus]);
 
   return (
-    <nav className={`${isScrollingUp ? styles.nav : styles.nav__hide}`}>
+    <nav className={styles[navbarStatus.style]}>
       <ul className={styles.navItems}>
         {leftSideItems.map((item) => {
           return (

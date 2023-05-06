@@ -1,11 +1,19 @@
 .nav {
     width: 100%;
     display: flex;
-    background-color: var(--global-background-color-dark);
-}
 
-.nav__hide {
-    display:none;
+    .hide {
+        display:none;
+    }
+
+    .opaque {
+        background-color: var(--global-background-color-dark);
+    }
+
+    .transparent {
+        background-color: none;
+    }
+
 }
 
 .navTitle,
