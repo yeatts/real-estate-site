@@ -76,7 +76,6 @@
 
     .bioImage {
       object-fit: cover;
-      width: 50%;
     }
   }
 
@@ -115,5 +114,44 @@
     //   height: 100%;
     //   background-color: purple;
     // }
+  }
+}
+
+.contact {
+  display: flex;
+  flex-flow: column;
+  min-height: 100%;
+  width: 100%;
+  position: relative;
+
+  .contactBgImg {
+    object-fit: cover;
+    filter: brightness(80%);
+    z-index: 0;
+  }
+
+  .contactBody {
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10% 5%;
+
+    h1 {
+      font-size: 4rem;
+      margin-bottom: 5%;
+      font-weight: 300;
+      text-align: center;
+      color: var(--global-secondary-color)
+    }
+
+    .contactButtonGroup {
+      min-width: 50%;
+      display: flex;
+      justify-content: center;
+    }
   }
 }
