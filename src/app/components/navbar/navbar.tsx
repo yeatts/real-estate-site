@@ -16,15 +16,17 @@ export default function Navbar( props: TNavbar ) {
     const navElement = document.getElementsByTagName("nav")[0]
 
     const getYCoord = (): number => {
-      return navElement.getBoundingClientRect().top + window.pageYOffset
+      const yCoord = navElement.getBoundingClientRect().top + window.pageYOffset
+      console.log(`yCoord`, yCoord)
+      return yCoord
     }
 
     // Add the event listener to the nav element
-    navElement.addEventListener('click', getYCoord);
+    navElement.addEventListener('scroll', getYCoord);
 
     // Remove the event listener when the component is unmounted
     return () => {
-      navElement.removeEventListener('click', getYCoord);
+      navElement.removeEventListener('scroll', getYCoord);
     };
   }, []); // The empty dependency array [] ensures that the effect runs only once on mount
 
