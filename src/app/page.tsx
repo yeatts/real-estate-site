@@ -1,23 +1,18 @@
-'use client'
-
 // nextjs imports
 import Image from 'next/image'
 // import { Inter } from 'next/font/google'
 
 // style imports
 import styles from './page.module.scss'
-import buttStyle from '@/app/components/buttons/buttonPrimary.module.scss'
 
 // type imports
 import { default as NavbarModel }from '@/app/models/navbar/navbar'
-import { default as NavItemModel, TNavItem } from '@/app/models/navbar/navitem'
+import { default as NavItemModel } from '@/app/models/navbar/navitem'
 
 // component imports
 import Navbar from '@/app/components/navbar/navbar'
 import ButtonPrimary from '@/app/components/buttons/ButtonPrimary'
-
-// calendly imports
-import { PopupButton } from 'react-calendly'
+import { default as CalendlyPopup } from '@/app/components/calendly/popup'
 
 export default function Home() {
   const navItems = [
@@ -69,12 +64,7 @@ export default function Home() {
           <div className={styles.contactBody}>
             <h1>Connect With Quise</h1>
             <div className={styles.contactButtonGroup}>
-              <PopupButton
-                className={buttStyle.buttonPrimaryDark}
-                url="https://calendly.com/marquiselovelace"
-                rootElement={document.getElementsByTagName('body')[0]}
-                text="Contact Quise"
-              />
+              <CalendlyPopup/>
             </div>
           </div>
         </section>

@@ -13,20 +13,20 @@ import { TNavItem } from '@/app/models/navbar/navitem'
 export default function Navbar( props: TNavbar ) {
   // useEffect that sets event listener on nav element
   useEffect(() => {
-    const navElement = document.getElementsByTagName("nav")[0]
+    const navElement = document.getElementsByTagName("main")[0]
 
-    const getYCoord = (): number => {
-      const yCoord = navElement.getBoundingClientRect().top + window.pageYOffset
-      console.log(`yCoord`, yCoord)
-      return yCoord
-    }
+    // const getYCoord = (): number => {
+    //   const yCoord = navElement.getBoundingClientRect().top + window.pageYOffset
+    //   console.log(`yCoord`, yCoord)
+    //   return yCoord
+    // }
 
     // Add the event listener to the nav element
-    navElement.addEventListener('scroll', getYCoord);
+    navElement.addEventListener('scroll', () => console.log(`boo`,));
 
     // Remove the event listener when the component is unmounted
     return () => {
-      navElement.removeEventListener('scroll', getYCoord);
+      navElement.removeEventListener('scroll', () => console.log(`boo`,));
     };
   }, []); // The empty dependency array [] ensures that the effect runs only once on mount
 
