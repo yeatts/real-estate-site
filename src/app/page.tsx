@@ -13,7 +13,7 @@ import { default as NavbarModel }from '@/app/models/navbar/navbar'
 import { default as NavItemModel, TNavItem } from '@/app/models/navbar/navitem'
 
 // component imports
-import Navbar from '@/app/components/navbar/Navbar'
+import Navbar from '@/app/components/navbar/navbar'
 import ButtonPrimary from '@/app/components/buttons/ButtonPrimary'
 
 // calendly imports
