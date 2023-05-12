@@ -27,7 +27,6 @@ export default async function Home() {
       <header className={styles.header}>
         <Navbar 
           navDisplayName={navbarProps.navDisplayName} 
-          navItems = {navbarProps.navbarItems}
           leftNavItems={navbarProps.leftNavItems}
           rightNavItems={navbarProps.rightNavItems}
         /> 

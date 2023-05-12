@@ -3,7 +3,7 @@ import NavItem, { TNavItem } from './navitem';
 
 export type TNavbar = {
   navDisplayName: string,
-  navItems: NavItem[], 
+  navItems?: TNavItem[], 
   leftNavItems: TNavItem[],
   rightNavItems: TNavItem[]
 }
@@ -12,6 +12,7 @@ export default class Navbar {
   public navbar: TNavbar;
 
   constructor(navbar: TNavbar) {
+    navbar.navItems === undefined || navbar.navItems === null ? NavItem.builder().build().navItem : navbar.navItems
     this.navbar = navbar; 
   }
   
@@ -19,13 +20,13 @@ export default class Navbar {
     return this.navbar.navDisplayName
   }
   
-  public get navbarItems(): NavItem[] {
-    return this.navbar.navItems;
+  public get navbarItems(): TNavItem[] {
+    return this.navbar.navItems!
   }
 
   public get leftNavItems(): TNavItem[] {
-    const itemCount = this.navbar.navItems.length
-    this.navbar.leftNavItems = this.navbar.navItems.slice(0, Math.floor(itemCount / 2)).map((item): TNavItem => {
+    const itemCount = this.navbar.navItems!.length
+    this.navbar.leftNavItems = this.navbar.navItems!.slice(0, Math.floor(itemCount / 2)).map((item): TNavItem => {
       return {
         url: item.url,
         title: item.title
@@ -35,8 +36,8 @@ export default class Navbar {
   }
 
   public get rightNavItems(): TNavItem[] {
-    const itemCount = this.navbar.navItems.length
-    this.navbar.rightNavItems = this.navbar.navItems.slice(Math.floor(itemCount / 2), itemCount).map((item): TNavItem => {
+    const itemCount = this.navbar.navItems!.length
+    this.navbar.rightNavItems = this.navbar.navItems!.slice(Math.floor(itemCount / 2), itemCount).map((item): TNavItem => {
       return {
         url: item.url,
         title: item.title
