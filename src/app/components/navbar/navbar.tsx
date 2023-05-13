@@ -13,20 +13,30 @@ import { TNavItem } from '@/app/models/navbar/navitem'
 export default function Navbar( props: TNavbar ) {
   // useEffect that sets event listener on nav element
   useEffect(() => {
-    const navElement = document.getElementsByTagName("main")[0]
+    var navbar = document.getElementsByTagName('nav')[0];
+    var body = document.getElementsByTagName('body')[0];
+    var lastScrollTop = 0;
+    
+    body.addEventListener('scroll', () => {
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      
+      console.log(`pageYOffset: ${window.pageYOffset}`,)
+      console.log(`scrollTop: ${document.documentElement.scrollTop}`,)
 
-    // const getYCoord = (): number => {
-    //   const yCoord = navElement.getBoundingClientRect().top + window.pageYOffset
-    //   console.log(`yCoord`, yCoord)
-    //   return yCoord
-    // }
-
-    // Add the event listener to the nav element
-    navElement.addEventListener('scroll', () => console.log(`boo`,));
-
+      if (scrollTop > lastScrollTop) {
+        // Scrolling down
+        navbar!.classList.add('scrolled');
+      } else {
+        // Scrolling up
+        navbar!.classList.remove('scrolled');
+      }
+      
+      lastScrollTop = scrollTop;
+    });
+    
     // Remove the event listener when the component is unmounted
     return () => {
-      navElement.removeEventListener('scroll', () => console.log(`boo`,));
+      body.removeEventListener('scroll', () => {});
     };
   }, []); // The empty dependency array [] ensures that the effect runs only once on mount
 
