@@ -1,25 +1,31 @@
-'use client'
+"use client"
 
 // react imports
-import { useRef, useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 // style imports
-import buttStyle from '@/app/components/buttons/buttonPrimary.module.scss'
+import buttStyle from '@/app/components/buttons/buttonPrimary.module.scss';
 
 // calendly imports
-import { PopupButton } from 'react-calendly'
+import { PopupButton } from 'react-calendly';
 
 export default function Popup() {
-    const rootElementRef = useRef(document.getElementsByTagName("body")[0]);
+  const [isMounted, setIsMounted] = useState(false);
 
-    return (
-        <>
-            <PopupButton
-                className={buttStyle.buttonPrimaryDark}
-                url="https://calendly.com/marquiselovelace"
-                rootElement={rootElementRef.current}
-                text="Contact Quise"
-            />
-        </>
-    )
+  useEffect(() => {
+    setIsMounted(true); // had to do this because I was getting an error that said "document is not defined" when we use it with the rootElement prop
+  }, []);
+
+  return (
+    <>
+      {isMounted && (
+        <PopupButton
+          className={buttStyle.buttonPrimaryDark}
+          url="https://calendly.com/marquiselovelace"
+          rootElement={document.getElementsByTagName('body')[0]}
+          text="Contact Quise"
+        />
+      )}
+    </>
+  );
 }
