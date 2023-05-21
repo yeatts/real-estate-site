@@ -41,7 +41,8 @@ export default function Home() {
               {"I sell hauses."}
             </h1>
             <div className={styles.heroButtonGroup}>
-              <ButtonPrimary buttonText="Search All Homes" />
+              {/* TODO: create a popup here to make sure user knows they're leavin the site */}
+              <ButtonPrimary buttonText="Search All Homes" onClickUrl='https://www.homes.com/real-estate-agents/marquise-lovelace/c6rhq6g/'/>
             </div>
           </div>
         </section>
