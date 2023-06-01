@@ -15,23 +15,17 @@ export default function Navbar( props: TNavbar ) {
   useEffect(() => {
     var navbar = document.getElementsByTagName('nav')[0];
     var body = document.getElementsByTagName('body')[0];
-    var lastScrollTop = 0;
     
     body.addEventListener('scroll', () => {
-      var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      
-      console.log(`pageYOffset: ${window.pageYOffset}`,)
-      console.log(`scrollTop: ${document.documentElement.scrollTop}`,)
 
-      if (scrollTop > lastScrollTop) {
-        // Scrolling down
-        navbar!.classList.add('scrolled');
+      console.log(`scrollTop: `, document.body.scrollTop === 0)
+
+      if (document.body.scrollTop === 0) {
+        navbar.classList.remove(styles.scrolled);
       } else {
-        // Scrolling up
-        navbar!.classList.remove('scrolled');
+        navbar.classList.add(styles.scrolled);
       }
       
-      lastScrollTop = scrollTop;
     });
     
     // Remove the event listener when the component is unmounted

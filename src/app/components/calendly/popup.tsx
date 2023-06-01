@@ -22,7 +22,7 @@ export default function Popup() {
           className={buttStyle.buttonPrimaryDark}
           url="https://calendly.com/marquiselovelace"
           rootElement={document.getElementsByTagName('body')[0]}
-          text="Contact Quise"
+          text="Contact"
         />
       )}
     </>

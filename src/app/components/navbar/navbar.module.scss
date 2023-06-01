@@ -3,9 +3,15 @@
     display: flex;
     background-color: transparent;
     transition: background-color 0.3s ease; /* Smooth transition effect */
+}
 
-    &.scrolled {
-        background-color: var(--global-background-color-tertiary);
+.scrolled {
+    background-color: rgba(#f9fafb, 0.5);
+    backdrop-filter: blur(10px); /* Adjust the blur radius as needed */
+
+    > .navTitle, .navItem {
+        color: var(--global-text-color-dark);
+        font-weight: 500;
     }
 }
 
@@ -17,7 +23,7 @@
     font-size: 1rem;
     font-weight: 300;
     color: var(--global-text-color-light);
-    letter-spacing: 0.1rem;
+    letter-spacing: 0.2rem;
     text-transform: uppercase;
 }
 
