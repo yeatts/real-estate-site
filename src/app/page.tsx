@@ -18,7 +18,7 @@ export default function Home() {
   const navItems = [
     NavItemModel.builder().withTitle("Properties").build(),
     NavItemModel.builder().withTitle("About").build(),
-    NavItemModel.builder().withTitle("Contact").build(),
+    NavItemModel.builder().withTitle("Contact").build(), 
   ]
   const navbarProps = NavbarModel.builder().withNavDisplayName("Marquise lovelace").withNavItems(navItems).build()
 
