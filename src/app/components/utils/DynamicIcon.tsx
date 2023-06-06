@@ -1,6 +1,6 @@
 // type imports
-import TIcon from "@/app/models/types/icon";
-import {IconType as TIconType} from "react-icons";
+import { TIcon } from "@/app/models/types/react-icon";
+import { IconType as TIconType } from "react-icons";
 // react-icons imports
 import { FaRocket } from 'react-icons/fa';
 import { GiSandsOfTime } from 'react-icons/gi';
@@ -22,15 +22,15 @@ export const DynamicIcon = (props: TDynamicIcon): JSX.Element  => {
 
 export const getIcon = (iconName: TIcon): TIconType => {
   switch (iconName) {
-    case 'fa-rocket' || 'FaRocket':
+    case 'fa-rocket':
       return FaRocket;
-    case 'gi-sands-of-time' || 'GiSandsOfTime':
+    case 'gi-sands-of-time':
       return GiSandsOfTime;
-    case 'md-local-shipping' || 'MdLocalShipping':
+    case 'md-local-shipping':
       return MdLocalShipping;
-    case 'ri-money-dollar-circle-line' || 'RiMoneyDollarCircleLine':
+    case 'ri-money-dollar-circle-line':
       return RiMoneyDollarCircleLine;
-    case 'bs-arrow-right' || 'BsArrowRight':
+    case 'bs-arrow-right':
       return BsArrowRight;
     default:
       return FaRocket;

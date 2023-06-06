@@ -1,9 +1,9 @@
 // type imports
-import Icon from "@/app/models/types/icon"
+import { TIcon }  from "@/app/models/types/react-icon"
 
 // use file to link content to components.
 export type TServiceCard = {
-  icon: Icon,
+  icon: TIcon,
   header: string,
   description: string,
 }
@@ -16,11 +16,11 @@ export default class ServiceCard {
   }
 
   // I need getter and setters for each property in the type TServiceCard
-  public get icon(): Icon {
+  public get icon(): TIcon {
     return this.serviceCard.icon;
   }
 
-  public set icon(icon: Icon) {
+  public set icon(icon: TIcon) {
     this.serviceCard.icon = icon;
   }
 
@@ -50,13 +50,13 @@ export class ServiceCardBuilder {
 
   constructor() {
     this.serviceCard = {
-        icon: '' as Icon,
+        icon: '' as TIcon,
         header: '',
         description: '',
     }
   }
 
-  public withIcon(icon: Icon): ServiceCardBuilder {
+  public withIcon(icon: TIcon): ServiceCardBuilder {
     this.serviceCard.icon = icon;
     return this;
   }

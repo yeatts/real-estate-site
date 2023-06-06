@@ -8,9 +8,11 @@ import NavItem from '@/app/models/navbar/navitem';
 describe('Navbar', () => {
   const mockNavbarProps: TNavbar = {
     navDisplayName: 'My Navbar',
-    navItems: [
-        NavItem.builder().withTitle('Item 1').withUrl('/item1').build(),
-        NavItem.builder().withTitle('Item 2').withUrl('/item2').build(),
+    leftNavItems: [
+      NavItem.builder().withTitle('Item 1').withUrl('/item1').build(),
+    ],
+    rightNavItems: [
+      NavItem.builder().withTitle('Item 2').withUrl('/item2').build(),
     ],
   };
 
