@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react'
 import '@testing-library/jest-dom'
 
-import Navbar from '@/app/components/navbar/Navbar';
+import Navbar from '@/app/components/navbar/Navbarz';
 import { TNavbar } from '@/app/models/navbar/navbar';
 import NavItem from '@/app/models/navbar/navitem';
 

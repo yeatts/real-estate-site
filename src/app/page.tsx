@@ -10,9 +10,9 @@ import { default as NavbarModel }from '@/app/models/navbar/navbar'
 import { default as NavItemModel } from '@/app/models/navbar/navitem'
 
 // component imports
-import Navbar from '@/app/components/navbar/Navbar'
+import Navbar from '@/app/components/navbar/Navbarz'
 import ButtonPrimary from '@/app/components/buttons/ButtonPrimary'
-import { default as CalendlyPopup } from '@/app/components/calendly/Popup'
+import { default as CalendlyPopup } from '@/app/components/calendly/Popupz'
 
 export default function Home() {
   const navItems = [
