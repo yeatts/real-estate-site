@@ -3,7 +3,6 @@
     display: flex;
     background-color: transparent;
     transition: background-color 0.3s ease; /* Smooth transition effect */
-    border: solid 1px red;
 }
 
 .scrolled {
@@ -32,19 +31,6 @@
     flex: 6;
 }
 
-.navItems {
-    flex: 3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.navItem {
-    flex: 1;
-    list-style: none;
-    text-decoration: none;
-}
-
 @media (max-width: 872px) {
     .navTitle {
         flex: 4;
@@ -59,6 +45,13 @@
     }
 }
 
+.navItems {
+    flex: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 @media (max-width: 550px) {
     .navItems {
         display: none;
@@ -69,3 +62,10 @@
         padding-left: 2rem;
     }
 }
+
+.navItem {
+    flex: 1;
+    list-style: none;
+    text-decoration: none;
+}
+

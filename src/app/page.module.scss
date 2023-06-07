@@ -21,7 +21,6 @@
   min-height: 100%;
   width: 100%;
   position: relative;
-  // border: 1px solid red;
 
   .heroImage {
     object-fit: cover;
@@ -56,23 +55,49 @@
 
     .heroButtonGroup {
       width: 50%;
+      height: 6%;
       justify-content: space-around;
     }
   }
 }
 
-.bio {
+@media (max-width: 650px) {
+  .hero {
+    .heroBody {
+      h1 {
+        font-size: 4rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 475px) {
+  .hero {
+    .heroBody {
+      h1 {
+        font-size: 3.5rem;
+      }
+    }
+  }
+}
+
+// TODO: start here 
+// Currently trying to resize the .bio row height when the child elements need to wrap after 850px width
+// The contact element below is staying at the rendered position and not adjusting when child flex components are wrapping
+// So the child flex components are wrapping but the parent flex component is not adjusting to the new height
+// Therefore, the child components are behind the contact element
+
+.bio { 
   display: flex;
   width: 100%;
-  min-height: 100%;
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
   background-color: var(--global-secondary-color);
 
   .bioImgContainer {
+    flex: 6 6 50%;
     position: relative;
-    width: 50%;
     height: 100%;
 
     .bioImage {
@@ -80,8 +105,14 @@
     }
   }
 
+  @media (max-width: 850px) {
+    .bioImgContainer {
+      flex: 1 1 100%;
+    }
+  }
+
   .bioText {
-    width: 50%;
+    flex: 6 6 50%;
     display: flex;
     position: relative;
     flex-direction: column;
@@ -116,6 +147,13 @@
     //   background-color: purple;
     // }
   }
+
+  @media (max-width: 850px) {
+    .bioText {
+      flex: 1 1 100%;
+    }
+  }
+
 }
 
 .contact {
