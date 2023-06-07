@@ -1,7 +1,7 @@
 'use client'
 
 // react imports
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 // style imports
 import styles from './navbar.module.scss'
@@ -10,7 +10,13 @@ import styles from './navbar.module.scss'
 import { TNavbar } from '@/app/models/navbar/navbar'
 import { TNavItem } from '@/app/models/navbar/navitem'
 
+// component imports
+import Hamburger from '../menus/hamburger/Hamburger'
+
 export default function Navbar( props: TNavbar ) {
+  // useState for scrolled boolean value
+  const [scrolled, setScrolled] = useState(false);
+
   // useEffect that sets event listener on nav element
   useEffect(() => {
     var navbar = document.getElementsByTagName('nav')[0];
@@ -18,12 +24,12 @@ export default function Navbar( props: TNavbar ) {
     
     body.addEventListener('scroll', () => {
 
-      console.log(`scrollTop: `, document.body.scrollTop === 0)
-
       if (document.body.scrollTop === 0) {
         navbar.classList.remove(styles.scrolled);
+        setScrolled(false);
       } else {
         navbar.classList.add(styles.scrolled);
+        setScrolled(true);
       }
       
     });
@@ -62,6 +68,7 @@ export default function Navbar( props: TNavbar ) {
           })
         }
       </ul>
+      <Hamburger scrolled={scrolled}/>
     </nav>
   )
 }

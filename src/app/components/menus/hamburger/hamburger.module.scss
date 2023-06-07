@@ -1,0 +1,57 @@
+.hamburgerMenu {
+    display: none;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    width: 15%;
+    align-items: center;
+}
+  
+.hamburgerCheckbox {
+    display: none;
+}
+
+.hamburgerIcon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    margin-bottom: 5px;
+
+}
+
+.scrolled {
+    .hamburgerLine {
+        background-color: var(--global-text-color-dark);
+    }
+}
+
+.hamburgerLine {
+    width: 100%;
+    height: 3px;
+    background-color: var(--global-text-color-light);
+}
+
+.menu {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menuItem {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.hamburgerCheckbox:checked ~ .menu {
+    display: block;
+}
+  
+@media (max-width: 550px) {
+    .hamburgerMenu {
+        display: flex;
+    }
+}

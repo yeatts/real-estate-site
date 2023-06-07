@@ -3,6 +3,7 @@
     display: flex;
     background-color: transparent;
     transition: background-color 0.3s ease; /* Smooth transition effect */
+    border: solid 1px red;
 }
 
 .scrolled {
@@ -42,4 +43,29 @@
     flex: 1;
     list-style: none;
     text-decoration: none;
+}
+
+@media (max-width: 872px) {
+    .navTitle {
+        flex: 4;
+    }
+}
+
+@media (max-width: 630px) {
+    .navTitle {
+        flex: 3;
+        line-height: 1.5;
+        text-align: center;
+    }
+}
+
+@media (max-width: 550px) {
+    .navItems {
+        display: none;
+    }
+
+    .navTitle {
+        justify-content: start;
+        padding-left: 2rem;
+    }
 }
