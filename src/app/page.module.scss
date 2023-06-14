@@ -140,6 +140,12 @@
   }
 }
 
+@media (max-width: 850px) {
+  .bio {
+    height: auto;
+  }
+}
+
 .contact {
   display: flex;
   flex-flow: column;
