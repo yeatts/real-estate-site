@@ -103,6 +103,17 @@
       line-height: 1.5;
       margin-bottom: 5%;
     }
+
+    // this was inteded to make the image or text section look like a book page 🤷🏼‍♂️
+    // &:before {
+    //   content: "";
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   width: 3%;
+    //   height: 100%;
+    //   background-color: purple;
+    // }
   }
 }
 
