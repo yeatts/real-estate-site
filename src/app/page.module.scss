@@ -90,29 +90,25 @@
 .bio { 
   display: flex;
   width: 100%;
-  flex-flow: row wrap;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   background-color: var(--global-secondary-color);
 
   .bioImgContainer {
-    flex: 6 6 50%;
+    display: block;
+    flex: 1 1 100%;
     position: relative;
-    height: 100%;
+    min-height: 100%;
+    width: 100%;
 
     .bioImage {
       object-fit: cover;
     }
   }
-
-  @media (max-width: 850px) {
-    .bioImgContainer {
-      flex: 1 1 100%;
-    }
-  }
-
+  
   .bioText {
-    flex: 6 6 50%;
+    flex: 1 1 100%;
     display: flex;
     position: relative;
     flex-direction: column;
@@ -135,25 +131,13 @@
       line-height: 1.5;
       margin-bottom: 5%;
     }
-
-    // this was inteded to make the image or text section look like a book page 🤷🏼‍♂️
-    // &:before {
-    //   content: "";
-    //   position: absolute;
-    //   top: 0;
-    //   left: 0;
-    //   width: 3%;
-    //   height: 100%;
-    //   background-color: purple;
-    // }
   }
+}
 
-  @media (max-width: 850px) {
-    .bioText {
-      flex: 1 1 100%;
-    }
+@media (max-width: 850px) {
+  .bio {
+    flex-direction: column;
   }
-
 }
 
 .contact {
