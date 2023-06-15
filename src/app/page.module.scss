@@ -1,180 +1,147 @@
 .main {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  height: 100%;
-  width: 100%;
+  display: grid;
+  grid-template-areas: 
+    "header-nav"
+    "hero"
+    "bio"
+    "contact"
+  // justify-content: space-between;
+  // align-items: center;
+  // height: 100%;
+  // width: 100%;
 }
 
 .header {
+  grid-area: header-nav;
   position: fixed;
-  min-height: 8%;
+  // min-height: 8%;
   width: 100%;
-  display: flex;
+  display: grid;
   z-index: 99;
 }
 
 .hero {
-  display: flex;
-  flex-flow: column;
-  min-height: 100%;
-  width: 100%;
-  position: relative;
+  grid-area: hero;
+//   display: grid;
+//   // min-height: 100%;
+//   // width: 100%;
+//   // position: relative;
 
-  .heroImage {
-    object-fit: cover;
-    filter: brightness(40%);
-    z-index: 0;
-  }
+//   .heroImage {
+//     // object-fit: cover;
+//     // filter: brightness(40%);
+//     // z-index: 0;
+//   }
 
-  .heroBody {
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-    font-size: 3rem;
-    text-align: center;
-    color: var(--global-text-color-light);
+//   .heroBody {
+//     // z-index: 1;
+//     // display: grid;
+//     // position: absolute;
+//     // width: 100%;
+//     // height: 100%;
+//     // justify-content: center;
+//     // align-items: center;
+//     // font-size: 3rem;
+//     // text-align: center;
+//     // color: var(--global-text-color-light);
 
-    > * {
-      justify-content: center;
-      align-items: center;
-      display: flex;
-    }
+//     // > * {
+//     //   justify-content: center;
+//     //   align-items: center;
+//     //   display: flex;
+//     // }
 
-    h1 {
-      font-size: 5rem;
-      font-weight: 300;
-      margin-bottom: 5%;
-    }
+//     // h1 {
+//     //   font-size: 5rem;
+//     //   font-weight: 300;
+//     //   margin-bottom: 5%;
+//     // }
 
-    .heroButtonGroup {
-      width: 50%;
-      height: 6%;
-      justify-content: space-around;
-    }
-  }
+//     // .heroButtonGroup {
+//     //   width: 50%;
+//     //   height: 6%;
+//     //   justify-content: space-around;
+//     // }
+//   }
 }
-
-@media (max-width: 650px) {
-  .hero {
-    .heroBody {
-      h1 {
-        font-size: 4rem;
-      }
-    }
-  }
-}
-
-@media (max-width: 475px) {
-  .hero {
-    .heroBody {
-      h1 {
-        font-size: 3.5rem;
-      }
-    }
-  }
-}
-
-// TODO: start here 
-// Currently trying to resize the .bio row height when the child elements need to wrap after 850px width
-// The contact element below is staying at the rendered position and not adjusting when child flex components are wrapping
-// So the child flex components are wrapping but the parent flex component is not adjusting to the new height
-// Therefore, the child components are behind the contact element
 
 .bio { 
-  display: flex;
-  width: 100%;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--global-secondary-color);
+  grid-area: bio;
+//   display: grid;
+//   width: 100%;
+//   grid-template-columns: repeat(auto-fit, minmax(425px, 1fr));
+//   justify-content: center;
+//   align-items: center;
+//   background-color: var(--global-secondary-color);
 
-  .bioImgContainer {
-    display: block;
-    flex: 1 1 100%;
-    position: relative;
-    min-height: 100%;
-    width: 100%;
+//   .bioImgContainer {
+//     width: 100%;
 
-    .bioImage {
-      object-fit: cover;
-    }
-  }
+//     .bioImage {
+//       object-fit: cover;
+//     }
+//   }
   
-  .bioText {
-    flex: 1 1 100%;
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 10% 5%;
+//   .bioText {
+//     position: relative;
+//     justify-content: center;
+//     align-items: center;
+//     padding: 10% 5%;
 
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 5%;
-      font-weight: 300;
-      text-align: center;
-    }
+//     h1 {
+//       font-size: 3rem;
+//       margin-bottom: 5%;
+//       font-weight: 300;
+//       text-align: center;
+//     }
 
-    p {
-      font-size: 1.5rem;
-      text-align: center;
-      font-size: 1rem;
-      letter-spacing: 1px;
-      line-height: 1.5;
-      margin-bottom: 5%;
-    }
-  }
-}
-
-@media (max-width: 850px) {
-  .bio {
-    flex-direction: column;
-  }
+//     p {
+//       font-size: 1.5rem;
+//       text-align: center;
+//       font-size: 1rem;
+//       letter-spacing: 1px;
+//       line-height: 1.5;
+//       margin-bottom: 5%;
+//     }
+//   }
 }
 
 .contact {
-  display: flex;
-  flex-flow: column;
-  min-height: 100%;
-  width: 100%;
-  position: relative;
+  grid-area: contact;
+//   display: flex;
+//   flex-flow: column;
+//   min-height: 100%;
+//   width: 100%;
+//   position: relative;
 
-  .contactBgImg {
-    object-fit: cover;
-    filter: brightness(80%);
-    z-index: 0;
-  }
+//   .contactBgImg {
+//     object-fit: cover;
+//     filter: brightness(80%);
+//     z-index: 0;
+//   }
 
-  .contactBody {
-    z-index: 1;
-    height: 100%;
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 10% 5%;
+//   .contactBody {
+//     z-index: 1;
+//     height: 100%;
+//     display: flex;
+//     position: relative;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//     padding: 10% 5%;
 
-    h1 {
-      font-size: 4rem;
-      margin-bottom: 5%;
-      font-weight: 300;
-      text-align: center;
-      color: var(--global-secondary-color)
-    }
+//     h1 {
+//       font-size: 4rem;
+//       margin-bottom: 5%;
+//       font-weight: 300;
+//       text-align: center;
+//       color: var(--global-secondary-color)
+//     }
 
-    .contactButtonGroup {
-      min-width: 50%;
-      display: flex;
-      justify-content: center;
-    }
-  }
+//     .contactButtonGroup {
+//       min-width: 50%;
+//       display: flex;
+//       justify-content: center;
+//     }
+//   }
 }
