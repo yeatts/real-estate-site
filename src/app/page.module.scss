@@ -81,11 +81,7 @@
   }
 }
 
-// TODO: start here 
-// Currently trying to resize the .bio row height when the child elements need to wrap after 850px width
-// The contact element below is staying at the rendered position and not adjusting when child flex components are wrapping
-// So the child flex components are wrapping but the parent flex component is not adjusting to the new height
-// Therefore, the child components are behind the contact element
+// bio flex container problem resolved, but I feel there is a better solution. Scroll down to bio media query for current fix.
 
 .bio { 
   display: flex;
@@ -134,9 +130,24 @@
   }
 }
 
+// manually double the minimum height of the container, adjust childrens' height to half the container. Also note min-height for buttons added to match hero section button.
+
 @media (max-width: 850px) {
   .bio {
     flex-direction: column;
+    min-height: 200%;
+  
+    .bioImgContainer {
+      min-height: 50%;
+    }
+
+    .bioText {
+      min-height: 50%;
+
+      button {
+        height: 6%;
+      }
+    }
   }
 }
 
@@ -173,6 +184,7 @@
 
     .contactButtonGroup {
       min-width: 50%;
+      min-height: 6%;
       display: flex;
       justify-content: center;
     }
