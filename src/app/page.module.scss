@@ -55,32 +55,56 @@
 
     .heroButtonGroup {
       width: 50%;
+      height: 6%;
       justify-content: space-around;
     }
   }
 }
 
-.bio {
+@media (max-width: 650px) {
+  .hero {
+    .heroBody {
+      h1 {
+        font-size: 4rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 475px) {
+  .hero {
+    .heroBody {
+      h1 {
+        font-size: 3.5rem;
+      }
+    }
+  }
+}
+
+// bio flex container problem resolved, but I feel there is a better solution. Scroll down to bio media query for current fix.
+
+.bio { 
   display: flex;
   width: 100%;
-  min-height: 100%;
-  flex-flow: row wrap;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   background-color: var(--global-secondary-color);
 
   .bioImgContainer {
+    display: block;
+    flex: 1 1 100%;
     position: relative;
-    width: 50%;
-    height: 100%;
+    min-height: 100%;
+    width: 100%;
 
     .bioImage {
       object-fit: cover;
     }
   }
-
+  
   .bioText {
-    width: 50%;
+    flex: 1 1 100%;
     display: flex;
     position: relative;
     flex-direction: column;
@@ -102,6 +126,27 @@
       letter-spacing: 1px;
       line-height: 1.5;
       margin-bottom: 5%;
+    }
+  }
+}
+
+// manually double the minimum height of the container, adjust childrens' height to half the container. Also note min-height for buttons added to match hero section button.
+
+@media (max-width: 850px) {
+  .bio {
+    flex-direction: column;
+    min-height: 200%;
+  
+    .bioImgContainer {
+      min-height: 50%;
+    }
+
+    .bioText {
+      min-height: 50%;
+
+      button {
+        height: 6%;
+      }
     }
   }
 }
@@ -139,6 +184,7 @@
 
     .contactButtonGroup {
       min-width: 50%;
+      min-height: 6%;
       display: flex;
       justify-content: center;
     }

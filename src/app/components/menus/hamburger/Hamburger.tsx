@@ -11,10 +11,8 @@ export default function Hamburger({scrolled}: {scrolled: boolean}) {
 
     // TODO: this is NOT optimal - this is temporary
     if (scrolled) {
-      console.log(`scrolled`,)
       menuElement ? menuElement.classList.add(styles.scrolled) : null;
     } else {
-      console.log(`not scrolled`,)
       menuElement ? menuElement.classList.remove(styles.scrolled) : null;
     }
   }, [scrolled]);

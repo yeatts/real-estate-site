@@ -31,19 +31,6 @@
     flex: 6;
 }
 
-.navItems {
-    flex: 3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.navItem {
-    flex: 1;
-    list-style: none;
-    text-decoration: none;
-}
-
 @media (max-width: 872px) {
     .navTitle {
         flex: 4;
@@ -58,6 +45,13 @@
     }
 }
 
+.navItems {
+    flex: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 @media (max-width: 550px) {
     .navItems {
         display: none;
@@ -68,3 +62,10 @@
         padding-left: 2rem;
     }
 }
+
+.navItem {
+    flex: 1;
+    list-style: none;
+    text-decoration: none;
+}
+
