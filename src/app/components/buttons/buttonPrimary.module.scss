@@ -39,3 +39,11 @@
     background-color: var(--global-background-color-darker);
   }
 }
+
+@media (max-width: 690px) {
+  .buttonPrimary,
+  .buttonSecondary,
+  .buttonPrimaryDark {
+    padding: 0 10%;
+  }
+}
