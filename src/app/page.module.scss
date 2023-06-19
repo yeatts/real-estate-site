@@ -10,11 +10,8 @@
     "extra3"
     "footer";
     grid-template-rows: repeat(8, min-content);
-  // justify-content: space-between;
-  // align-items: center;
-  // height: 100%;
   width: 100%;
-  height: auto;
+  height: 10000px;
 }
 
 .header {
@@ -29,6 +26,7 @@
 .hero {
   grid-area: hero;
   display: grid;
+  position: relative;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   min-height: 100vh;
@@ -75,45 +73,51 @@
 
 .bio { 
   grid-area: bio;
-  display: none;
+  display: grid;
+  position: relative;
+  grid-template-columns: repeat(auto-fit, minmax(425px, 1fr));
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+  background-color: var(--global-secondary-color);
 
-//   display: grid;
-//   width: 100%;
-//   grid-template-columns: repeat(auto-fit, minmax(425px, 1fr));
-//   justify-content: center;
-//   align-items: center;
-//   background-color: var(--global-secondary-color);
+  .bioImgContainer {
+    position: relative;
+    height: 100%;
+    min-height: 574.56px; //approx min height of biotext. Temp fix.
 
-//   .bioImgContainer {
-//     width: 100%;
-
-//     .bioImage {
-//       object-fit: cover;
-//     }
-//   }
+    .bioImage {
+      object-fit: cover;
+    }
+  }
   
-//   .bioText {
-//     position: relative;
-//     justify-content: center;
-//     align-items: center;
-//     padding: 10% 5%;
+  .bioText {
+    position: relative;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    padding: 10% 5%;
 
-//     h1 {
-//       font-size: 3rem;
-//       margin-bottom: 5%;
-//       font-weight: 300;
-//       text-align: center;
-//     }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 5%;
+      font-weight: 300;
+      text-align: center;
+    }
 
-//     p {
-//       font-size: 1.5rem;
-//       text-align: center;
-//       font-size: 1rem;
-//       letter-spacing: 1px;
-//       line-height: 1.5;
-//       margin-bottom: 5%;
-//     }
-//   }
+    p {
+      font-size: 1.5rem;
+      text-align: center;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      line-height: 1.5;
+      margin-bottom: 5%;
+    }
+
+    button {
+      width: fit-content;
+    }
+  }
 }
 
 .contact {
