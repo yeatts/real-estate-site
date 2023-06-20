@@ -17,7 +17,7 @@ import { default as CalendlyPopup } from '@/app/components/calendly/Popup'
 
 export default function Home() {
   const navItems = [
-    NavItemModel.builder().withTitle("Properties").build(),
+    NavItemModel.builder().withTitle("Properties").withUrl("https://www.homes.com/real-estate-agents/marquise-lovelace/c6rhq6g/").build(),
     NavItemModel.builder().withTitle("About").build(),
     NavItemModel.builder().withTitle("Contact").build(), 
   ]
@@ -30,6 +30,7 @@ export default function Home() {
         <header className={styles.header}>
           <Navbar
             navDisplayName={navbarProps.navDisplayName}
+            navItems={navbarProps.navItems}
             leftNavItems={navbarProps.leftNavItems}
             rightNavItems={navbarProps.rightNavItems}
           />

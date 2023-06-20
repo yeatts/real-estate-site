@@ -12,10 +12,12 @@ import { TNavItem } from '@/app/models/navbar/navitem'
 
 // component imports
 import Hamburger from '../menus/hamburger/Hamburger'
+import Menu from '../menus/hamburger/menu/Menu'
 
 export default function Navbar( props: TNavbar ) {
   // useState for scrolled boolean value
   const [scrolled, setScrolled] = useState(false);
+  const [hbgActive, setHbgActive] = useState(false); // hbg = hamburger
 
   // useEffect that sets event listener on nav element
   useEffect(() => {
@@ -40,14 +42,17 @@ export default function Navbar( props: TNavbar ) {
     };
   }, []); // The empty dependency array [] ensures that the effect runs only once on mount
 
+  const toggleHbg = () => {
+    setHbgActive(!hbgActive);
+  };
 
   return (
     <nav className={styles.nav}>
       <ul className={styles.navItems}>
         {
-          props.leftNavItems.map((item: TNavItem) => {
+          props.leftNavItems.map((item: TNavItem, index) => {
             return (
-              <ol className={styles.navItem} key={item.title}>
+              <ol className={styles.navItem} key={index}>
                 <a href={item.url}>{item.title}</a>
               </ol>
             )
@@ -59,16 +64,17 @@ export default function Navbar( props: TNavbar ) {
       </header>
       <ul className={styles.navItems}>
         {
-          props.rightNavItems.map((item: TNavItem) => {
+          props.rightNavItems.map((item: TNavItem,  index) => {
             return (
-              <ol className={styles.navItem} key={item.title}>
+              <ol className={styles.navItem} key={index}>
                 <a href={item.url}>{item.title}</a>
               </ol>
             )
           })
         }
       </ul>
-      <Hamburger scrolled={scrolled}/>
+      <Hamburger scrolled={scrolled} hbgActive={hbgActive}/>
+      <Menu scrolled={scrolled} hbgActive={hbgActive} navItems={props.navItems}/>
     </nav>
   )
 }

@@ -1,0 +1,17 @@
+.menu {
+    display: none;
+}
+
+.menu {
+    display: flex;
+    flex-basis: 100%;
+    position: relative;
+    border: solid yellow 1px;
+    justify-content: flex-end;
+}
+
+.menuItem {
+    height: 50px;
+    border: solid red 1px;
+    color: white;
+}

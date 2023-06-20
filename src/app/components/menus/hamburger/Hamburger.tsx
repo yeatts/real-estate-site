@@ -2,10 +2,9 @@
 
 import { useEffect, useState } from 'react';
 import styles from './hamburger.module.scss';
+import { TNavItem } from '@/app/models/navbar/navitem';
 
-export default function Hamburger({scrolled}: {scrolled: boolean}) {
-  const [isOpen, setIsOpen] = useState(false);
-
+export default function Hamburger({scrolled, hbgActive}: {scrolled: boolean, hbgActive: boolean}) {
   useEffect(() => {
     const menuElement = document.getElementById('hamburgerIcon');
 
@@ -18,29 +17,13 @@ export default function Hamburger({scrolled}: {scrolled: boolean}) {
   }, [scrolled]);
 
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
   return (
     <div className={styles.hamburgerMenu}>
-      <input
-        type="checkbox"
-        className={styles.hamburgerCheckbox}
-        checked={isOpen}
-        onChange={toggleMenu}
-      />
       <span className={styles.hamburgerIcon} id="hamburgerIcon">
         <span className={styles.hamburgerLine}></span>
         <span className={styles.hamburgerLine}></span>
         <span className={styles.hamburgerLine}></span>
       </span>
-      <ul className={styles.menu}>
-        <li className={styles.menuItem}>Home</li>
-        <li className={styles.menuItem}>About</li>
-        <li className={styles.menuItem}>Services</li>
-        <li className={styles.menuItem}>Contact</li>
-      </ul>
     </div>
   );
 };
