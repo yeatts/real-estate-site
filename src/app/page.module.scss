@@ -1,6 +1,6 @@
 .main {
   display: grid;
-  grid-template-areas: 
+  grid-template-areas:
     "header-nav"
     "hero"
     "bio"
@@ -9,7 +9,7 @@
     "extra2"
     "extra3"
     "footer";
-    grid-template-rows: repeat(8, min-content);
+  grid-template-rows: repeat(8, min-content);
   width: 100%;
   height: 10000px; //TODO made it huge to temp fix scrolling issue. Ideally change this to something more responsive.
 }
@@ -33,9 +33,9 @@
   justify-items: center;
   align-items: center;
 
-   .heroImage {
+  .heroImage {
     filter: brightness(40%);
-   }
+  }
 
   .heroBody {
     z-index: 1;
@@ -60,14 +60,20 @@
       font-weight: 300;
     }
   }
+
+  @media (max-width: 425px) {
+    .heroBody h1 {
+      display: none;
+    }
+  }
 }
 
-.bio { 
+.bio {
   grid-area: bio;
   display: grid;
   position: relative;
-  grid-template-columns: repeat(auto-fit, minmax(425px, 1fr));
-  justify-content: center; // adding "justify-items: center;" drives bioImgContainer width to zero. unsure why. 
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-content: center; // adding "justify-items: center;" drives bioImgContainer width to zero. unsure why.
   align-items: center;
   height: fit-content;
   background-color: var(--global-secondary-color);
@@ -77,7 +83,7 @@
     height: 100%;
     min-height: 574.56px; //approx min height of biotext. Temp fix.
   }
-  
+
   .bioText {
     position: relative;
     display: grid;
@@ -101,6 +107,15 @@
       margin-bottom: 5%;
     }
 
+    @media (max-width: 425px) {
+        p {
+          display: none;
+        }
+
+        h1 {
+          font-size: 2rem;
+        }
+    }
   }
 }
 
@@ -136,10 +151,25 @@
     //   display: grid;
     // }
 
-    h1 { // TODO move h1 standard to globals
+    @media (max-width: 425px) {
+      h1,
+      p {
+        display: none;
+      }
+    }
+
+    h1 {
+      // TODO move h1 standard to globals
       font-size: 5rem;
       font-weight: 300;
       // color: var(--global-secondary-color)
     }
+  }
+}
+
+@media (max-width: 425px) {
+  .heroBody,
+  .contactBody {
+    display: none;
   }
 }
