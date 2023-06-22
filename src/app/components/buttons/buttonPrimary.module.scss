@@ -1,15 +1,16 @@
 .buttonPrimary,
 .buttonSecondary,
 .buttonPrimaryDark {
-  height: 100%;
+  min-height: 3rem;
   font-size: 1rem;  
   background: none;
   border: none;
   outline: none;
   cursor: pointer;
-  padding: 3% 5%;
-  display: flex;
+  padding: 1rem 2rem;
   align-items: center;
+  justify-items: center;
+  width: max-content;
 }
 
 .buttonPrimary {
@@ -40,10 +41,10 @@
   }
 }
 
-@media (max-width: 690px) {
-  .buttonPrimary,
-  .buttonSecondary,
-  .buttonPrimaryDark {
-    padding: 0 10%;
-  }
-}
+// @media (max-width: 690px) {
+//   .buttonPrimary,
+//   .buttonSecondary,
+//   .buttonPrimaryDark {
+//     padding: 0 10%;
+//   }
+// }
