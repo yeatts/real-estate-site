@@ -22,6 +22,10 @@
 
 }
 
+.active {
+    border: solid red 1px;
+}
+
 .scrolled {
     .hamburgerLine {
         background-color: var(--global-text-color-dark);

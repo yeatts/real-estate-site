@@ -73,7 +73,7 @@ export default function Navbar( props: TNavbar ) {
           })
         }
       </ul>
-      <Hamburger scrolled={scrolled} hbgActive={hbgActive}/>
+      <Hamburger scrolled={scrolled} hbgActive={hbgActive} toggleHbg={toggleHbg}/>
       <Menu scrolled={scrolled} hbgActive={hbgActive} navItems={props.navItems}/>
     </nav>
   )

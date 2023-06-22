@@ -1,17 +1,19 @@
-.menu {
-    display: none;
+.menuContainer {
+    flex-basis: 100%;
+    padding: 75% 10%;
 }
 
 .menu {
     display: flex;
-    flex-basis: 100%;
     position: relative;
     border: solid yellow 1px;
-    justify-content: flex-end;
+    justify-content: center;
+    flex-flow: column;
+    align-items: center;
 }
 
 .menuItem {
-    height: 50px;
     border: solid red 1px;
     color: white;
+    font-size: 3rem;
 }

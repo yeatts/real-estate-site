@@ -1,10 +1,13 @@
 .nav {
     display: flex;
+    width: 100%;
+    position: fixed;
+    z-index: 99;
     flex-flow: row wrap;
     padding: 6%;
-    width: 100%;
     background-color: transparent;
     transition: background-color 0.3s ease; /* Smooth transition effect */
+    border: solid blue 1px;
 }
 
 .scrolled {

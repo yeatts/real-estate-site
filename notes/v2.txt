@@ -1,0 +1,2 @@
+- After a certain media query, the navbar should reduce to just quise's name at the top and the menu should relocate to a circular button in the bottom right hand corner so it's easier to click
+- create web scraper that pulls all properties of quise's and list them on his app

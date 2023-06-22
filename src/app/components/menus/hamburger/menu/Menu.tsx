@@ -17,8 +17,8 @@ export default function Menu({scrolled, hbgActive, navItems}: {scrolled: boolean
   // }, [scrolled]);
 
   return (
-    <div className={styles.menu}>
-      <ul>
+    <div className={styles.menuContainer}>
+      <ul className={styles.menu}>
       {
           navItems.map((item: TNavItem, index) => {
             return (

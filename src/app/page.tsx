@@ -26,15 +26,12 @@ export default function Home() {
   return (
     <>
       <main className={styles.main}>
-        {/* header and nav */}
-        <header className={styles.header}>
-          <Navbar
-            navDisplayName={navbarProps.navDisplayName}
-            navItems={navbarProps.navItems}
-            leftNavItems={navbarProps.leftNavItems}
-            rightNavItems={navbarProps.rightNavItems}
-          />
-        </header>
+        <Navbar
+          navDisplayName={navbarProps.navDisplayName}
+          navItems={navbarProps.navItems}
+          leftNavItems={navbarProps.leftNavItems}
+          rightNavItems={navbarProps.rightNavItems}
+        />
         {/* hero section */}
         <section className={styles.hero}>
           <Image className={styles.heroImage} src="/landing-houses.jpg" alt="Hauses" fill priority sizes='100%' />

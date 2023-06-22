@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import styles from './hamburger.module.scss';
 import { TNavItem } from '@/app/models/navbar/navitem';
 
-export default function Hamburger({scrolled, hbgActive}: {scrolled: boolean, hbgActive: boolean}) {
+export default function Hamburger({scrolled, toggleHbg, hbgActive}: {scrolled: boolean, toggleHbg: Function, hbgActive: boolean}) {
   useEffect(() => {
     const menuElement = document.getElementById('hamburgerIcon');
 
@@ -14,11 +14,16 @@ export default function Hamburger({scrolled, hbgActive}: {scrolled: boolean, hbg
     } else {
       menuElement ? menuElement.classList.remove(styles.scrolled) : null;
     }
-  }, [scrolled]);
 
+    if (hbgActive) {
+      menuElement ? menuElement.classList.add(styles.active) : null;
+    } else {
+      menuElement ? menuElement.classList.remove(styles.active) : null;
+    }
+  }, [scrolled, hbgActive]);
 
   return (
-    <div className={styles.hamburgerMenu}>
+    <div className={styles.hamburgerMenu} onClick={() => {toggleHbg()}}>
       <span className={styles.hamburgerIcon} id="hamburgerIcon">
         <span className={styles.hamburgerLine}></span>
         <span className={styles.hamburgerLine}></span>
