@@ -53,5 +53,14 @@
     .hamburgerMenu {
         display: grid;
         grid-area: hamburger;
+        
+    .hamburgerCheckbox:checked ~ .menu {
+        display: block;
+    }
+
+    .hamburgerCheckbox:checked ~ .hamburgerIcon {
+        display: none;
+    }
       }
+
 }

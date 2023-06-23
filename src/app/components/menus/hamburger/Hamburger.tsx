@@ -18,8 +18,10 @@ export default function Hamburger({scrolled}: {scrolled: boolean}) {
   }, [scrolled]);
 
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
+  const toggleMenu = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const isOpen = e.target.checked;
+    setIsOpen(isOpen);
+    console.log(isOpen);
   };
 
   return (
