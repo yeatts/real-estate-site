@@ -1,13 +1,14 @@
-'use client'
+"use client";
 
-import { useEffect, useState } from 'react';
-import styles from './hamburger.module.scss';
+import { useEffect, useState } from "react";
+import styles from "./hamburger.module.scss";
+import React from "react";
 
-export default function Hamburger({scrolled}: {scrolled: boolean}) {
+export default function Hamburger({ scrolled }: { scrolled: boolean }) {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    const menuElement = document.getElementById('hamburgerIcon');
+    const menuElement = document.getElementById("hamburgerIcon");
 
     // TODO: this is NOT optimal - this is temporary
     if (scrolled) {
@@ -17,21 +18,23 @@ export default function Hamburger({scrolled}: {scrolled: boolean}) {
     }
   }, [scrolled]);
 
-
-  const toggleMenu = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const isOpen = e.target.checked;
-    setIsOpen(isOpen);
+  const toggleMenu = (e: React.MouseEvent<HTMLButtonElement>) => {
+    setIsOpen(!isOpen);
     console.log(isOpen);
   };
 
   return (
     <div className={styles.hamburgerMenu}>
-      <input
+      <button className={styles.hamburgerCheckbox} onClick={toggleMenu}>
+        <span className="open">☰</span>
+        <span className="close">×</span>
+      </button>
+      {/* <input
         type="checkbox"
         className={styles.hamburgerCheckbox}
         checked={isOpen}
         onChange={toggleMenu}
-      />
+      /> */}
       <span className={styles.hamburgerIcon} id="hamburgerIcon">
         <span className={styles.hamburgerLine}></span>
         <span className={styles.hamburgerLine}></span>
@@ -45,4 +48,4 @@ export default function Hamburger({scrolled}: {scrolled: boolean}) {
       </ul>
     </div>
   );
-};
+}
