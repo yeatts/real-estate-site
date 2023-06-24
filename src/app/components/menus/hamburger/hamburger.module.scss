@@ -1,66 +1,77 @@
 .hamburgerMenu {
-    display: none;
-    grid-template-columns: 1fr;
-    justify-content: center;
-    width: 15%;
-    align-items: center;
-}
-  
-.hamburgerCheckbox {
-    display: block;
-}
+  display: none;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  width: 15%;
+  align-items: center;
 
-.hamburgerIcon {
+  .hamburgerButton {
     display: grid;
     grid-template-columns: 1fr;
     justify-content: space-between;
-    width: 30px;
-    height: 20px;
-    cursor: pointer;
     margin-bottom: 5px;
+    font-size: 1rem;
+    color: var(--global-text-color-light);
+    // background-color: var(--global-text-color-light);
+    border-color: var(--global-border-light);
+    // min-height: 3rem;
+    // font-size: 1rem;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 1rem 2rem;
+    align-items: center;
+    justify-items: center;
+    width: max-content;
+  }
 
-}
-
-.scrolled {
-    .hamburgerLine {
-        background-color: var(--global-text-color-dark);
+  .closed {
+    > .close {
+      display: none;
     }
-}
+    > .open {
+        display: block;
+      }
+  }
+  .opened {
+    > .open {
+      display: none;
+    }
+    .close {
+        display: block;
+    }
+  }
 
-.hamburgerLine {
-    width: 100%;
-    height: 3px;
-    background-color: var(--global-text-color-light);
-}
+  .scrolled {
+    color: var(--global-text-color-dark);
+  }
 
-.menu {
+  .menu {
     display: none;
     list-style: none;
     padding: 0;
     margin: 0;
-}
+  }
 
-.menuItem {
+  .menuItem {
     padding: 10px;
     cursor: pointer;
+  }
 }
 
-.hamburgerCheckbox:checked ~ .menu {
-    display: block;
-}
+@media (max-width: 700px) {
+  // TODO use variables for media query values. BDJ
+  .hamburgerMenu {
+    display: grid;
+    grid-area: hamburger;
 
-@media (max-width: 700px) { // TODO use variables for media query values. BDJ
-    .hamburgerMenu {
-        display: grid;
-        grid-area: hamburger;
-        
-    .hamburgerCheckbox:checked ~ .menu {
-        display: block;
-    }
+    // .hamburgerButton:checked ~ .menu {
+    //     display: block;
+    // }
 
-    .hamburgerCheckbox:checked ~ .hamburgerIcon {
-        display: none;
-    }
-      }
-
+    // .hamburgerButton:checked ~ .hamburgerIcon {
+    //     display: none;
+    // }
+  }
 }
