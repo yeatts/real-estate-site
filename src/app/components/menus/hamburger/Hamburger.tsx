@@ -2,10 +2,15 @@
 
 import { useEffect, useState } from "react";
 import styles from "./hamburger.module.scss";
-import React from "react";
 
-export default function Hamburger({ scrolled }: { scrolled: boolean }) {
-  const [isOpen, setIsOpen] = useState(false);
+interface IProps {
+  scrolled: boolean;
+  isOpen: boolean;
+  onMenuToggle:(e: React.MouseEvent<HTMLButtonElement>) => void;
+}
+
+export default function Hamburger(props:IProps) {
+  const {scrolled, isOpen, onMenuToggle} = props;
 
   useEffect(() => {
     const menuElement = document.getElementById("hamburgerButton");
@@ -19,17 +24,14 @@ export default function Hamburger({ scrolled }: { scrolled: boolean }) {
     console.log(menuElement);
   }, [scrolled]);
 
-  const toggleMenu = (e: React.MouseEvent<HTMLButtonElement>) => {
-    setIsOpen(!isOpen);
-    console.log(isOpen);
-  };
+
 
   return (
     <div className={styles.hamburgerMenu}>
       <button
         className={`${styles.hamburgerButton} ${isOpen ? styles.opened : styles.closed}`}
         id="hamburgerButton"
-        onClick={toggleMenu}
+        onClick={props.onMenuToggle}
       >
         <span className={styles.open}>☰</span>
         <span className={styles.close}>×</span>

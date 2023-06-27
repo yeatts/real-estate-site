@@ -13,7 +13,7 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true, // When isolatedModules is set to true, the compiler assumes that each file is independent and does not share any state with other files. This means that certain features of TypeScript, such as global variable declarations and module augmentation, are not available.
-    "jsx": "react", // BDJ changed this from "preserve". Tried this as a potential bug fix, but also seems like this might be preferred to keep TS typechecking? 
+    "jsx": "preserve",
     "incremental": true,
     "plugins": [
       {
