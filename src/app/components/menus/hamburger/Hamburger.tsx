@@ -27,10 +27,9 @@ export default function Hamburger({ scrolled }: { scrolled: boolean }) {
   return (
     <div className={styles.hamburgerMenu}>
       <button
-        className={styles.hamburgerButton}
+        className={`${styles.hamburgerButton} ${isOpen ? styles.opened : styles.closed}`}
         id="hamburgerButton"
         onClick={toggleMenu}
-        className={`${isOpen ? styles.opened : styles.closed}`}
       >
         <span className={styles.open}>☰</span>
         <span className={styles.close}>×</span>

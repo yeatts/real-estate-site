@@ -1,16 +1,15 @@
 .hamburgerMenu {
   display: none;
   grid-template-columns: 1fr;
-  justify-content: center;
-  width: 15%;
-  align-items: center;
+  justify-self: center;
+//   width: 15%;
 
   .hamburgerButton {
     display: grid;
     grid-template-columns: 1fr;
     justify-content: space-between;
-    margin-bottom: 5px;
-    font-size: 1rem;
+    // margin-bottom: 5px;
+    font-size: 1.5rem;
     color: var(--global-text-color-light);
     // background-color: var(--global-text-color-light);
     border-color: var(--global-border-light);
@@ -20,7 +19,7 @@
     border: none;
     outline: none;
     cursor: pointer;
-    padding: 1rem 2rem;
+    // padding: 1rem 2rem;
     align-items: center;
     justify-items: center;
     width: max-content;
@@ -41,7 +40,12 @@
     .close {
         display: block;
     }
+    ~ .menu {
+        display: grid;
+    }
   }
+
+
 
   .scrolled {
     color: var(--global-text-color-dark);
@@ -50,6 +54,7 @@
   .menu {
     display: none;
     list-style: none;
+    color: var(--global-text-color-light);
     padding: 0;
     margin: 0;
   }
