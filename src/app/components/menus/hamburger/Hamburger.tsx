@@ -29,9 +29,10 @@ export default function Hamburger(props:IProps) {
   return (
     <div className={styles.hamburgerMenu}>
       <button
-        className={`${styles.hamburgerButton} ${isOpen ? styles.opened : styles.closed}`}
+        className={styles.hamburgerButton}
         id="hamburgerButton"
-        onClick={props.onMenuToggle}
+        onClick={toggleMenu}
+        className={`${isOpen ? styles.opened : styles.closed}`}
       >
         <span className={styles.open}>☰</span>
         <span className={styles.close}>×</span>
