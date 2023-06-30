@@ -16,12 +16,6 @@ import Hamburger from '../menus/hamburger/Hamburger'
 export default function Navbar( props: TNavbar ) {
   // useState for scrolled boolean value
   const [scrolled, setScrolled] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
-
-  const menuToggleHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
-    setIsOpen(!isOpen);
-    console.log(isOpen);
-  };
 
   // useEffect that sets event listener on nav element
   useEffect(() => {
@@ -48,7 +42,7 @@ export default function Navbar( props: TNavbar ) {
 
 
   return (
-    <nav className={`${styles.nav} ${isOpen ? styles.opened : styles.closed}`}>
+    <nav className={styles.nav}>
       <ul className={styles.navItems}>
         {
           props.leftNavItems.map((item: TNavItem) => {
@@ -74,7 +68,7 @@ export default function Navbar( props: TNavbar ) {
           })
         }
       </ul>
-      <Hamburger scrolled={scrolled} isOpen={isOpen} onMenuToggle={menuToggleHandler}/>
+      <Hamburger scrolled={scrolled}/>
     </nav>
   )
 }

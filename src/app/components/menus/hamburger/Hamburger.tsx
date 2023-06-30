@@ -3,15 +3,8 @@
 import { useEffect, useState } from "react";
 import styles from "./hamburger.module.scss";
 
-interface IProps {
-  scrolled: boolean;
-  isOpen: boolean;
-  onMenuToggle:(e: React.MouseEvent<HTMLButtonElement>) => void;
-}
-
-export default function Hamburger(props:IProps) {
-  const {scrolled, isOpen, onMenuToggle} = props;
-
+export default function Hamburger({ scrolled } : { scrolled: boolean }) {
+  const [isOpen, setIsOpen] = useState(false);
   useEffect(() => {
     const menuElement = document.getElementById("hamburgerIcon");
 
@@ -23,7 +16,9 @@ export default function Hamburger(props:IProps) {
     }
   }, [scrolled]);
 
-
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  }
 
   return (
     <div className={styles.hamburgerMenu}>
@@ -31,12 +26,6 @@ export default function Hamburger(props:IProps) {
         <span className="open">☰</span>
         <span className="close">×</span>
       </button>
-      {/* <input
-        type="checkbox"
-        className={styles.hamburgerCheckbox}
-        checked={isOpen}
-        onChange={toggleMenu}
-      /> */}
       <span className={styles.hamburgerIcon} id="hamburgerIcon">
         <span className={styles.hamburgerLine}></span>
         <span className={styles.hamburgerLine}></span>
