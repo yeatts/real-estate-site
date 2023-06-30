@@ -1,66 +1,69 @@
 .hamburgerMenu {
-    display: none;
-    grid-template-columns: 1fr;
-    justify-content: center;
-    width: 15%;
-    align-items: center;
-}
-  
-.hamburgerCheckbox {
-    display: block;
+  display: none;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  width: 15%;
+  align-items: center;
 }
 
 .hamburgerIcon {
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-content: space-between;
-    width: 30px;
-    height: 20px;
-    cursor: pointer;
-    margin-bottom: 5px;
-
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  margin-bottom: 5px;
 }
 
 .scrolled {
-    .hamburgerLine {
-        background-color: var(--global-text-color-dark);
-    }
+  .hamburgerLine {
+    background-color: var(--global-text-color-dark);
+  }
 }
 
 .hamburgerLine {
-    width: 100%;
-    height: 3px;
-    background-color: var(--global-text-color-light);
+  width: 100%;
+  height: 3px;
+  background-color: var(--global-text-color-light);
 }
 
 .menu {
-    display: none;
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  display: none;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .menuItem {
-    padding: 10px;
-    cursor: pointer;
+  padding: 10px;
+  cursor: pointer;
 }
 
-.hamburgerCheckbox:checked ~ .menu {
-    display: block;
-}
+@media (max-width: 700px) {
+  // TODO use variables for media query values. BDJ
+  .hamburgerMenu {
+    display: grid;
+    grid-area: hamburger;
 
-@media (max-width: 700px) { // TODO use variables for media query values. BDJ
-    .hamburgerMenu {
-        display: grid;
-        grid-area: hamburger;
-        
-    .hamburgerCheckbox:checked ~ .menu {
-        display: block;
-    }
-
-    .hamburgerCheckbox:checked ~ .hamburgerIcon {
-        display: none;
-    }
+    .hamburgerButton {
+      ~ .opened {
+        > .close {
+          display: block;
+        }
+        > .open {
+          display: none;
+        }
       }
 
+      ~ .closed {
+        > .open {
+          display: block;
+        }
+        > .close {
+          display: none;
+        }
+      }
+    }
+  }
 }

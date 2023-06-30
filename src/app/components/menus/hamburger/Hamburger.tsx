@@ -18,19 +18,15 @@ export default function Hamburger({ scrolled } : { scrolled: boolean }) {
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+    console.log(isOpen);
   }
 
   return (
     <div className={styles.hamburgerMenu}>
-      <button className={styles.hamburgerCheckbox} onClick={toggleMenu}>
+      <button className={`${styles.hamburgerButton} ${isOpen ? styles.opened : styles.closed}`} onClick={toggleMenu}>
         <span className="open">☰</span>
         <span className="close">×</span>
       </button>
-      <span className={styles.hamburgerIcon} id="hamburgerIcon">
-        <span className={styles.hamburgerLine}></span>
-        <span className={styles.hamburgerLine}></span>
-        <span className={styles.hamburgerLine}></span>
-      </span>
       <ul className={styles.menu}>
         <li className={styles.menuItem}>Home</li>
         <li className={styles.menuItem}>About</li>
