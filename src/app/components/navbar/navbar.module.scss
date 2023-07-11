@@ -12,6 +12,7 @@
     transition: background-color 0.3s ease;
     /* Smooth transition effect */
     border: solid blue 1px;
+    align-items: center;
 }
 
 .scrolled {
@@ -24,6 +25,16 @@
         color: var(--global-text-color-dark);
         font-weight: 500;
     }
+}
+
+.active {
+    color: red;
+    background: red;
+}
+
+.inactive {
+    color: green;
+    background: green;
 }
 
 .navTitle,

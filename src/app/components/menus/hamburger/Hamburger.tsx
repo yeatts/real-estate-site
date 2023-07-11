@@ -23,7 +23,7 @@ export default function Hamburger({scrolled, toggleHbg, hbgActive}: {scrolled: b
   }, [scrolled, hbgActive]);
 
   return (
-    <div className={styles.hamburgerMenu} onClick={() => {toggleHbg()}}>
+    <div className={`${styles.hamburgerMenu} ${hbgActive ? styles.active : styles.inactive}`} onClick={() => {toggleHbg()}}>
       <span className={styles.hamburgerIcon} id="hamburgerIcon">
         <span className={styles.hamburgerLine}></span>
         <span className={styles.hamburgerLine}></span>

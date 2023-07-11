@@ -1,29 +1,51 @@
 .hamburgerMenu {
     display: none;
-    flex-direction: column;
-    align-items: flex-end;
     justify-content: center;
-    width: 15%;
+    width: fit-content;
+    height: fit-content;
     align-items: center;
-}
-  
-.hamburgerCheckbox {
-    display: none;
 }
 
 .hamburgerIcon {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 5px;
     justify-content: space-between;
-    width: 30px;
-    height: 20px;
+    align-items: center;
+    min-width: 30px;
+    height: fit-content;
     cursor: pointer;
-    margin-bottom: 5px;
 
+    >* {
+        transition: .25s ease-in-out;
+    }
+
+    :nth-child(2) {
+        visibility: visible;
+        transition: visibility .2s linear .2s;
+    }
 }
 
 .active {
-    border: solid red 1px;
+
+    .hamburgerIcon {
+        height: fit-content;
+        width: fit-content;
+
+        :first-child {
+            transform: translate(0, 8px) rotate(45deg);
+
+        }
+
+        :nth-child(2) {
+            visibility: hidden;
+            transition: visibility 0s ease-out;
+        }
+
+        :last-child {
+            transform: translate(0, -8px) rotate(-45deg);
+        }
+    }
 }
 
 .scrolled {
@@ -50,12 +72,14 @@
     cursor: pointer;
 }
 
-.hamburgerCheckbox:checked ~ .menu {
+.hamburgerCheckbox:checked~.menu {
     display: block;
 }
-  
+
 @media (max-width: 550px) {
     .hamburgerMenu {
-        display: flex;
+        display: grid;
+        height: fit-content;
+        align-items: center;
     }
 }

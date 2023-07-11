@@ -14,7 +14,7 @@ import { TNavItem } from '@/app/models/navbar/navitem'
 import Hamburger from '../menus/hamburger/Hamburger'
 import Menu from '../menus/hamburger/menu/Menu'
 
-export default function Navbar( props: TNavbar ) {
+export default function Navbar(props: TNavbar) {
   // useState for scrolled boolean value
   const [scrolled, setScrolled] = useState(false);
   const [hbgActive, setHbgActive] = useState(false); // hbg = hamburger
@@ -23,7 +23,7 @@ export default function Navbar( props: TNavbar ) {
   useEffect(() => {
     var navbar = document.getElementsByTagName('nav')[0];
     var body = document.getElementsByTagName('body')[0];
-    
+
     body.addEventListener('scroll', () => {
 
       if (document.body.scrollTop === 0) {
@@ -33,17 +33,18 @@ export default function Navbar( props: TNavbar ) {
         navbar.classList.add(styles.scrolled);
         setScrolled(true);
       }
-      
+
     });
-    
+
     // Remove the event listener when the component is unmounted
     return () => {
-      body.removeEventListener('scroll', () => {});
+      body.removeEventListener('scroll', () => { });
     };
   }, []); // The empty dependency array [] ensures that the effect runs only once on mount
 
   const toggleHbg = () => {
     setHbgActive(!hbgActive);
+
   };
 
   return (
@@ -56,7 +57,7 @@ export default function Navbar( props: TNavbar ) {
                 <a href={item.url}>{item.title}</a>
               </ol>
             )
-          }) 
+          })
         }
       </ul>
       <header className={styles.navTitle}>
@@ -64,7 +65,7 @@ export default function Navbar( props: TNavbar ) {
       </header>
       <ul className={styles.navItems}>
         {
-          props.rightNavItems.map((item: TNavItem,  index) => {
+          props.rightNavItems.map((item: TNavItem, index) => {
             return (
               <ol className={styles.navItem} key={index}>
                 <a href={item.url}>{item.title}</a>
@@ -73,8 +74,8 @@ export default function Navbar( props: TNavbar ) {
           })
         }
       </ul>
-      <Hamburger scrolled={scrolled} hbgActive={hbgActive} toggleHbg={toggleHbg}/>
-      <Menu scrolled={scrolled} hbgActive={hbgActive} navItems={props.navItems}/>
+      <Hamburger scrolled={scrolled} hbgActive={hbgActive} toggleHbg={toggleHbg} />
+      <Menu scrolled={scrolled} hbgActive={hbgActive} navItems={props.navItems} />
     </nav>
   )
 }
