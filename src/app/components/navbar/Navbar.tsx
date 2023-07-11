@@ -44,11 +44,11 @@ export default function Navbar(props: TNavbar) {
 
   const toggleHbg = () => {
     setHbgActive(!hbgActive);
-
+    
   };
 
   return (
-    <nav className={styles.nav}>
+    <nav className={`${styles.nav} ${hbgActive ? styles.active : styles.inactive}`}>
       <ul className={styles.navItems}>
         {
           props.leftNavItems.map((item: TNavItem, index) => {
