@@ -48,7 +48,7 @@ export default function Navbar(props: TNavbar) {
   };
 
   return (
-    <nav className={`${styles.nav} ${hbgActive ? styles.active : styles.inactive}`}>
+    <nav className={styles.nav}>
       <ul className={styles.navItems}>
         {
           props.leftNavItems.map((item: TNavItem, index) => {

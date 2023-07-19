@@ -2,6 +2,10 @@
     display: none;
     flex-basis: 100%;
     padding: 75% 10%;
+
+    .active {
+        display: block;
+    }
 }
 
 .menu {

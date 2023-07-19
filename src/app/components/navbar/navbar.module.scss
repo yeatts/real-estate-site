@@ -32,6 +32,8 @@
     display: grid;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    line-height: 1.5;
     font-size: 1rem;
     font-weight: 300;
     color: var(--global-text-color-light);
@@ -52,8 +54,6 @@
 @media (max-width: 630px) {
     .navTitle {
         flex: 3;
-        line-height: 1.5;
-        text-align: center;
     }
 }
 
