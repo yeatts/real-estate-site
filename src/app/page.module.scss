@@ -33,7 +33,7 @@
     text-align: center;
     color: var(--global-text-color-light);
 
-    > * {
+    >* {
       justify-content: center;
       align-items: center;
       display: flex;
@@ -75,7 +75,7 @@
 
 // bio flex container problem resolved, but I feel there is a better solution. Scroll down to bio media query for current fix.
 
-.bio { 
+.bio {
   display: flex;
   width: 100%;
   flex-direction: row;
@@ -94,7 +94,7 @@
       object-fit: cover;
     }
   }
-  
+
   .bioText {
     flex: 1 1 100%;
     display: flex;
@@ -128,7 +128,7 @@
   .bio {
     flex-direction: column;
     min-height: 200%;
-  
+
     .bioImgContainer {
       min-height: 50%;
     }

@@ -40,15 +40,14 @@ export default function Navbar(props: TNavbar) {
     return () => {
       body.removeEventListener('scroll', () => { });
     };
-  }, []); // The empty dependency array [] ensures that the effect runs only once on mount
+  }, [hbgActive]); // The empty dependency array [] ensures that the effect runs only once on mount
 
   const toggleHbg = () => {
     setHbgActive(!hbgActive);
-    
   };
 
   return (
-    <nav className={styles.nav}>
+    <nav className={`${styles.nav} ${hbgActive ? styles.active : null}`}>
       <ul className={styles.navItems}>
         {
           props.leftNavItems.map((item: TNavItem, index) => {

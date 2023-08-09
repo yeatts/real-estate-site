@@ -15,11 +15,11 @@ export default function Hamburger({scrolled, toggleHbg, hbgActive}: {scrolled: b
       menuElement ? menuElement.classList.remove(styles.scrolled) : null;
     }
 
-    if (hbgActive) {
-      menuElement ? menuElement.classList.add(styles.active) : null;
-    } else {
-      menuElement ? menuElement.classList.remove(styles.active) : null;
-    }
+    // if (hbgActive) {
+    //   menuElement ? menuElement.classList.add(styles.active) : null;
+    // } else {
+    //   menuElement ? menuElement.classList.remove(styles.active) : null;
+    // }
   }, [scrolled, hbgActive]);
 
   return (
