@@ -9,26 +9,17 @@
     // grid-area: menuList;
     height: 100%;
     width: 100%;
+    transform: rotateX(-90deg);
 
     .menu {
         width: 100%;
     }
 
     .menuItem {
-        transform: translate(800px);
-
-        &:first-child {
-            transition: transform .5s ease-in-out;
-        }
-
-        &:nth-child(2) {
-            transition: transform .75s ease-in-out;
-        }
-
-        &:last-child {
-            transition: transform 1s ease-in-out;
-        }
-
+        text-align: center;
+        color: var(--global-text-color-light);
+        font-size: 1.5rem;
+        text-transform: uppercase;
     }
 }
 
@@ -36,6 +27,8 @@
 
 .active {
     display: grid;
+    transform: rotateX(0);
+    transition: transform 1s ease 1s;
 
     .menu {
         display: grid;
@@ -45,18 +38,5 @@
         align-items: center;
         height: fit-content;
         line-height: 1.5;
-
-        .menuItem {
-            text-align: center;
-            color: var(--global-text-color-light);
-            font-size: 1.5rem;
-            text-transform: uppercase;
-            transform: translate(0);
-
-        }
-    }
-
-    .heroBody {
-        display: none;
     }
 }

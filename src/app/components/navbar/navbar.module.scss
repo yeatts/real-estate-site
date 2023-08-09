@@ -15,6 +15,7 @@
     transition: background-color 0.3s ease;
     /* Smooth transition effect */
     align-items: center;
+    perspective: 800px;
 }
 
 .scrolled {
@@ -71,12 +72,17 @@
 
 @media (max-width: 790px) {
     .nav {
-        grid-template-areas:
-            "title hamburger";
         grid-template-columns: 1fr .2fr;
         justify-items: center;
         height: 14%;
         padding: 0%;
+
+
+    }
+
+    .navTitle {
+        grid-column: 1 / -1;
+        grid-row: 1;
     }
 
     .active {
@@ -91,11 +97,6 @@
         background-color: rgba(#f9fafb, 0.5);
         backdrop-filter: blur(10px);
 
-        .navTitle {
-            // grid-area: title;
-            grid-column: 1 / -1;
-            grid-row: 1;
-        }
     }
 
     .navItems {
