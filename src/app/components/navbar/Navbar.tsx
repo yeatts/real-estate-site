@@ -21,8 +21,8 @@ export default function Navbar(props: TNavbar) {
 
   // useEffect that sets event listener on nav element
   useEffect(() => {
-    var navbar = document.getElementsByTagName('nav')[0];
-    var body = document.getElementsByTagName('body')[0];
+    const navbar = document.getElementsByTagName('nav')[0];
+    const body = document.getElementsByTagName('body')[0];
 
     body.addEventListener('scroll', () => {
 

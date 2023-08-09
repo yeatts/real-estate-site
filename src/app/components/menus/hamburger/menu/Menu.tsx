@@ -16,7 +16,6 @@ export default function Menu({scrolled, hbgActive, navItems}: {scrolled: boolean
     }
 
 
-
   }, [scrolled, hbgActive]);
 
   return (

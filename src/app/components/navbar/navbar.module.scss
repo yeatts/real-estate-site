@@ -2,7 +2,9 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas:
-        "left-items" "title" "right-items";
+        "left-items title right-items";
+    // TODO: it would be cool to base the grid cell size on how many navItems there are.
+    // currently, About and Contact share the same size grid cell as Properties does alone. Don't know if possible with CSS alone.
     grid-gap: 1%;
     width: 100%;
     height: 14%;
@@ -47,17 +49,17 @@
 
 // TODO: make corrections to media queries. 
 
-@media (max-width: 872px) {
-    .navTitle {
-        flex: 4;
-    }
-}
+// @media (max-width: 790px) {
+//     .navTitle {
+//         display: grid;
+//     }
+// }
 
-@media (max-width: 630px) {
-    .navTitle {
-        flex: 3;
-    }
-}
+// @media (max-width: 630px) {
+//     .navTitle {
+//         flex: 3;
+//     }
+// }
 
 .navItems {
     display: grid;
@@ -67,7 +69,7 @@
     align-items: center;
 }
 
-@media (max-width: 550px) {
+@media (max-width: 790px) {
     .nav {
         grid-template-areas:
             "title hamburger";
@@ -78,9 +80,10 @@
     }
 
     .active {
-        grid-template-areas:
-            "title hamburger"
-            "menuList .";
+        grid-template-areas: none;
+        //     "title hamburger"
+        //     "menuList menuList";
+        // TODO: since menuList spans both columns, but title doesn't...title and menu list do not align / title is off center of window. Decide between this and overlap.
         grid-template-columns: 1fr .2fr;
         grid-template-rows: .14fr .86fr;
         width: 100%;
@@ -89,7 +92,9 @@
         backdrop-filter: blur(10px);
 
         .navTitle {
-            grid-area: title;
+            // grid-area: title;
+            grid-column: 1 / -1;
+            grid-row: 1;
         }
     }
 
