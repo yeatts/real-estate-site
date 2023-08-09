@@ -2,14 +2,16 @@
 .buttonSecondary,
 .buttonPrimaryDark {
   height: 100%;
-  font-size: 1rem;  
+  font-size: 1rem;
   background: none;
   border: none;
   outline: none;
   cursor: pointer;
-  padding: 3% 5%;
+  padding: 3% 7%;
   display: flex;
   align-items: center;
+  min-height: 50px;
+
 }
 
 .buttonPrimary {
@@ -19,7 +21,7 @@
   &:hover {
     background-color: var(--global-secondary-color);
   }
-} 
+}
 
 .buttonSecondary {
   color: var(--global-secondary-color);
@@ -41,6 +43,7 @@
 }
 
 @media (max-width: 690px) {
+
   .buttonPrimary,
   .buttonSecondary,
   .buttonPrimaryDark {
