@@ -12,7 +12,6 @@
     background-color: transparent;
     transition: background-color 0.3s ease;
     /* Smooth transition effect */
-    border: solid blue 1px;
     align-items: center;
 }
 
@@ -45,6 +44,8 @@
 .navTitle {
     justify-content: center;
 }
+
+// TODO: make corrections to media queries. 
 
 @media (max-width: 872px) {
     .navTitle {
