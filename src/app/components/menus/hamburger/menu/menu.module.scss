@@ -4,31 +4,30 @@
     width: max-content;
     justify-items: center;
     justify-content: center;
-    grid-column: span 2;
     grid-template-columns: 1fr;
     grid-area: menuList;
+    height: 100%;
 }
+
+// TODO: locate menuContainer off screen and create CSS transition to animate action.
 
 .active {
     display: grid;
-    // background-color: rgba(#f9fafb, 0.5);
-    // backdrop-filter: blur(10px);
-    // grid-template-areas:
-    //     "title"
-    //     "menuList";
-    // grid-template-columns: 1fr;
 
     .menu {
         display: grid;
         justify-self: center;
         justify-content: center;
         align-items: center;
+        height: fit-content;
+        line-height: 1.5;
 
         .menuItem {
-            // border: solid red 1px;
             text-align: center;
             color: var(--global-text-color-light);
-            font-size: 3rem;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+
         }
     }
 

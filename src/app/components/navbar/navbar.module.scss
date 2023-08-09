@@ -5,6 +5,7 @@
         "left-items" "title" "right-items";
     grid-gap: 1%;
     width: 100%;
+    height: 14%;
     position: fixed;
     z-index: 99;
     padding: 3%;
@@ -71,26 +72,24 @@
             "title hamburger";
         grid-template-columns: 1fr .2fr;
         justify-items: center;
+        height: 14%;
+        padding: 0%;
     }
 
     .active {
         grid-template-areas:
-            "title Burger"
-            "menuList menuList";
+            "title hamburger"
+            "menuList .";
         grid-template-columns: 1fr .2fr;
+        grid-template-rows: .14fr .86fr;
         width: 100%;
         height: 100%;
         background-color: rgba(#f9fafb, 0.5);
         backdrop-filter: blur(10px);
 
-        // .navTitle {
-        //     grid-row: 1;
-        //     grid-column: 1 / -1;
-        // }
-
-        // .hamburgerMenu {
-        //     grid-column: 2;
-        // }
+        .navTitle {
+            grid-area: title;
+        }
     }
 
     .navItems {
@@ -99,7 +98,7 @@
 
     .navTitle {
         justify-content: center;
-        padding-left: 2rem;
+        white-space: nowrap;
     }
 }
 
