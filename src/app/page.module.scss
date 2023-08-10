@@ -53,37 +53,10 @@
   }
 }
 
-@media (max-width: 650px) {
-  .hero {
-    .heroBody {
-      h1 {
-        font-size: 4rem;
-      }
-    }
-  }
-}
 
-@media (max-width: 475px) {
-  .hero {
-    .heroBody {
-      h1 {
-        font-size: 3.5rem;
-      }
-    }
-  }
-}
-
-@media (max-width: 250px) {
-  .hero {
-    .heroBody {
-      h1 {
-        display: none;
-      }
-    }
-  }
-}
 
 // bio flex container problem resolved, but I feel there is a better solution. Scroll down to bio media query for current fix.
+// TODO: as viewport width decreases, it appears text wrap is pushing squeezing the elements, overriding padding and height...probably related to comment above.
 
 .bio {
   display: flex;
@@ -132,27 +105,6 @@
   }
 }
 
-// manually double the minimum height of the container, adjust childrens' height to half the container. Also note min-height for buttons added to match hero section button.
-
-@media (max-width: 850px) {
-  .bio {
-    flex-direction: column;
-    min-height: 200%;
-
-    .bioImgContainer {
-      min-height: 50%;
-    }
-
-    .bioText {
-      min-height: 50%;
-
-      button {
-        height: 6%;
-      }
-    }
-  }
-}
-
 .contact {
   display: flex;
   flex-flow: column;
@@ -189,6 +141,59 @@
       min-height: 6%;
       display: flex;
       justify-content: center;
+    }
+  }
+}
+
+// manually double the minimum height of the container, adjust childrens' height to half the container. Also note min-height for buttons added to match hero section button.
+
+@media (max-width: 850px) {
+  .bio {
+    flex-direction: column;
+    min-height: 200%;
+
+    .bioImgContainer {
+      min-height: 50%;
+    }
+
+    .bioText {
+      min-height: 50%;
+
+      button {
+        height: 6%;
+      }
+    }
+  }
+}
+
+// TODO: consider using CSS auto-fit properties to get rid of the font-size-only media queries.
+
+@media (max-width: 650px) {
+  .hero {
+    .heroBody {
+      h1 {
+        font-size: 4rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 475px) {
+  .hero {
+    .heroBody {
+      h1 {
+        font-size: 3.5rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 250px) {
+  .hero {
+    .heroBody {
+      h1 {
+        display: none;
+      }
     }
   }
 }

@@ -1,21 +1,23 @@
 .nav {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: .14fr .86fr;
-
+    grid-template-rows: 1fr 0fr;
+    grid-gap: 10px;
     grid-template-areas:
         "left-items title right-items";
     // TODO: it would be cool to base the grid cell size on how many navItems there are.
     // currently, About and Contact share the same size grid cell as Properties does alone. Don't know if possible with CSS alone.
     grid-gap: 1%;
     width: 100%;
-    height: 100%; // TODO: added this as fix for menu transition, but causes bug at navbar scroll...whole viewport is blurred instead of top bar.
+    height: 14%;
     position: fixed;
     z-index: 99;
-    padding: 3%;
+    padding: 2%;
     background-color: transparent;
     transition: background-color 0.3s ease;
     /* Smooth transition effect */
+    justify-content: center;
+    // align-content: center;
     align-items: center;
     perspective: 800px;
 }
@@ -30,10 +32,13 @@
         color: var(--global-text-color-dark);
         font-weight: 500;
     }
+
+    // text-shadow effect not used on scroll, because BDJ did not like look of the dark glow on white / blurred background.
 }
 
 .navTitle,
 .navItem {
+    cursor: pointer;
     display: grid;
     justify-content: center;
     align-items: center;
@@ -50,6 +55,7 @@
 .navTitle {
     justify-content: center;
     font-size: 1.25rem;
+    text-shadow: 0 0 1px var(--global-text-color-light); // makes slightly brighter than navItems.
 }
 
 .navItem {
@@ -65,14 +71,25 @@
     align-items: center;
 }
 
+
+@media (max-width: 870px) {
+    .navTitle {
+        font-size: 1rem;
+    }
+}
+
 @media (max-width: 790px) {
+
+    // navTitle and hamburgerMenu are sitting too close to top edge. BDJ - maybe fix by having the 1st row be full height;
     .nav {
         grid-template-columns: 1fr .2fr;
-        justify-items: center;
+        grid-template-areas: none;
+        grid-template-rows: .14fr .86fr;
         height: 100%;
-        padding: 0%;
+    }
 
-
+    .navItems {
+        display: none;
     }
 
     .navTitle {
@@ -81,11 +98,8 @@
         justify-content: center;
     }
 
+    // when height goes to 100%
     .active {
-        grid-template-areas: none;
-        //     "title hamburger"
-        //     "menuList menuList";
-        // TODO: since menuList spans both columns, but title doesn't...title and menu list do not align / title is off center of window. Decide between this and overlap.
         grid-template-columns: 1fr .2fr;
         width: 100%;
         height: 100%;
@@ -93,15 +107,7 @@
         backdrop-filter: blur(10px);
     }
 
-    .navItems {
-        display: none;
-    }
-}
 
-@media (max-width: 450px) {
-    .navTitle {
-        font-size: 1rem;
-    }
 }
 
 @media (max-width: 350px) {
