@@ -1,13 +1,15 @@
 .nav {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: .14fr .86fr;
+
     grid-template-areas:
         "left-items title right-items";
     // TODO: it would be cool to base the grid cell size on how many navItems there are.
     // currently, About and Contact share the same size grid cell as Properties does alone. Don't know if possible with CSS alone.
     grid-gap: 1%;
     width: 100%;
-    height: 14%;
+    height: 100%; // TODO: added this as fix for menu transition, but causes bug at navbar scroll...whole viewport is blurred instead of top bar.
     position: fixed;
     z-index: 99;
     padding: 3%;
@@ -42,25 +44,18 @@
     color: var(--global-text-color-light);
     letter-spacing: 0.2rem;
     text-transform: uppercase;
+    width: 100%;
 }
 
 .navTitle {
     justify-content: center;
+    font-size: 1.25rem;
 }
 
-// TODO: make corrections to media queries. 
-
-// @media (max-width: 790px) {
-//     .navTitle {
-//         display: grid;
-//     }
-// }
-
-// @media (max-width: 630px) {
-//     .navTitle {
-//         flex: 3;
-//     }
-// }
+.navItem {
+    list-style: none;
+    text-decoration: none;
+}
 
 .navItems {
     display: grid;
@@ -74,7 +69,7 @@
     .nav {
         grid-template-columns: 1fr .2fr;
         justify-items: center;
-        height: 14%;
+        height: 100%;
         padding: 0%;
 
 
@@ -83,6 +78,7 @@
     .navTitle {
         grid-column: 1 / -1;
         grid-row: 1;
+        justify-content: center;
     }
 
     .active {
@@ -91,25 +87,32 @@
         //     "menuList menuList";
         // TODO: since menuList spans both columns, but title doesn't...title and menu list do not align / title is off center of window. Decide between this and overlap.
         grid-template-columns: 1fr .2fr;
-        grid-template-rows: .14fr .86fr;
         width: 100%;
         height: 100%;
         background-color: rgba(#f9fafb, 0.5);
         backdrop-filter: blur(10px);
-
     }
 
     .navItems {
         display: none;
     }
+}
 
+@media (max-width: 450px) {
     .navTitle {
-        justify-content: center;
-        white-space: nowrap;
+        font-size: 1rem;
     }
 }
 
-.navItem {
-    list-style: none;
-    text-decoration: none;
+@media (max-width: 350px) {
+    .navTitle {
+        width: min-content;
+
+    }
+}
+
+@media (max-width: 250px) {
+    .navTitle {
+        display: none;
+    }
 }

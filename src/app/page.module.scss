@@ -73,6 +73,16 @@
   }
 }
 
+@media (max-width: 250px) {
+  .hero {
+    .heroBody {
+      h1 {
+        display: none;
+      }
+    }
+  }
+}
+
 // bio flex container problem resolved, but I feel there is a better solution. Scroll down to bio media query for current fix.
 
 .bio {

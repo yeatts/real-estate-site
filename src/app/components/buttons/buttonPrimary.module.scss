@@ -8,10 +8,22 @@
   outline: none;
   cursor: pointer;
   padding: 3% 7%;
-  display: flex;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-rows: 1fr;
+  grid-template-columns: fit-content auto;
+  justify-content: center;
   align-items: center;
   min-height: 50px;
+  min-width: 75px;
 
+  span {
+    grid-column: 1 / 1;
+  }
+
+  svg {
+    grid-column: 2 / 2;
+  }
 }
 
 .buttonPrimary {
@@ -48,5 +60,20 @@
   .buttonSecondary,
   .buttonPrimaryDark {
     padding: 0 10%;
+  }
+}
+
+@media (max-width: 250px) {
+
+  .buttonPrimary,
+  .buttonSecondary,
+  .buttonPrimaryDark {
+    span {
+      display: none;
+    }
+
+    svg {
+      grid-column: 1 / -1;
+    }
   }
 }

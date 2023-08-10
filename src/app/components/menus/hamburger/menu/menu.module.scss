@@ -1,15 +1,20 @@
 .menuContainer {
-    display: none;
+    display: grid;
     padding: 0% 10%;
     width: max-content;
     justify-items: center;
     justify-content: center;
     grid-template-columns: 1fr;
     grid-column: 1 / -1;
-    // grid-area: menuList;
     height: 100%;
     width: 100%;
-    transform: rotateX(-90deg);
+    transform-origin: top;
+    opacity: 0%;
+    transform: rotateX(-100deg);
+    transition:
+        transform .1s ease,
+        opacity .025s;
+    // transition: opacity .025s cubic-bezier(.05, .05, .05, .05) .05s;
 
     .menu {
         width: 100%;
@@ -23,12 +28,16 @@
     }
 }
 
-// TODO: locate menuContainer off screen and create CSS transition to animate action.
 
 .active {
-    display: grid;
-    transform: rotateX(0);
-    transition: transform 1s ease 1s;
+    &.menuContainer {
+        transition:
+            transform .1s ease,
+            opacity .025s;
+        transform: rotateX(0deg);
+        transform: translateY(20px);
+        opacity: 100%;
+    }
 
     .menu {
         display: grid;
