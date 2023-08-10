@@ -10,23 +10,26 @@
     height: 100%;
     width: 100%;
     transform-origin: top;
-    opacity: 0%;
+    visibility: hidden;
     transform: rotateX(-100deg);
     transition:
         transform .1s ease,
-        opacity .025s;
-    // transition: opacity .025s cubic-bezier(.05, .05, .05, .05) .05s;
+        visibility .025s;
 
     .menu {
         width: 100%;
     }
 
     .menuItem {
+        width: 100%;
         text-align: center;
         color: var(--global-text-color-light);
         font-size: 1.5rem;
         text-transform: uppercase;
     }
+
+    // TODO: make menuItem anchor tags full width of viewport for easier user interaction.
+
 }
 
 
@@ -37,7 +40,7 @@
             opacity .025s;
         transform: rotateX(0deg);
         transform: translateY(20px);
-        opacity: 100%;
+        visibility: visible;
     }
 
     .menu {

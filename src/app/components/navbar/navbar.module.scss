@@ -9,7 +9,7 @@
     // currently, About and Contact share the same size grid cell as Properties does alone. Don't know if possible with CSS alone.
     grid-gap: 1%;
     width: 100%;
-    height: 14%;
+    height: 14vh;
     position: fixed;
     z-index: 99;
     padding: 2%;
@@ -55,7 +55,7 @@
 .navTitle {
     justify-content: center;
     font-size: 1.25rem;
-    text-shadow: 0 0 1px var(--global-text-color-light); // makes slightly brighter than navItems.
+    text-shadow: 0 0 1px var(--global-text-color-light); // this effect makes navTitle slightly brighter than navItems.
 }
 
 .navItem {
@@ -80,12 +80,10 @@
 
 @media (max-width: 790px) {
 
-    // navTitle and hamburgerMenu are sitting too close to top edge. BDJ - maybe fix by having the 1st row be full height;
     .nav {
         grid-template-columns: 1fr .2fr;
         grid-template-areas: none;
-        grid-template-rows: .14fr .86fr;
-        height: 100%;
+        grid-template-rows: 10vh 0vh;
     }
 
     .navItems {
@@ -98,11 +96,11 @@
         justify-content: center;
     }
 
-    // when height goes to 100%
     .active {
         grid-template-columns: 1fr .2fr;
+        grid-template-rows: 14vh auto;
         width: 100%;
-        height: 100%;
+        height: 100%; // TODO: nav shifts a little when menu is toggled. consider figuring this out...probably height to 100% causing the issue
         background-color: rgba(#f9fafb, 0.5);
         backdrop-filter: blur(10px);
     }
