@@ -56,7 +56,8 @@
 
 
 // bio flex container problem resolved, but I feel there is a better solution. Scroll down to bio media query for current fix.
-// TODO: as viewport width decreases, it appears text wrap is pushing squeezing the elements, overriding padding and height...probably related to comment above.
+// TODO: at 663px viewport width (desktop), it appears text wrap is squeezing the elements, overriding padding and height, and overflowing / cropping content...probably related to comment above. fix.
+// TODO: at 393px viewport width (responsive), it appears text wrap is squeezing the elements, overriding padding and height, and overflowing / cropping content...probably related to comment above. fix.
 
 .bio {
   display: flex;
@@ -187,6 +188,8 @@
     }
   }
 }
+
+// 
 
 @media (max-width: 250px) {
   .hero {

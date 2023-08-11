@@ -17,7 +17,8 @@
     transition: background-color 0.3s ease;
     /* Smooth transition effect */
     justify-content: center;
-    // align-content: center;
+    justify-items: center;
+    align-content: center;
     align-items: center;
     perspective: 800px;
 }
@@ -103,16 +104,18 @@
         height: 100%; // TODO: nav shifts a little when menu is toggled. consider figuring this out...probably height to 100% causing the issue
         background-color: rgba(#f9fafb, 0.5);
         backdrop-filter: blur(10px);
+        align-content: start;
     }
 
 
 }
 
-@media (max-width: 350px) {
+@media (max-width: 375px) {
     .navTitle {
         width: min-content;
-
     }
+
+    //TODO: navTitle is wrapping at 350px, but the text is aligning left. fix to center.
 }
 
 @media (max-width: 250px) {
