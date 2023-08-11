@@ -1,18 +1,18 @@
 .nav {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 0fr;
+    grid-template-rows: 1fr 0rem;
     grid-gap: 10px;
     grid-template-areas:
         "left-items title right-items";
     // TODO: it would be cool to base the grid cell size on how many navItems there are.
     // currently, About and Contact share the same size grid cell as Properties does alone. Don't know if possible with CSS alone.
-    grid-gap: 1%;
+    grid-gap: .5rem;
     width: 100%;
-    height: 14vh;
+    // height: 14vh;
     position: fixed;
     z-index: 99;
-    padding: 2%;
+    padding: 1rem;
     background-color: transparent;
     transition: background-color 0.3s ease;
     /* Smooth transition effect */
@@ -20,7 +20,7 @@
     justify-items: center;
     align-content: center;
     align-items: center;
-    perspective: 800px;
+    perspective: 800rem;
 }
 
 .scrolled {
