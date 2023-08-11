@@ -52,9 +52,7 @@ export default function Home() {
           </div>
           <aside className={styles.bioText}>
             <h1>Quise Gives You The Keys 🔑</h1>
-            <br />
             <p> As a Marine Corps veteran, Mar[quise] is a real estate agent who understands the value of hard work and dedication. He is passionate about helping his clients find the perfect home and making the buying or selling process as smooth as possible. With his sharp negotiating skills and knowledge of the local market, Quise is a valuable asset to anyone looking to buy or sell real estate. He is committed to providing exceptional service and building lasting relationships with his clients. Let Quise help you achieve your real estate goals with his expertise and professionalism. </p>
-            <br />
             <ButtonPrimary buttonText="Get To Know Quise" />
           </aside>
         </section>
@@ -67,21 +65,21 @@ export default function Home() {
               <CalendlyPopup/>
             </div>
           </div>
-        </section>
+        </section >
         {/* testimonials section */}
-        <section>
+        <section className={styles.unused}>
 
         </section>
         {/* listings section */}
-        <section>
+        <section className={styles.unused}>
 
         </section>
         {/* social media section */}
-        <section>
+        <section className={styles.unused}>
 
         </section>
         {/* footer */}
-        <footer>
+        <footer className={styles.unused}>
 
         </footer>
       </main>

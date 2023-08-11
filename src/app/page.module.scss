@@ -1,168 +1,176 @@
-// TODO: consider making hero bio contact globals. more reusable and dry.
+// TODO: (optional exercise / for fun) use intersection observers to set up animations as you scroll the page.
 
 .main {
+  align-items: start;
   display: grid;
   grid-template-areas:
     "hero"
     "bio"
     "contact";
+  // TODO: investigate ways to make gta more dynamic. Right now, new sections would need to be manually added. If not added, it will probably look fine (grid-auto-flow default will wrap new elements to next row.)
   grid-template-columns: 100%;
   grid-template-rows: auto;
-  justify-content: center;
-  align-items: start;
   height: fit-content;
+  justify-content: center;
   width: 100%;
-
-  // pulled these out of each section, but is having side effects with navbar.
-
-  >* {
-    display: grid;
-    width: 100vw;
-    height: 100vh;
-    justify-content: center;
-    align-content: center;
-    justify-items: center;
-    align-items: center;
-  }
-
 }
+
+// Default Properties for main sections //
+section {
+  align-content: center;
+  align-items: center;
+  display: grid;
+  height: 100vh;
+  justify-content: center;
+  justify-items: center;
+  position: relative;
+  width: 100vw;
+}
+
+// Hero: Section 1 //
 
 .hero {
   grid-area: hero;
-  position: relative;
-  display: grid;
 
   .heroImage {
+    filter: brightness(40%);
+    height: 100%;
     object-fit: cover;
     width: 100%;
-    height: 100%;
-    filter: brightness(40%);
     z-index: 0;
   }
 
   .heroBody {
-    z-index: 1;
+    align-content: center;
+    align-items: center;
+    color: var(--global-text-color-light);
     display: grid;
+    font-size: 3rem;
     grid-template-columns: 100%;
-    grid-gap: 2rem;
-    position: absolute;
-    width: 100%;
+    grid-gap: var(--global-grid-gap-default);
     height: 100%;
     justify-content: center;
-    align-content: center;
     justify-items: center;
-    align-items: center;
-    font-size: 3rem;
+    position: absolute;
     text-align: center;
-    color: var(--global-text-color-light);
+    width: 100%;
+    z-index: 1;
 
     h1 {
+      color: var(--global-secondary-color);
       font-size: 5rem;
       font-weight: 300;
     }
 
     .heroButtonGroup {
-      justify-content: space-around;
+      width: 100%;
     }
   }
 }
 
-
-
-// bio flex container problem resolved, but I feel there is a better solution. Scroll down to bio media query for current fix.
-// TODO: at 663px viewport width (desktop), it appears text wrap is squeezing the elements, overriding padding and height, and overflowing / cropping content...probably related to comment above. fix.
-// TODO: at 393px viewport width (responsive), it appears text wrap is squeezing the elements, overriding padding and height, and overflowing / cropping content...probably related to comment above. fix.
+// Bio: Section 2 //
 
 .bio {
-  grid-area: bio;
   background-color: var(--global-secondary-color);
-  position: relative;
+  grid-area: bio;
   grid-template-columns: 1fr 1fr;
+  height: fit-content;
 
   .bioImgContainer {
     height: 100%;
-    width: 100%;
     position: relative;
+    width: 100%;
 
     .bioImage {
-      position: relative;
-      object-fit: cover;
       height: 100%;
+      object-fit: cover;
+      position: relative;
       width: 100%;
     }
   }
 
   .bioText {
-    height: 100%;
-    width: 100%;
-    position: relative;
-    // flex-direction: column;
-    justify-content: center;
+    align-content: center;
     align-items: center;
-    padding: 10% 5%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-gap: var(--global-grid-gap-default);
+    height: 100%;
+    justify-content: center;
+    justify-items: center;
+    padding: 4rem 2rem;
+    position: relative;
+    width: 100%;
 
     h1 {
       font-size: 3rem;
-      margin-bottom: 5%;
       font-weight: 300;
       text-align: center;
     }
 
     p {
-      font-size: 1.5rem;
-      text-align: center;
       font-size: 1rem;
       letter-spacing: 1px;
       line-height: 1.5;
-      margin-bottom: 5%;
+      text-align: center;
     }
   }
 }
 
+// Contact: Section 3 //
+
 .contact {
-  min-height: 100%;
-  width: 100%;
-  position: relative;
+  grid-area: contact;
 
   .contactBgImg {
-    object-fit: cover;
     filter: brightness(80%);
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
     z-index: 0;
   }
 
   .contactBody {
-    z-index: 1;
-    height: 100%;
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    justify-content: center;
+    align-content: center;
     align-items: center;
-    padding: 10% 5%;
+    color: var(--global-text-color-light);
+    display: grid;
+    grid-template-columns: 100%;
+    grid-gap: var(--global-grid-gap-default);
+    height: 100%;
+    justify-content: center;
+    justify-items: center;
+    position: absolute; // TODO: (optional) button width shifted when I changed this from relative. investigate.
+    padding: 4rem 4rem;
+    text-align: center;
+    width: 100%;
+    z-index: 1;
 
     h1 {
+      color: var(--global-secondary-color);
       font-size: 4rem;
-      margin-bottom: 5%;
       font-weight: 300;
       text-align: center;
-      color: var(--global-secondary-color)
     }
 
     .contactButtonGroup {
-      min-width: 50%;
+      display: grid;
       min-height: 6%;
-      display: flex;
+      width: 100%;
       justify-content: center;
     }
   }
 }
 
+.unused {
+  display: none;
+}
+
+
 // manually double the minimum height of the container, adjust childrens' height to half the container. Also note min-height for buttons added to match hero section button.
 
 @media (max-width: 850px) {
   .bio {
-    flex-direction: column;
-    min-height: 200%;
 
     .bioImgContainer {
       min-height: 50%;
