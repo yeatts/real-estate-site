@@ -18,9 +18,9 @@ a {
 }
 
 :root {
-  width: 100%;
-  height: 100vh;
-  display: flex;
+  // width: 100%;        note: width and height are not inherited.
+  // height: 100%;
+  display: grid;
 
   // global vars here
   --global-primary-color: #bbd5d8;

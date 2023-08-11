@@ -2,14 +2,14 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 0rem;
-    grid-gap: 10px;
+    grid-gap: 1rem;
     grid-template-areas:
         "left-items title right-items";
     // TODO: it would be cool to base the grid cell size on how many navItems there are.
     // currently, About and Contact share the same size grid cell as Properties does alone. Don't know if possible with CSS alone.
     grid-gap: .5rem;
     width: 100%;
-    // height: 14vh;
+    height: 5rem;
     position: fixed;
     z-index: 99;
     padding: 1rem;
@@ -21,20 +21,6 @@
     align-content: center;
     align-items: center;
     perspective: 800rem;
-}
-
-.scrolled {
-    background-color: rgba(#f9fafb, 0.5);
-    backdrop-filter: blur(10px);
-    /* Adjust the blur radius as needed */
-
-    >.navTitle,
-    .navItem {
-        color: var(--global-text-color-dark);
-        font-weight: 500;
-    }
-
-    // text-shadow effect not used on scroll, because BDJ did not like look of the dark glow on white / blurred background.
 }
 
 .navTitle,
@@ -66,12 +52,30 @@
 
 .navItems {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    grid-gap: 1%;
+    grid-gap: 2rem;
+    grid-auto-flow: column;
     justify-content: center;
     align-items: center;
 }
 
+// Dynamic Styles //
+
+.scrolled {
+    background-color: rgba(#f9fafb, 0.5);
+    backdrop-filter: blur(10px);
+    /* Adjust the blur radius as needed */
+
+    >.navTitle,
+    .navItem {
+        color: var(--global-text-color-dark);
+        font-weight: 500;
+    }
+
+    // text-shadow effect not used on scroll, because BDJ did not like look of the dark glow on white / blurred background.
+}
+
+
+// Media Queries //
 
 @media (max-width: 870px) {
     .navTitle {

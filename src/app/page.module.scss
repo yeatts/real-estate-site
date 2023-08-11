@@ -1,21 +1,38 @@
+// TODO: consider making hero bio contact globals. more reusable and dry.
+
 .main {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  height: 100%;
+  display: grid;
+  grid-template-areas:
+    "hero"
+    "bio"
+    "contact";
+  grid-template-columns: 100%;
+  grid-template-rows: 60rem;
+  // flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  height: max-content;
   width: 100%;
+
+  // pulled these out of each section, but is having side effects with navbar.
+
+  >* {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+  }
+
 }
 
 .hero {
-  display: flex;
-  flex-flow: column;
-  min-height: 100%;
-  width: 100%;
+  grid-area: hero;
+
   position: relative;
 
   .heroImage {
     object-fit: cover;
+    width: 100%;
+    height: 100%;
     filter: brightness(40%);
     z-index: 0;
   }
@@ -60,7 +77,7 @@
 // TODO: at 393px viewport width (responsive), it appears text wrap is squeezing the elements, overriding padding and height, and overflowing / cropping content...probably related to comment above. fix.
 
 .bio {
-  display: flex;
+  grid-area: bio;
   width: 100%;
   flex-direction: row;
   justify-content: center;
@@ -107,8 +124,6 @@
 }
 
 .contact {
-  display: flex;
-  flex-flow: column;
   min-height: 100%;
   width: 100%;
   position: relative;
