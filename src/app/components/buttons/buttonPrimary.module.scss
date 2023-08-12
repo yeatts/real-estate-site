@@ -10,11 +10,10 @@
   border: none;
   outline: none;
   cursor: pointer;
-  padding: 3% 10%;
+  padding: .5rem 1.5rem;
   display: grid;
   grid-gap: 10px;
   grid-template-rows: 1fr;
-  grid-template-columns: fit-content auto;
   justify-content: center;
   align-content: center;
   align-items: center;

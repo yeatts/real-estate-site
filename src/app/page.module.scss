@@ -1,3 +1,4 @@
+// TODO: Image type is causing issues with styling overrides. Documentation directs to style in-line, but having type issues trying to do it that way. Need to dig in further...https://nextjs.org/docs/pages/api-reference/components/image#style
 // TODO: (optional exercise / for fun) use intersection observers to set up animations as you scroll the page.
 
 .main {
@@ -15,7 +16,7 @@
   width: 100%;
 }
 
-// Default Properties for main sections //
+// Default Properties for main section elements //
 section {
   align-content: center;
   align-items: center;
@@ -36,7 +37,6 @@ section {
     filter: brightness(40%);
     height: 100%;
     object-fit: cover;
-    width: 100%;
     z-index: 0;
   }
 
@@ -62,7 +62,12 @@ section {
     }
 
     .heroButtonGroup {
+      align-content: center;
+      align-items: center;
+      display: grid;
       width: 100%;
+      justify-content: center;
+      justify-items: center;
     }
   }
 }
@@ -72,19 +77,18 @@ section {
 .bio {
   background-color: var(--global-secondary-color);
   grid-area: bio;
-  grid-template-columns: 1fr 1fr;
-  height: fit-content;
+  // grid-template-columns: 1fr 1fr; // TODO: replacing this with auto-fit / minmax combo should allow us to eliminate the media query at 850px
+  grid-template-columns: repeat(auto-fit, minmax(calc(var(--media-query-default-850px) / 2), 1fr));
 
   .bioImgContainer {
-    height: 100%;
+    object-fit: cover;
     position: relative;
     width: 100%;
 
     .bioImage {
-      height: 100%;
+      height: 20rem;
       object-fit: cover;
       position: relative;
-      width: 100%;
     }
   }
 
@@ -125,7 +129,6 @@ section {
     filter: brightness(80%);
     height: 100%;
     object-fit: cover;
-    width: 100%;
     z-index: 0;
   }
 
@@ -139,7 +142,7 @@ section {
     height: 100%;
     justify-content: center;
     justify-items: center;
-    position: absolute; // TODO: (optional) button width shifted when I changed this from relative. investigate.
+    position: absolute;
     padding: 4rem 4rem;
     text-align: center;
     width: 100%;
@@ -153,10 +156,12 @@ section {
     }
 
     .contactButtonGroup {
+      align-content: center;
+      align-items: center;
       display: grid;
-      min-height: 6%;
       width: 100%;
       justify-content: center;
+      justify-items: center;
     }
   }
 }
@@ -166,9 +171,9 @@ section {
 }
 
 
-// manually double the minimum height of the container, adjust childrens' height to half the container. Also note min-height for buttons added to match hero section button.
+// manually double the minimum height of the container, adjust childrens' height to half the container.
 
-@media (max-width: 850px) {
+@media (max-width: var(--media-query-default-850px)) {
   .bio {
 
     .bioImgContainer {
@@ -177,10 +182,6 @@ section {
 
     .bioText {
       min-height: 50%;
-
-      button {
-        height: 6%;
-      }
     }
   }
 }
