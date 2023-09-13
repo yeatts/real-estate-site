@@ -7,14 +7,6 @@
   width: 100%;
 }
 
-.header {
-  position: fixed;
-  min-height: 8%;
-  width: 100%;
-  display: flex;
-  z-index: 99;
-}
-
 .hero {
   display: flex;
   flex-flow: column;
@@ -41,7 +33,7 @@
     text-align: center;
     color: var(--global-text-color-light);
 
-    > * {
+    >* {
       justify-content: center;
       align-items: center;
       display: flex;
@@ -61,29 +53,13 @@
   }
 }
 
-@media (max-width: 650px) {
-  .hero {
-    .heroBody {
-      h1 {
-        font-size: 4rem;
-      }
-    }
-  }
-}
 
-@media (max-width: 475px) {
-  .hero {
-    .heroBody {
-      h1 {
-        font-size: 3.5rem;
-      }
-    }
-  }
-}
 
 // bio flex container problem resolved, but I feel there is a better solution. Scroll down to bio media query for current fix.
+// TODO: at 663px viewport width (desktop), it appears text wrap is squeezing the elements, overriding padding and height, and overflowing / cropping content...probably related to comment above. fix.
+// TODO: at 393px viewport width (responsive), it appears text wrap is squeezing the elements, overriding padding and height, and overflowing / cropping content...probably related to comment above. fix.
 
-.bio { 
+.bio {
   display: flex;
   width: 100%;
   flex-direction: row;
@@ -102,7 +78,7 @@
       object-fit: cover;
     }
   }
-  
+
   .bioText {
     flex: 1 1 100%;
     display: flex;
@@ -126,27 +102,6 @@
       letter-spacing: 1px;
       line-height: 1.5;
       margin-bottom: 5%;
-    }
-  }
-}
-
-// manually double the minimum height of the container, adjust childrens' height to half the container. Also note min-height for buttons added to match hero section button.
-
-@media (max-width: 850px) {
-  .bio {
-    flex-direction: column;
-    min-height: 200%;
-  
-    .bioImgContainer {
-      min-height: 50%;
-    }
-
-    .bioText {
-      min-height: 50%;
-
-      button {
-        height: 6%;
-      }
     }
   }
 }
@@ -187,6 +142,61 @@
       min-height: 6%;
       display: flex;
       justify-content: center;
+    }
+  }
+}
+
+// manually double the minimum height of the container, adjust childrens' height to half the container. Also note min-height for buttons added to match hero section button.
+
+@media (max-width: 850px) {
+  .bio {
+    flex-direction: column;
+    min-height: 200%;
+
+    .bioImgContainer {
+      min-height: 50%;
+    }
+
+    .bioText {
+      min-height: 50%;
+
+      button {
+        height: 6%;
+      }
+    }
+  }
+}
+
+// TODO: consider using CSS auto-fit properties to get rid of the font-size-only media queries.
+
+@media (max-width: 650px) {
+  .hero {
+    .heroBody {
+      h1 {
+        font-size: 4rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 475px) {
+  .hero {
+    .heroBody {
+      h1 {
+        font-size: 3.5rem;
+      }
+    }
+  }
+}
+
+// 
+
+@media (max-width: 250px) {
+  .hero {
+    .heroBody {
+      h1 {
+        display: none;
+      }
     }
   }
 }

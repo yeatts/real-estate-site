@@ -1,49 +1,54 @@
-// use file to link content to components.
 import NavItem, { TNavItem } from './navitem';
 
 export type TNavbar = {
   navDisplayName: string,
-  navItems?: TNavItem[], 
+  navItems: TNavItem[], 
   leftNavItems: TNavItem[],
   rightNavItems: TNavItem[]
 }
 
 export default class Navbar {
-  public navbar: TNavbar;
+  private navbar: TNavbar;
 
   constructor(navbar: TNavbar) {
-    navbar.navItems === undefined || navbar.navItems === null ? NavItem.builder().build().navItem : navbar.navItems
     this.navbar = navbar; 
   }
   
   public get navDisplayName(): string {
-    return this.navbar.navDisplayName
+    return this.navbar.navDisplayName;
   }
   
-  public get navbarItems(): TNavItem[] {
-    return this.navbar.navItems!
+  public get navItems(): TNavItem[] {
+    // we have to do this return bc of this warning in the console:
+    // Only plain objects can be passed to Client Components from Server Components. Classes or other objects with methods are not supported.
+    return this.navbar.navItems.map((item): TNavItem => {
+      return {
+        url: item.url,
+        title: item.title
+        };
+    });
   }
 
   public get leftNavItems(): TNavItem[] {
-    const itemCount = this.navbar.navItems!.length
-    this.navbar.leftNavItems = this.navbar.navItems!.slice(0, Math.floor(itemCount / 2)).map((item): TNavItem => {
+    const itemCount = this.navbar.navItems.length;
+    this.navbar.leftNavItems = this.navbar.navItems.slice(0, Math.floor(itemCount / 2)).map((item): TNavItem => {
       return {
         url: item.url,
         title: item.title
-      }
-    })
-    return this.navbar.leftNavItems
+      };
+    });
+    return this.navbar.leftNavItems;
   }
 
   public get rightNavItems(): TNavItem[] {
-    const itemCount = this.navbar.navItems!.length
-    this.navbar.rightNavItems = this.navbar.navItems!.slice(Math.floor(itemCount / 2), itemCount).map((item): TNavItem => {
+    const itemCount = this.navbar.navItems.length;
+    this.navbar.rightNavItems = this.navbar.navItems.slice(Math.floor(itemCount / 2), itemCount).map((item): TNavItem => {
       return {
         url: item.url,
         title: item.title
-      }
-    })
-    return this.navbar.rightNavItems
+      };
+    });
+    return this.navbar.rightNavItems;
   }
   
   public static builder(): NavbarBuilder {
@@ -52,15 +57,15 @@ export default class Navbar {
 }
 
 export class NavbarBuilder {
-  public navbar: TNavbar;
+  private navbar: TNavbar;
 
   constructor() {
     this.navbar = {
       navDisplayName: '',
-      navItems: [],
+      navItems: [], // Initialize with an empty array
       leftNavItems: [],
       rightNavItems: []
-    }
+    };
   }
 
   public withNavDisplayName(navDisplayName: string): NavbarBuilder {
@@ -92,10 +97,10 @@ export class NavbarBuilder {
         url: '/contact-form',
         title: 'Contact'
       }),
-    ]
+    ];
 
     return this;
-  };
+  }
           
   public build(): Navbar {
     return new Navbar(this.navbar);

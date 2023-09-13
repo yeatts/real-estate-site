@@ -36,7 +36,7 @@ export class NavItemBuilder {
 
     constructor() {
         this.navItem = {
-            url: "",
+            url: "#",
             title: ""
         }
     }

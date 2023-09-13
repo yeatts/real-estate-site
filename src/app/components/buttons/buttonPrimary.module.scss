@@ -2,14 +2,29 @@
 .buttonSecondary,
 .buttonPrimaryDark {
   height: 100%;
-  font-size: 1rem;  
+  font-size: 1rem;
   background: none;
   border: none;
   outline: none;
   cursor: pointer;
-  padding: 3% 5%;
-  display: flex;
+  padding: 3% 10%;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-rows: 1fr;
+  grid-template-columns: fit-content auto;
+  justify-content: center;
+  align-content: center;
   align-items: center;
+  min-height: 50px;
+  min-width: 75px;
+
+  span {
+    grid-column: 1 / 1;
+  }
+
+  svg {
+    grid-column: 2 / 2;
+  }
 }
 
 .buttonPrimary {
@@ -19,7 +34,7 @@
   &:hover {
     background-color: var(--global-secondary-color);
   }
-} 
+}
 
 .buttonSecondary {
   color: var(--global-secondary-color);
@@ -40,10 +55,17 @@
   }
 }
 
-@media (max-width: 690px) {
+@media (max-width: 250px) {
+
   .buttonPrimary,
   .buttonSecondary,
   .buttonPrimaryDark {
-    padding: 0 10%;
+    span {
+      display: none;
+    }
+
+    svg {
+      grid-column: 1 / -1;
+    }
   }
 }

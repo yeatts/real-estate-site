@@ -1,28 +1,63 @@
 .hamburgerMenu {
     display: none;
-    flex-direction: column;
-    align-items: flex-end;
+    // grid-area: hamburger;
+    grid-column: 2;
+    grid-row: 1;
     justify-content: center;
-    width: 15%;
+    width: fit-content;
+    height: fit-content;
     align-items: center;
-}
-  
-.hamburgerCheckbox {
-    display: none;
 }
 
 .hamburgerIcon {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 5px;
     justify-content: space-between;
-    width: 30px;
-    height: 20px;
+    align-items: center;
+    min-width: 30px;
+    height: fit-content;
     cursor: pointer;
-    margin-bottom: 5px;
 
+    >* {
+        transition: transform 0.25s;
+    }
+
+    :nth-child(2) {
+        visibility: visible;
+        transition: visibility .2s linear .2s;
+    }
+}
+
+.active {
+    .hamburgerMenu {
+        height: 400px;
+    }
+
+
+
+    .hamburgerIcon {
+        height: fit-content;
+        width: fit-content;
+
+        :first-child {
+            transform: translate(0, 8px) rotate(45deg);
+
+        }
+
+        :nth-child(2) {
+            visibility: hidden;
+            transition: visibility 0s ease-out;
+        }
+
+        :last-child {
+            transform: translate(0, -8px) rotate(-45deg);
+        }
+    }
 }
 
 .scrolled {
+
     .hamburgerLine {
         background-color: var(--global-text-color-dark);
     }
@@ -34,24 +69,23 @@
     background-color: var(--global-text-color-light);
 }
 
-.menu {
-    display: none;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
+// TODO: should menu and menuItem be here? Could be scope creep.
 
-.menuItem {
-    padding: 10px;
-    cursor: pointer;
-}
 
-.hamburgerCheckbox:checked ~ .menu {
-    display: block;
-}
-  
-@media (max-width: 550px) {
+// TODO: make media query values variables. 
+@media (max-width: 790px) {
     .hamburgerMenu {
-        display: flex;
+        display: grid;
+        height: fit-content;
+        justify-self: center;
+        align-items: center;
+        grid-column: 2;
+        grid-row: 1;
+    }
+}
+
+@media (max-width: 250px) {
+    .hamburgerMenu {
+        grid-column: 1 / -1;
     }
 }

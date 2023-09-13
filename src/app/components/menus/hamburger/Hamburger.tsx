@@ -2,10 +2,9 @@
 
 import { useEffect, useState } from 'react';
 import styles from './hamburger.module.scss';
+import { TNavItem } from '@/app/models/navbar/navitem';
 
-export default function Hamburger({scrolled}: {scrolled: boolean}) {
-  const [isOpen, setIsOpen] = useState(false);
-
+export default function Hamburger({scrolled, toggleHbg, hbgActive}: {scrolled: boolean, toggleHbg: Function, hbgActive: boolean}) {
   useEffect(() => {
     const menuElement = document.getElementById('hamburgerIcon');
 
@@ -15,32 +14,21 @@ export default function Hamburger({scrolled}: {scrolled: boolean}) {
     } else {
       menuElement ? menuElement.classList.remove(styles.scrolled) : null;
     }
-  }, [scrolled]);
 
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+    // if (hbgActive) {
+    //   menuElement ? menuElement.classList.add(styles.active) : null;
+    // } else {
+    //   menuElement ? menuElement.classList.remove(styles.active) : null;
+    // }
+  }, [scrolled, hbgActive]);
 
   return (
-    <div className={styles.hamburgerMenu}>
-      <input
-        type="checkbox"
-        className={styles.hamburgerCheckbox}
-        checked={isOpen}
-        onChange={toggleMenu}
-      />
+    <div className={`${styles.hamburgerMenu} ${hbgActive ? styles.active : null}`} onClick={() => {toggleHbg()}}>
       <span className={styles.hamburgerIcon} id="hamburgerIcon">
         <span className={styles.hamburgerLine}></span>
         <span className={styles.hamburgerLine}></span>
         <span className={styles.hamburgerLine}></span>
       </span>
-      <ul className={styles.menu}>
-        <li className={styles.menuItem}>Home</li>
-        <li className={styles.menuItem}>About</li>
-        <li className={styles.menuItem}>Services</li>
-        <li className={styles.menuItem}>Contact</li>
-      </ul>
     </div>
   );
 };
