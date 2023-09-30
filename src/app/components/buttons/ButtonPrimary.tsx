@@ -16,7 +16,7 @@ export default function ButtonPrimary(props: TButtonPrimaryProps ) {
         <button className={styles.buttonPrimaryDark} onClick={() => location.href = `${props.onClickUrl}`}>
             <span> {props.buttonText} </span>
             &nbsp; &nbsp;  
-            <DynamicIcon iconName="bs-arrow-right"/>
+            <DynamicIcon iconName="hi-arrow-sm-right"/>
         </button>
     )
 }
