@@ -7,6 +7,7 @@ import { GiSandsOfTime } from 'react-icons/gi';
 import { MdLocalShipping } from 'react-icons/md';
 import { RiMoneyDollarCircleLine } from 'react-icons/ri';
 import { BsArrowRight } from 'react-icons/bs';
+import { BiTrash } from 'react-icons/bi'
 
 type TDynamicIcon = {
   iconName: TIcon,
@@ -32,6 +33,8 @@ export const getIcon = (iconName: TIcon): TIconType => {
       return RiMoneyDollarCircleLine;
     case 'bs-arrow-right':
       return BsArrowRight;
+    case 'bi-trash':
+      return BiTrash;
     default:
       return FaRocket;
   }
