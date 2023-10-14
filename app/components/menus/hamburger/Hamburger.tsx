@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import styles from './hamburger.module.scss';
-import { TNavItem } from '@/app/models/navbar/navitem';
+import { TNavItem } from 'app/models/navbar/navitem';
 
 export default function Hamburger({scrolled, toggleHbg, hbgActive}: {scrolled: boolean, toggleHbg: Function, hbgActive: boolean}) {
   useEffect(() => {

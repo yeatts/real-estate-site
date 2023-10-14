@@ -4,7 +4,7 @@
 import styles from './buttonPrimary.module.scss'
 
 // component imports
-import DynamicIcon from '@/app/components/utils/DynamicIcon'
+import DynamicIcon from 'app/components/utils/DynamicIcon'
 
 type TButtonPrimaryProps = {
     buttonText: string,

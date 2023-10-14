@@ -7,8 +7,8 @@ import { useEffect, useState } from 'react'
 import styles from './navbar.module.scss'
 
 // type imports
-import { TNavbar } from '@/app/models/navbar/navbar'
-import { TNavItem } from '@/app/models/navbar/navitem'
+import { TNavbar } from 'app/models/navbar/navbar'
+import { TNavItem } from 'app/models/navbar/navitem'
 
 // component imports
 import Hamburger from '../menus/hamburger/Hamburger'

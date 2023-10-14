@@ -2,10 +2,10 @@
 import styles from '@/app/components/archive/services/servicesSection.module.scss'
 
 // component imports
-import ServiceCard from '@/app/components/cards/ServiceCard'
+import ServiceCard from 'app/components/cards/ServiceCard'
 
 // model imports
-import { default as ServiceCardModel } from '@/app/models/cards/service-card'
+import { default as ServiceCardModel } from 'app/models/cards/service-card'
 
 export default function ServicesSection() {
     const serviceCard = ServiceCardModel.builder().withDefaultServiceCard().build()

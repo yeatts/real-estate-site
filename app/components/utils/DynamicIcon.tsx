@@ -1,5 +1,5 @@
 // type imports
-import { TIcon } from "@/app/models/types/react-icon";
+import { TIcon } from "app/models/types/react-icon";
 import { IconType as TIconType } from "react-icons";
 // react-icons imports
 import { FaRocket } from 'react-icons/fa';

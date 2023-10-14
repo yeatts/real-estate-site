@@ -2,10 +2,10 @@
 import styles from './serviceCard.module.scss'
 
 // util imports
-import DynamicIcon from '@/app/components/utils/DynamicIcon'
+import DynamicIcon from 'app/components/utils/DynamicIcon'
 
 // type imports
-import { TServiceCard } from '@/app/models/cards/service-card'
+import { TServiceCard } from 'app/models/cards/service-card'
 
 export default function ServicesCard( props: TServiceCard ) {
   return (

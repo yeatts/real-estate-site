@@ -1,5 +1,5 @@
 // type imports
-import { TIcon }  from "@/app/models/types/react-icon"
+import { TIcon }  from "app/models/types/react-icon"
 
 // use file to link content to components.
 export type TServiceCard = {

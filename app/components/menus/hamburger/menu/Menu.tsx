@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import styles from './menu.module.scss';
-import { TNavItem } from '@/app/models/navbar/navitem';
+import { TNavItem } from 'app/models/navbar/navitem';
 
 export default function Menu({scrolled, hbgActive, navItems}: {scrolled: boolean, hbgActive: boolean, navItems: TNavItem[]}) {
   useEffect(() => {
