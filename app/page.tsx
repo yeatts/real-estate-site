@@ -40,10 +40,7 @@ export default function Home() {
         <section className="flex flex-wrap">
           <div className="flex-1 basis-full h-screen sm:basis-1/2 bg-cover bg-center"
             style={{ backgroundImage: "url('/quise-1.jpg')" }} />
-          <aside className="flex flex-col justify-center px-10 basis-full h-screen bg-quinary sm:basis-1/2"
-            style={{
-              backgroundImage: 'linear-gradient(to right, #c4cad7, #fff6ea 5%, #fff6ea)'
-            }}>
+          <aside className="flex flex-col justify-center px-10 basis-full h-screen bg-primary sm:basis-1/2 md:bg-gradient-to-r from-[#c4cad7] from-0% via-[#fff6ea] via-5% to-[#fff6ea] to-90%">
             <h1 className="">
               {"Quise Gives You The Keys 🔑"}
             </h1>
