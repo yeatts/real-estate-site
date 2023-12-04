@@ -12,14 +12,14 @@ export default function Popup() {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    setIsMounted(true); // had to do this because I was getting an error that said "document is not defined" when we use it with the rootElement prop
+    // can only mount when layout body is mounted first  
+    setIsMounted(true);
   }, []);
 
   return (
     <>
       {isMounted && (
         <PopupButton
-          className={buttStyle.buttonPrimaryDark}
           url="https://calendly.com/marquiselovelace"
           rootElement={document.getElementsByTagName('body')[0]}
           text="Contact"

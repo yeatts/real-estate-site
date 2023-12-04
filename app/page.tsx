@@ -7,7 +7,7 @@ import { Analytics } from '@vercel/analytics/react';
 import styles from './page.module.scss'
 
 // type imports
-import { default as NavbarModel }from 'app/models/navbar/navbar'
+import { default as NavbarModel } from 'app/models/navbar/navbar'
 import { default as NavItemModel } from 'app/models/navbar/navitem'
 
 // component imports
@@ -19,73 +19,50 @@ export default function Home() {
   const navItems = [
     NavItemModel.builder().withTitle("Properties").withUrl("https://www.homes.com/real-estate-agents/marquise-lovelace/c6rhq6g/").build(),
     NavItemModel.builder().withTitle("About").build(),
-    NavItemModel.builder().withTitle("Contact").build(), 
+    NavItemModel.builder().withTitle("Contact").build(),
   ]
   const navbarProps = NavbarModel.builder().withNavDisplayName("Marquise lovelace").withNavItems(navItems).build()
 
   return (
     <>
-      <main className={styles.main}>
-        <Navbar
-          navDisplayName={navbarProps.navDisplayName}
-          navItems={navbarProps.navItems}
-          leftNavItems={navbarProps.leftNavItems}
-          rightNavItems={navbarProps.rightNavItems}
-        />
+      <main className="w-full">
         {/* hero section */}
-        <section className={styles.hero}>
-          <Image className={styles.heroImage} src="/landing-houses.jpg" alt="Hauses" fill priority sizes='100%' />
-          <div className={styles.heroBody}>
-            <h1>
-              {"I sell hauses."}
+        <section className="h-screen bg-cover bg-center"
+          style={{ backgroundImage: "url('/landing-houses.jpg')" }}>
+          <div className="flex justify-center items-center h-full bg-black/40">
+            <h1 className="border-2 border-primary border-solid text-2xl text-primary p-5">
+              {"We sell "} <a className="underline underline-offset-8 text-quaternary animate-pulse" href="https://www.homes.com/real-estate-agents/marquise-lovelace/c6rhq6g/">{"Houses"}</a>
             </h1>
-            <div className={styles.heroButtonGroup}>
-              {/* TODO: create a popup here to make sure user knows they're leavin the site */}
-              <ButtonPrimary buttonText="Search All Homes" onClickUrl='https://www.homes.com/real-estate-agents/marquise-lovelace/c6rhq6g/'/>
-            </div>
           </div>
         </section>
+
         {/* bio section */}
-        <section className={styles.bio}>
-          <div className={styles.bioImgContainer}>
-            <Image className={styles.bioImage} src="/cat-portrait-lol.jpg" alt="bio-pic" fill priority sizes='100%' />
-          </div>
-          <aside className={styles.bioText}>
-            <h1>Quise Gives You The Keys 🔑</h1>
+        <section className="flex flex-wrap">
+          <div className="flex-1 basis-full h-screen sm:basis-1/2 bg-cover bg-center"
+            style={{ backgroundImage: "url('/quise-1.jpg')" }} />
+          <aside className="flex flex-col justify-center items-center basis-full h-screen sm:basis-1/2">
+            <h1 className="flex-1 border-2 border-solid border-red-500">
+              {"Quise Gives You The Keys 🔑"}
+            </h1>
             <br />
-            <p> As a Marine Corps veteran, Mar[quise] is a real estate agent who understands the value of hard work and dedication. He is passionate about helping his clients find the perfect home and making the buying or selling process as smooth as possible. With his sharp negotiating skills and knowledge of the local market, Quise is a valuable asset to anyone looking to buy or sell real estate. He is committed to providing exceptional service and building lasting relationships with his clients. Let Quise help you achieve your real estate goals with his expertise and professionalism. </p>
-            <br />
-            <ButtonPrimary buttonText="Get To Know Quise" />
+            <p className="flex-1 border-2 border-solid border-red-500">
+              {"As a Marine Corps veteran, Mar[quise] is a real estate agent who understands the value of hard work and dedication. He is passionate about helping his clients find the perfect home and making the buying or selling process as smooth as possible. With his sharp negotiating skills and knowledge of the local market, Quise is a valuable asset to anyone looking to buy or sell real estate. He is committed to providing exceptional service and building lasting relationships with his clients. Let Quise help you achieve your real estate goals with his expertise and professionalism."}
+            </p>
           </aside>
         </section>
         {/* contact section */}
-        <section className={styles.contact}>
-          <Image className={styles.contactBgImg} src="/contact-bg-img.jpg" alt="kewl haus" fill priority sizes="100%" />
-          <div className={styles.contactBody}>
+        <section className="h-screen bg-cover bg-center"
+          style={{ backgroundImage: "url('/contact.jpg')" }}>
+          <div>
             <h1>Connect With Quise</h1>
-            <div className={styles.contactButtonGroup}>
-              <CalendlyPopup/>
+            <div>
+              <CalendlyPopup />
             </div>
           </div>
         </section>
-        {/* testimonials section */}
-        <section>
 
-        </section>
-        {/* listings section */}
-        <section>
-
-        </section>
-        {/* social media section */}
-        <section>
-
-        </section>
-        {/* footer */}
-        <footer>
-
-        </footer>
       </main>
-      <Analytics/>
+      <Analytics />
     </>
   )
 }

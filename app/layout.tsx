@@ -1,5 +1,5 @@
 import { StrictMode } from 'react'
-import './globals.scss'
+import './globals.css'
 
 export const metadata = {
   title: 'Quise Gives You The 🔑',
