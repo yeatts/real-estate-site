@@ -27,10 +27,10 @@ export default function Home() {
     <>
       <main className="w-full">
         {/* hero section */}
-        <section className="h-screen bg-cover bg-center"
-          style={{ backgroundImage: "url('/landing-houses.jpg')" }}>
-          <div className="flex justify-center items-center h-full bg-black/40">
-            <h1 className="border-2 border-primary border-solid text-2xl text-primary p-5">
+        <section className="h-screen w-screen">
+          <Image className="object-cover brightness-50 z-0" src="/landing-houses.jpg" alt="Hauses" fill priority sizes='100%' />
+          <div className="flex justify-center items-center h-full">
+            <h1 className="border-2 border-primary border-solid text-2xl text-primary p-5 z-10">
               {"We sell "} <a className="underline underline-offset-8 text-quaternary animate-pulse" href="https://www.homes.com/real-estate-agents/marquise-lovelace/c6rhq6g/">{"Houses"}</a>
             </h1>
           </div>
@@ -38,8 +38,9 @@ export default function Home() {
 
         {/* bio section */}
         <section className="flex flex-wrap">
-          <div className="flex-1 basis-full h-screen sm:basis-1/2 bg-cover bg-center"
-            style={{ backgroundImage: "url('/quise-1.jpg')" }} />
+          <div className="relative flex-1 basis-full h-screen sm:basis-1/2">
+            <Image className="object-cover z-0" src="/quise-1.jpg" alt="quise-bio-photo" fill priority sizes='100%' />
+          </div>
           <aside className="flex flex-col justify-center px-10 basis-full h-screen bg-primary sm:basis-1/2 md:bg-gradient-to-r from-[#c4cad7] from-0% via-[#fff6ea] via-5% to-[#fff6ea] to-90%">
             <h1 className="">
               {"Quise Gives You The Keys 🔑"}
@@ -51,10 +52,10 @@ export default function Home() {
           </aside>
         </section>
         {/* contact section */}
-        <section className="h-screen bg-cover bg-center"
-          style={{ backgroundImage: "url('/contact.jpg')" }}>
-          <div className="flex justify-center items-center h-full bg-black/40">
-            <h1 className="border-2 border-primary border-solid text-2xl text-primary p-5">
+        <section className="absolute h-screen w-screen">
+          <Image className="relative object-cover brightness-50 z-0" src="/contact.jpg" alt="contact-photo" fill priority sizes='100%' />
+          <div className="flex justify-center items-center h-full">
+            <h1 className="border-2 border-primary border-solid text-2xl text-primary p-5 z-10">
               <CalendlyPopup textStyle="underline underline-offset-8 text-quaternary animate-pulse" />
               {" With Quise"}
             </h1>
