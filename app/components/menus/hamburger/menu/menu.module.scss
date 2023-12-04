@@ -1,0 +1,55 @@
+.menuContainer {
+    display: grid;
+    padding: 0% 10%;
+    width: max-content;
+    justify-items: center;
+    justify-content: center;
+    grid-template-columns: 1fr;
+    grid-column: 1 / -1;
+    grid-row: 2;
+    height: 100%;
+    width: 100%;
+    transform-origin: top;
+    visibility: hidden;
+    transform: rotateX(-100deg);
+    transition:
+        transform .1s ease,
+        visibility .025s;
+
+    .menu {
+        width: 100%;
+    }
+
+    .menuItem {
+        width: 100%;
+        text-align: center;
+        color: var(--global-text-color-light);
+        font-size: 1.5rem;
+        text-transform: uppercase;
+    }
+
+    // TODO: make menuItem anchor tags full width of viewport for easier user interaction.
+
+}
+
+
+.active {
+    &.menuContainer {
+        transition:
+            transform .1s ease,
+            opacity .025s;
+        transform: rotateX(0deg);
+        transform: translateY(20px);
+        visibility: visible;
+    }
+
+    .menu {
+        display: grid;
+        grid-gap: 30px;
+        justify-self: center;
+        justify-content: center;
+        align-items: center;
+        height: fit-content;
+        line-height: 1.5;
+    }
+}

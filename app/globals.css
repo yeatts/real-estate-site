@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: 235 242 242; /* #ebf2f2 */
+    --color-secondary: 207 218 218; /* #cfdada */
+    --color-tertiary: 156 173 179; /* #9cadb3 */
+    --color-quaternary: 230 255 6; /* #e6ff06 */
+    --color-quinary: 255 246 234; /* #fff6ea */
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+  display: flex;
+}
+
+a {
+  color: inherit;
+  /* text-decoration: none; */
+}

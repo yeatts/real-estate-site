@@ -1,0 +1,125 @@
+.nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 0fr;
+    grid-gap: 10px;
+    grid-template-areas:
+        "left-items title right-items";
+    // TODO: it would be cool to base the grid cell size on how many navItems there are.
+    // currently, About and Contact share the same size grid cell as Properties does alone. Don't know if possible with CSS alone.
+    grid-gap: 1%;
+    width: 100%;
+    height: 14vh;
+    position: fixed;
+    z-index: 99;
+    padding: 0;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+    /* Smooth transition effect */
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+    perspective: 800px;
+}
+
+.scrolled {
+    background-color: rgba(#f9fafb, 0.5);
+    backdrop-filter: blur(10px);
+    /* Adjust the blur radius as needed */
+
+    >.navTitle,
+    .navItem {
+        color: var(--global-text-color-dark);
+        font-weight: 500;
+    }
+
+    // text-shadow effect not used on scroll, because BDJ did not like look of the dark glow on white / blurred background.
+}
+
+.navTitle,
+.navItem {
+    cursor: pointer;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: 1.5;
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--global-text-color-light);
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.navTitle {
+    justify-content: center;
+    font-size: 1.25rem;
+    text-shadow: 0 0 1px var(--global-text-color-light); // this effect makes navTitle slightly brighter than navItems.
+}
+
+.navItem {
+    list-style: none;
+    text-decoration: none;
+}
+
+.navItems {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-gap: 1%;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media (max-width: 870px) {
+    .navTitle {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 790px) {
+
+    .nav {
+        grid-template-columns: 1fr .2fr;
+        grid-template-areas: none;
+        grid-template-rows: 10vh 0vh;
+    }
+
+    .navItems {
+        display: none;
+    }
+
+    .navTitle {
+        grid-column: 1 / -1;
+        grid-row: 1;
+        justify-content: center;
+    }
+
+    .active {
+        grid-template-columns: 1fr .2fr;
+        grid-template-rows: 14vh auto;
+        width: 100%;
+        height: 100%; // TODO: nav shifts a little when menu is toggled. consider figuring this out...probably height to 100% causing the issue
+        background-color: rgba(#f9fafb, 0.5);
+        backdrop-filter: blur(10px);
+        align-content: start;
+    }
+
+
+}
+
+@media (max-width: 375px) {
+    .navTitle {
+        width: min-content;
+    }
+
+    //TODO: navTitle is wrapping at 350px, but the text is aligning left. fix to center.
+}
+
+@media (max-width: 250px) {
+    .navTitle {
+        display: none;
+    }
+}

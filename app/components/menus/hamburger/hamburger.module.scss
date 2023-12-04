@@ -1,0 +1,91 @@
+.hamburgerMenu {
+    display: none;
+    // grid-area: hamburger;
+    grid-column: 2;
+    grid-row: 1;
+    justify-content: center;
+    width: fit-content;
+    height: fit-content;
+    align-items: center;
+}
+
+.hamburgerIcon {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 5px;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 30px;
+    height: fit-content;
+    cursor: pointer;
+
+    >* {
+        transition: transform 0.25s;
+    }
+
+    :nth-child(2) {
+        visibility: visible;
+        transition: visibility .2s linear .2s;
+    }
+}
+
+.active {
+    .hamburgerMenu {
+        height: 400px;
+    }
+
+
+
+    .hamburgerIcon {
+        height: fit-content;
+        width: fit-content;
+
+        :first-child {
+            transform: translate(0, 8px) rotate(45deg);
+
+        }
+
+        :nth-child(2) {
+            visibility: hidden;
+            transition: visibility 0s ease-out;
+        }
+
+        :last-child {
+            transform: translate(0, -8px) rotate(-45deg);
+        }
+    }
+}
+
+.scrolled {
+
+    .hamburgerLine {
+        background-color: var(--global-text-color-dark);
+    }
+}
+
+.hamburgerLine {
+    width: 100%;
+    height: 3px;
+    background-color: var(--global-text-color-light);
+}
+
+// TODO: should menu and menuItem be here? Could be scope creep.
+
+
+// TODO: make media query values variables. 
+@media (max-width: 790px) {
+    .hamburgerMenu {
+        display: grid;
+        height: fit-content;
+        justify-self: center;
+        align-items: center;
+        grid-column: 2;
+        grid-row: 1;
+    }
+}
+
+@media (max-width: 250px) {
+    .hamburgerMenu {
+        grid-column: 1 / -1;
+    }
+}
