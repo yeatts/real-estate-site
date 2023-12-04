@@ -2,13 +2,14 @@
 // react imports
 import React, { useEffect, useState } from 'react'
 
-// style imports
-import buttStyle from '@/app/components/buttons/buttonPrimary.module.scss';
-
 // calendly imports
 import { PopupButton } from 'react-calendly';
 
-export default function Popup() {
+type TPopupProps = {
+  textStyle: string
+}
+
+export default function Popup(props: TPopupProps) {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -20,11 +21,13 @@ export default function Popup() {
     <>
       {isMounted && (
         <PopupButton
+          className={props.textStyle}
           url="https://calendly.com/marquiselovelace"
           rootElement={document.getElementsByTagName('body')[0]}
-          text="Contact"
+          text="Connect"
         />
-      )}
+      )
+      }
     </>
   );
 }

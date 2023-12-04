@@ -40,12 +40,15 @@ export default function Home() {
         <section className="flex flex-wrap">
           <div className="flex-1 basis-full h-screen sm:basis-1/2 bg-cover bg-center"
             style={{ backgroundImage: "url('/quise-1.jpg')" }} />
-          <aside className="flex flex-col justify-center items-center basis-full h-screen sm:basis-1/2">
-            <h1 className="flex-1 border-2 border-solid border-red-500">
+          <aside className="flex flex-col justify-center px-10 basis-full h-screen bg-quinary sm:basis-1/2"
+            style={{
+              backgroundImage: 'linear-gradient(to right, #c4cad7, #fff6ea 5%, #fff6ea)'
+            }}>
+            <h1 className="">
               {"Quise Gives You The Keys 🔑"}
             </h1>
             <br />
-            <p className="flex-1 border-2 border-solid border-red-500">
+            <p className="">
               {"As a Marine Corps veteran, Mar[quise] is a real estate agent who understands the value of hard work and dedication. He is passionate about helping his clients find the perfect home and making the buying or selling process as smooth as possible. With his sharp negotiating skills and knowledge of the local market, Quise is a valuable asset to anyone looking to buy or sell real estate. He is committed to providing exceptional service and building lasting relationships with his clients. Let Quise help you achieve your real estate goals with his expertise and professionalism."}
             </p>
           </aside>
@@ -53,15 +56,15 @@ export default function Home() {
         {/* contact section */}
         <section className="h-screen bg-cover bg-center"
           style={{ backgroundImage: "url('/contact.jpg')" }}>
-          <div>
-            <h1>Connect With Quise</h1>
-            <div>
-              <CalendlyPopup />
-            </div>
+          <div className="flex justify-center items-center h-full bg-black/40">
+            <h1 className="border-2 border-primary border-solid text-2xl text-primary p-5">
+              <CalendlyPopup textStyle="underline underline-offset-8 text-quaternary animate-pulse" />
+              {" With Quise"}
+            </h1>
           </div>
         </section>
 
-      </main>
+      </main >
       <Analytics />
     </>
   )

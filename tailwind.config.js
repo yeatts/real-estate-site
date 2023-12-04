@@ -13,6 +13,7 @@ module.exports = {
         secondary: 'rgb(var(--color-secondary) / <alpha-value>)',
         tertiary: 'rgb(var(--color-tertiary) / <alpha-value>)',
         quaternary: 'rgb(var(--color-quaternary) / <alpha-value>)',
+        quinary: 'rgb(var(--color-quinary) / <alpha-value>)',
       }
     }
   },

@@ -4,10 +4,11 @@
 
 @layer base {
   :root {
-    --color-primary: 235 242 242;
-    --color-secondary: 207 218 218;
-    --color-tertiary: 156 173 179;
-    --color-quaternary: 230 255 6;
+    --color-primary: 235 242 242; /* #ebf2f2 */
+    --color-secondary: 207 218 218; /* #cfdada */
+    --color-tertiary: 156 173 179; /* #9cadb3 */
+    --color-quaternary: 230 255 6; /* #e6ff06 */
+    --color-quinary: 255 246 234; /* #fff6ea */
   }
 }
 
