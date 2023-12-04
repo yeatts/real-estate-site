@@ -39,7 +39,7 @@ export default function Home() {
         {/* bio section */}
         <section className="flex flex-wrap">
           <div className="relative flex-1 basis-full h-screen sm:basis-1/2">
-            <Image className="object-cover z-0" src="/quise-1.jpg" alt="quise-bio-photo" fill priority sizes='100%' />
+            <Image className="object-cover z-0" src="/quise-2.jpg" alt="quise-bio-photo" fill priority sizes='100%' />
           </div>
           <aside className="flex flex-col justify-center px-10 basis-full h-screen bg-primary sm:basis-1/2 md:bg-gradient-to-r from-[#c4cad7] from-0% via-[#fff6ea] via-5% to-[#fff6ea] to-90%">
             <h1 className="">
@@ -51,6 +51,7 @@ export default function Home() {
             </p>
           </aside>
         </section>
+
         {/* contact section */}
         <section className="absolute h-screen w-screen">
           <Image className="relative object-cover brightness-50 z-0" src="/contact.jpg" alt="contact-photo" fill priority sizes='100%' />
